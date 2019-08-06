@@ -60,8 +60,12 @@ otu <- read.table('OTU_rarefied_16S.txt', sep='\t', header=T, row.names = 1)
 taxonomy <- otu[,'taxonomy']
 taxonomy
 otu <- otu[,-46]
+# RAREFACTION CURVE - BACTERIA
+rarecurve(t(otu_table(PHYL)), step=50, cex=0.5, xlab = "Reads", ylab = "Bacterial/Archaeal OTUs")
 # READ OTU FUNGI
 otuITS <- read.table(file = "OTU_rarefied_ITS.txt", sep='\t', header=T, row.names = 1) 
+# RAREFACTION CURVE - FUNGI
+rarecurve(t(otu_table(physeq)), step=50, cex=0.5, xlab = "Reads", ylab = "Fungal OTUs")
 # READ MAP
 map <- read.table('clean_map_data.csv', sep=',', header=TRUE)
 map$Site <- as.character(map$Site)
@@ -131,9 +135,9 @@ map.div$nema.Shannon <- h.nema
 map.div$nema.Pielou <- pielou.nema
 names(map.div)
 
-##############################################################################################
+###################################################################################################################
 #### ANOVA AND KRUSKAL-WALLIS TO COMPARE BACTERIAL AND FUNGAL RICHNESS & SHANNON AMONG SITES AND ROOTSTOCKS #######
-##############################################################################################
+###################################################################################################################
 
 map_aov <- map.div
 class(map_aov)
@@ -560,7 +564,518 @@ grid.draw(rbind(ggplotGrob(fg_rich_site), ggplotGrob(fg_sha_site),size = "first"
 grid.newpage()
 grid.draw(rbind(ggplotGrob(fg_rich_root), ggplotGrob(fg_sha_root),size = "first"))
 
-# 3. ANOVA TEST FOR NEMATODES, OLIGOCHAETES, AND MYCORRHIZAL FUNGI TOTAL ABSOLUTE ABUNDANCE (COUNT DATA)
+##########################################################################################
+#### CORRELATION TEST OF BACTERIAL AND FUNGAL ALPHA DIVERSITY WITH SOIL PROPERTIES #######
+##########################################################################################
+
+# 1. Pearson correlation of soil properties with bacterial Richness
+bac.rich_pH <- cor(map.div$pH, map.div$Richness, method ="pearson")
+cor.test(map.div$pH, map.div$Richness)
+
+bac.rich_P <- cor(map.div$P_ppm, map.div$Richness, method ="pearson")
+cor.test(map.div$P_ppm, map.div$Richness)
+
+bac.rich_K <- cor.test(map.div$K_ppm, map.div$Richness, method ="pearson")
+cor.test(map.div$K_ppm, map.div$Richness)
+
+bac.rich_Ca <- cor.test(map.div$Ca_ppm, map.div$Richness, method ="pearson")
+cor.test(map.div$Ca_ppm, map.div$Richness)
+
+bac.rich_Mg <- cor.test(map.div$Mg_ppm, map.div$Richness, method ="pearson")
+cor.test(map.div$Mg_ppm, map.div$Richness)
+
+bac.rich_NO3N <- cor.test(map.div$NO3N_ppm, map.div$Richness, method ="pearson")
+cor.test(map.div$NO3N_ppm, map.div$Richness)
+
+bac.rich_NH4N <- cor.test(map.div$NH4N_ppm, map.div$Richness, method ="pearson")
+cor.test(map.div$NH4N_ppm, map.div$Richness)
+
+bac.rich_OM <- cor.test(map.div$OM_percent, map.div$Richness, method ="pearson")
+cor.test(map.div$OM_percent, map.div$Richness)
+
+bac.rich_SD <- cor.test(map.div$sand_percent, map.div$Richness, method ="pearson")
+cor.test(map.div$sand_percent, map.div$Richness)
+
+bac.rich_SL <- cor.test(map.div$silt_percent, map.div$Richness, method ="pearson")
+cor.test(map.div$silt_percent, map.div$Richness)
+
+bac.rich_CL <- cor.test(map.div$clay_percent, map.div$Richness, method ="pearson")
+cor.test(map.div$clay_percent, map.div$Richness)
+
+# effect of soil type to bacterial richness
+bac.rich_soil.type <- lm(Richness ~ soil_type, data=map.div)
+summary(bac.rich_soil.type)
+drop1(bac.rich_soil.type,~.,test="F") # type III SS and F Tests
+TYPE_RC_resids <- residuals(bac.rich_soil.type)
+TYPE_RC_preds <- predict(bac.rich_soil.type)
+plot(TYPE_RC_resids ~ TYPE_RC_preds, xlab = "Predicted Values", ylab = "Residuals", asp=.5)
+leveneTest(Richness ~ soil_type, data=map.div, na.action=na.exclude) # p-val 0.004, data is not homogen
+shapiro.test(TYPE_RC_resids) # data is normal
+# fail test assumption for anova
+# use WELCH-ANOVA instead
+bac.rich_soil.type <- oneway.test(Richness ~ soil_type, data=map.div, var.equal = F)
+bac.rich_soil.type
+ggplot(map.div, aes(x=soil_type, y=Richness)) + geom_boxplot()
+# F = 13.568, num df = 2.0000, denom df = 4.2992, p-value = 0.01389
+# GAMES-HOWELL posthoc test
+GH.bac.rich_soil.type <- oneway(map.div$soil_type, y = map.div$Richness, posthoc = 'games-howell')
+GH.bac.rich_soil.type
+
+# 2. Pearson correlation of soil properties with bacterial Shannon index
+bac.sha._pH <- cor(map.div$pH, map.div$Shannon, method ="pearson")
+cor.test(map.div$pH, map.div$Shannon)
+
+bac.sha_P <- cor(map.div$P_ppm, map.div$Shannon, method ="pearson")
+cor.test(map.div$P_ppm, map.div$Shannon)
+
+bac.sha_K <- cor.test(map.div$K_ppm, map.div$Shannon, method ="pearson")
+cor.test(map.div$K_ppm, map.div$Shannon)
+
+bac.sha_Ca <- cor.test(map.div$Ca_ppm, map.div$Shannon, method ="pearson")
+cor.test(map.div$Ca_ppm, map.div$Shannon)
+
+bac.sha_Mg <- cor.test(map.div$Mg_ppm, map.div$Shannon, method ="pearson")
+cor.test(map.div$Mg_ppm, map.div$Shannon)
+
+bac.sha_NO3N <- cor.test(map.div$NO3N_ppm, map.div$Shannon, method ="pearson")
+cor.test(map.div$NO3N_ppm, map.div$Shannon)
+
+bac.sha_NH4N <- cor.test(map.div$NH4N_ppm, map.div$Shannon, method ="pearson")
+cor.test(map.div$NH4N_ppm, map.div$Shannon)
+
+bac.sha_OM <- cor.test(map.div$OM_percent, map.div$Shannon, method ="pearson")
+cor.test(map.div$OM_percent, map.div$Shannon)
+
+bac.sha_SD <- cor.test(map.div$sand_percent, map.div$Shannon, method ="pearson")
+cor.test(map.div$sand_percent, map.div$Shannon)
+
+bac.sha_SL <- cor.test(map.div$silt_percent, map.div$Shannon, method ="pearson")
+cor.test(map.div$silt_percent, map.div$Shannon)
+
+bac.sha_CL <- cor.test(map.div$clay_percent, map.div$Shannon, method ="pearson")
+cor.test(map.div$clay_percent, map.div$Shannon)
+
+# effect of soil type to bacterial shannon index # not significant
+bac.sha_soil.type <- lm(Shannon ~ soil_type, data=map.div)
+summary(bac.sha_soil.type)
+drop1(bac.sha_soil.type,~.,test="F") # type III SS and F Tests
+TYPE_SH_resids <- residuals(bac.sha_soil.type)
+TYPE_SH_preds <- predict(bac.sha_soil.type)
+plot(TYPE_SH_resids ~ TYPE_SH_preds, xlab = "Predicted Values", ylab = "Residuals", asp=.5)
+leveneTest(Shannon ~ soil_type, data=map.div, na.action=na.exclude) # p-val 0.005, data is not homogen
+shapiro.test(TYPE_SH_resids) # data is normal
+# fail test assumption for anova
+# use WELCH-ANOVA instead
+bac.sha_soil.type <- oneway.test(Shannon ~ soil_type, data=map.div, var.equal = F)
+bac.sha_soil.type
+ggplot(map.div, aes(x=soil_type, y=Shannon)) + geom_boxplot()
+# F = 7.1633, num df = 2.0000, denom df = 2.8821, p-value = 0.07615
+# use GAMES-HOWELL posthoc
+GH.bac.sha_soil.type <- oneway(map.div$soil_type, y = map.div$Shannon, posthoc = 'games-howell')
+GH.bac.sha_soil.type
+
+# 3. Pearson correlation of soil properties with fungal Richness # all are not significant
+fg.rich_pH <- cor(map.div$pH, map.div$fg.Richness, method ="pearson")
+cor.test(map.div$pH, map.div$fg.Richness)
+
+fg.rich_P <- cor(map.div$P_ppm, map.div$fg.Richness, method ="pearson")
+cor.test(map.div$P_ppm, map.div$fg.Richness)
+
+fg.rich_K <- cor.test(map.div$K_ppm, map.div$fg.Richness, method ="pearson")
+cor.test(map.div$K_ppm, map.div$fg.Richness)
+
+fg.rich_Ca <- cor.test(map.div$Ca_ppm, map.div$fg.Richness, method ="pearson")
+cor.test(map.div$Ca_ppm, map.div$fg.Richness)
+
+fg.rich_Mg <- cor.test(map.div$Mg_ppm, map.div$fg.Richness, method ="pearson")
+cor.test(map.div$Mg_ppm, map.div$fg.Richness)
+
+fg.rich_NO3N <- cor.test(map.div$NO3N_ppm, map.div$fg.Richness, method ="pearson")
+cor.test(map.div$NO3N_ppm, map.div$fg.Richness)
+
+fg.rich_NH4N <- cor.test(map.div$NH4N_ppm, map.div$fg.Richness, method ="pearson")
+cor.test(map.div$NH4N_ppm, map.div$fg.Richness)
+
+fg.rich_OM <- cor.test(map.div$OM_percent, map.div$fg.Richness, method ="pearson")
+cor.test(map.div$OM_percent, map.div$fg.Richness)
+
+fg.rich_SD <- cor.test(map.div$sand_percent, map.div$fg.Richness, method ="pearson")
+cor.test(map.div$sand_percent, map.div$fg.Richness)
+
+fg.rich_SL <- cor.test(map.div$silt_percent, map.div$fg.Richness, method ="pearson")
+cor.test(map.div$silt_percent, map.div$fg.Richness)
+
+fg.rich_CL <- cor.test(map.div$clay_percent, map.div$fg.Richness, method ="pearson")
+cor.test(map.div$clay_percent, map.div$fg.Richness)
+
+# effect of soil type to fungal richness # not significant
+fg.rich_soil.type <- lm(fg.Richness ~ soil_type, data=map.div)
+summary(fg.rich_soil.type)
+drop1(fg.rich_soil.type,~.,test="F") # type III SS and F Tests
+TYPE_fg.RC_resids <- residuals(fg.rich_soil.type)
+TYPE_fg.RC_preds <- predict(fg.rich_soil.type)
+plot(TYPE_fg.RC_resids ~ TYPE_fg.RC_preds, xlab = "Predicted Values", ylab = "Residuals", asp=.5)
+leveneTest(fg.Richness ~ soil_type, data=map.div, na.action=na.exclude) # p-val 0.2, data is homogen
+shapiro.test(TYPE_fg.RC_resids) # 0.047, data is not normal
+# fail test assumption for anova
+
+# 4. Pearson correlation of soil properties with fungal Shannon index
+fg.sha_pH <- cor(map.div$pH, map.div$fg.Shannon, method ="pearson")
+cor.test(map.div$pH, map.div$fg.Shannon)
+
+fg.sha_P <- cor(map.div$P_ppm, map.div$fg.Shannon, method ="pearson")
+cor.test(map.div$P_ppm, map.div$fg.Shannon)
+
+fg.sha_K <- cor.test(map.div$K_ppm, map.div$fg.Shannon, method ="pearson")
+cor.test(map.div$K_ppm, map.div$fg.Shannon)
+
+fg.sha_Ca <- cor.test(map.div$Ca_ppm, map.div$fg.Shannon, method ="pearson")
+cor.test(map.div$Ca_ppm, map.div$fg.Shannon)
+
+fg.sha_Mg <- cor.test(map.div$Mg_ppm, map.div$fg.Shannon, method ="pearson")
+cor.test(map.div$Mg_ppm, map.div$fg.Shannon)
+
+fg.sha_NO3N <- cor.test(map.div$NO3N_ppm, map.div$fg.Shannon, method ="pearson")
+cor.test(map.div$NO3N_ppm, map.div$fg.Shannon)
+
+fg.sha_NH4N <- cor.test(map.div$NH4N_ppm, map.div$fg.Shannon, method ="pearson")
+cor.test(map.div$NH4N_ppm, map.div$fg.Shannon)
+
+fg.sha_OM <- cor.test(map.div$OM_percent, map.div$fg.Shannon, method ="pearson")
+cor.test(map.div$OM_percent, map.div$fg.Shannon)
+
+fg.sha_SD <- cor.test(map.div$sand_percent, map.div$fg.Shannon, method ="pearson")
+cor.test(map.div$sand_percent, map.div$fg.Shannon) # significant
+
+fg.sha_SL <- cor.test(map.div$silt_percent, map.div$fg.Shannon, method ="pearson")
+cor.test(map.div$silt_percent, map.div$fg.Shannon) # significant
+
+fg.sha_CL <- cor.test(map.div$clay_percent, map.div$fg.Shannon, method ="pearson")
+cor.test(map.div$clay_percent, map.div$fg.Shannon) # significant
+
+# effect of soil type to fungal shannon index # significant
+fg.sha_soil.type <- lm(fg.Shannon ~ soil_type, data=map.div)
+summary(fg.sha_soil.type)
+drop1(fg.sha_soil.type,~.,test="F") # type III SS and F Tests
+TYPE_fg.SH_resids <- residuals(fg.sha_soil.type)
+TYPE_fg.SH_preds <- predict(fg.sha_soil.type)
+plot(TYPE_fg.SH_resids ~ TYPE_fg.SH_preds, xlab = "Predicted Values", ylab = "Residuals", asp=.5)
+leveneTest(fg.Shannon ~ soil_type, data=map.div, na.action=na.exclude) # p-val 0.6, data is homogen
+shapiro.test(TYPE_fg.SH_resids) # data is normal
+# Tukey's HSD post hoc test
+hsd_TYPE_fg.SH <- HSD.test(fg.sha_soil.type, "soil_type", alpha = 0.05,group = FALSE,main = NULL,console=TRUE)
+ggplot(map.div, aes(x=soil_type, y=fg.Shannon)) + geom_boxplot()
+
+#########################################################################################
+## LINEAR REGRESSION TEST OF BACTERIAL AND FUNGAL ALPHA DIVERSITY WITH SOIL PROPERTIES ##
+#########################################################################################
+
+### BACTERIA ###
+# 1. BACTERIAL RICHNESS - SAND
+Sand_percent_rich <- lm(Richness ~ sand_percent, data=map.div)
+summary(Sand_percent_rich)
+ggscatter(map.div, x = "sand_percent", y = "Richness", 
+          add = "reg.line",conf.int = TRUE, xlab = "Sand (%)", ylab = "Richness")+
+          annotate("text", x=42, y=5300, label = "y == 14.88(x)+3863.22", parse=T)+
+          annotate("text", x=38, y=5200, label = "R^2 == 0.325", parse=T)+
+          annotate("text", x=40, y=5100, label = "p-val == 4.38e-05", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+# 2. BACTERIAL RICHNESS - SILT
+Silt_percent_rich <- lm(Richness ~ silt_percent, data=map.div)
+summary(Silt_percent_rich)
+ggscatter(map.div, x = "silt_percent", y = "Richness", 
+          add = "reg.line",conf.int = TRUE, xlab = "Silt (%)", ylab = "Richness")+
+          annotate("text", x=39, y=5300, label = "y == -16.48(x)+5158.09", parse=T)+
+          annotate("text", x=35, y=5200, label = "R^2 == 0.208", parse=T)+
+          annotate("text", x=36, y=5100, label = "p-val == 0.001", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+    
+# 3. BACTERIAL RICHNESS - CLAY
+Clay_percent_rich <- lm(Richness ~ clay_percent, data=map.div)
+summary(Clay_percent_rich)
+ggscatter(map.div, x = "clay_percent", y = "Richness", 
+          add = "reg.line",conf.int = TRUE, xlab = "Clay (%)", ylab = "Richness")+
+          annotate("text", x=20, y=5300, label = "y == -49.89(x)+5456.83", parse=T)+
+          annotate("text", x=20, y=5200, label = "R^2 == 0.457", parse=T)+
+          annotate("text", x=20, y=5100, label = "p-val == 3.376e-07", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+    
+#. 4. BACTERIAL RICHNESS - K
+K_rich <- lm(Richness ~ K_ppm, data=map.div)
+ggplot(K_rich, aes(x = K_ppm, y = Richness)) + geom_point() + stat_smooth(method = 'lm')
+summary(K_rich)
+ggscatter(map.div, x = "K_ppm", y = "Richness", 
+          add = "reg.line",conf.int = TRUE, xlab = "K (ppm)", ylab = "Richness")+
+          annotate("text", x=200, y=5300, label = "y == -2.42(x)+5016.79", parse=T)+
+          annotate("text", x=200, y=5200, label = "R^2 == 0.157", parse=T)+
+          annotate("text", x=200, y=5100, label = "p-val == 0.006", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+#. 4. BACTERIAL RICHNESS - Ca 
+par(mar=c(6, 4, 4, 2) + 0.1)
+Ca_rich <- lm(Richness ~ Ca_ppm, data=map.div)
+ggplot(Ca_rich, aes(x = Ca_ppm, y = Richness)) + geom_point() + stat_smooth(method = 'lm')
+summary(Ca_rich)
+ggscatter(map.div, x = "Ca_ppm", y = "Richness", 
+          add = "reg.line",conf.int = TRUE, xlab = "Ca (ppm)", ylab = "Richness")+
+          annotate("text", x=2500, y=5300, label = "y == -0.18(x)+4891.12", parse=T)+
+          annotate("text", x=2500, y=5200, label = "R^2 == 0.148", parse=T)+
+          annotate("text", x=2500, y=5100, label = "p-val == 0.008", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+#. 5. BACTERIAL RICHNESS - P
+P_rich <- lm(Richness ~ P_ppm, data=map.div)
+ggplot(P_rich, aes(x = P_ppm, y = Richness)) + geom_point() + stat_smooth(method = 'lm')
+summary(P_rich)
+ggscatter(map.div, x = "P_ppm", y = "Richness", 
+          add = "reg.line",conf.int = TRUE, xlab = "P (ppm)", ylab = "Richness")+
+          annotate("text", x=45, y=5300, label = "y == 2.77(x)+4386.16", parse=T)+
+          annotate("text", x=35, y=5200, label = "R^2 ==  0.218", parse=T)+
+          annotate("text", x=35, y=5100, label = "p-val == 0.001", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+#. 6. BACTERIAL RICHNESS - OM
+OM_rich <- lm(Richness ~ OM_percent, data=map.div)
+ggplot(OM_rich, aes(x = OM_percent, y = Richness)) + geom_point() + stat_smooth(method = 'lm')
+summary(OM_rich)
+ggscatter(map.div, x = "OM_percent", y = "Richness", 
+          add = "reg.line",conf.int = TRUE, xlab = "OM (%)", ylab = "Richness")+
+          annotate("text", x=2.3, y=4200, label = "y == -167.6(x)+5132.34", parse=T)+
+          annotate("text", x=2, y=4100, label = "R^2 ==  0.178", parse=T)+
+          annotate("text", x=2, y=4000, label = "p-val == 0.003", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+
+# 1. BACTERIAL SHANNON - SAND
+Sand_percent_sha <- lm(Shannon ~ sand_percent, data=map.div)
+ggplot(Sand_percent_sha, aes(x = sand_percent, y = Shannon)) + geom_point() + stat_smooth(method = 'lm')
+summary(Sand_percent_sha)
+ggscatter(map.div, x = "sand_percent", y = "Shannon", 
+          add = "reg.line",conf.int = TRUE, xlab = "Sand (%)", ylab = "Shannon")+
+          annotate("text", x=40, y=7.7, label = "y == 0.004(x)+7.19", parse=T)+
+          annotate("text", x=40, y=7.67, label = "R^2 == 0.157", parse=T)+
+          annotate("text", x=40, y=7.63, label = "p-val == 0.006", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+# 2. BACTERIAL SHANNON - SILT
+Silt_percent_sha <- lm(Shannon ~ silt_percent, data=map.div)
+ggplot(Silt_percent_sha, aes(x = silt_percent, y = Shannon)) + geom_point() + stat_smooth(method = 'lm')
+summary(Silt_percent_sha)
+ggscatter(map.div, x = "silt_percent", y = "Shannon", 
+          add = "reg.line",conf.int = TRUE, xlab = "Silt (%)", ylab = "Shannon")+
+          annotate("text", x=35, y=7.7, label = "y == -0.004(x)+7.55", parse=T)+
+          annotate("text", x=35, y=7.67, label = "R^2 == 0.089", parse=T)+
+          annotate("text", x=35, y=7.63, label = "p-val == 0.04", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+    
+# 3. BACTERIAL SHANNON - CLAY
+Clay_percent_sha <- lm(Shannon ~ clay_percent, data=map.div)
+summary(Clay_percent_sha)
+ggplot(Clay_percent_sha, aes(x = clay_percent, y = Shannon)) + geom_point() + stat_smooth(method = 'lm')
+ggscatter(map.div, x = "clay_percent", y = "Shannon", 
+          add = "reg.line",conf.int = TRUE, xlab = "Clay (%)", ylab = "Shannon")+
+          annotate("text", x=20, y=7.7, label = "y == -0.01(x)+7.66", parse=T)+
+          annotate("text", x=20, y=7.67, label = "R^2 == 0.259", parse=T)+
+          annotate("text", x=20, y=7.63, label = "p-val == 0.0003", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+    
+#. 4. BACTERIAL SHANNON - K
+K_sha <- lm(Shannon ~ K_ppm, data=map.div)
+ggplot(K_sha, aes(x = K_ppm, y = Shannon)) + geom_point() + stat_smooth(method = 'lm')
+summary(K_sha)
+ggscatter(map.div, x = "K_ppm", y = "Shannon", 
+          add = "reg.line",conf.int = TRUE, xlab = "K (ppm)", ylab = "Shannon")+
+          annotate("text", x=200, y=7.7, label = "y == -0.0007(x)+7.53", parse=T)+
+          annotate("text", x=200, y=7.67, label = "R^2 == 0.089", parse=T)+
+          annotate("text", x=200, y=7.63, label = "p-val == 0.04", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+#. 5. BACTERIAL SHANNON - P
+P_sha <- lm(Shannon ~ P_ppm, data=map.div)
+ggplot(P_sha, aes(x = P_ppm, y = Shannon)) + geom_point() + stat_smooth(method = 'lm')
+summary(P_sha)
+ggscatter(map.div, x = "P_ppm", y = "Shannon", 
+          add = "reg.line",conf.int = TRUE, xlab = "P (ppm)", ylab = "Shannon")+
+          annotate("text", x=35, y=7.7, label = "y == 0.001(x)+7.30", parse=T)+
+          annotate("text", x=35, y=7.67, label = "R^2 ==  0.236", parse=T)+
+          annotate("text", x=35, y=7.63, label = "p-val == 0.0007", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+
+### FUNGI ###
+
+# 1. FUNGAL SHANNON - SAND
+fg.sha_sand <- lm(fg.Shannon ~ sand_percent, data=map.div)
+ggplot(fg.sha_sand, aes(x = sand_percent, y = fg.Shannon)) + geom_point() + stat_smooth(method = 'lm')
+summary(fg.sha_sand)
+ggscatter(map.div, x = "sand_percent", y = "fg.Shannon", 
+          add = "reg.line",conf.int = TRUE, xlab = "Sand (%)", ylab = "Shannon")+
+          annotate("text", x=38, y=4.5, label = "y == 0.01(x)+2.96", parse=T)+
+          annotate("text", x=37, y=4.4, label = "R^2 == 0.141", parse=T)+
+          annotate("text", x=37, y=4.3, label = "p-val == 0.01", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+# 2. FUNGAL SHANNON - SILT
+fg.sha_silt <- lm(fg.Shannon ~ silt_percent, data=map.div)
+ggplot(fg.sha_silt, aes(x = silt_percent, y = fg.Shannon)) + geom_point() + stat_smooth(method = 'lm')
+summary(fg.sha_silt)
+ggscatter(map.div, x = "silt_percent", y = "fg.Shannon", 
+          add = "reg.line",conf.int = TRUE, xlab = "Silt (%)", ylab = "Shannon")+
+          annotate("text", x=35, y=4.5, label = "y == -0.01(x)+4.15", parse=T)+
+          annotate("text", x=35, y=4.4, label = "R^2 == 0.132", parse=T)+
+          annotate("text", x=35, y=4.3, label = "p-val == 0.01", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+# 3. FUNGAL SHANNON - CLAY
+fg.sha_clay <- lm(fg.Shannon ~ clay_percent, data=map.div)
+ggplot(fg.sha_clay, aes(x = clay_percent, y = fg.Shannon)) + geom_point() + stat_smooth(method = 'lm')
+summary(fg.sha_clay)
+ggscatter(map.div, x = "clay_percent", y = "fg.Shannon", 
+          add = "reg.line",conf.int = TRUE, xlab = "Clay (%)", ylab = "Shannon")+
+          annotate("text", x=22, y=4.6, label = "y == -0.03(x)+4.12", parse=T)+
+          annotate("text", x=22, y=4.5, label = "R^2 == 0.102", parse=T)+
+          annotate("text", x=22, y=4.4, label = "p-val == 0.03", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=18,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+######################################################################################################
+#ANOVA TEST FOR NEMATODES, OLIGOCHAETES, AND MYCORRHIZAL FUNGI TOTAL ABSOLUTE ABUNDANCE (COUNT DATA)##
+######################################################################################################
 
 # 1. Compare total absolute nematodes abundances among sites
 map.div$Site<-as.factor(map.div$Site)
@@ -660,8 +1175,23 @@ nema.ab.root <- ggplot(map.div, aes(x=Rootstock, y=nema.total.Count))+
        plot.background = element_blank(),
        panel.grid = element_blank())
 
+# 3. Compare total absolute nematodes abundances among cultivars # not significant
+TC_nema_cult <- lm(nema.total.SqrtCount ~ cultivar, data=map.div, na.action=na.exclude)
+summary(TC_nema_cult)
+drop1(TC_nema_cult,~.,test="F") # type III SS and F Tests
+#TESTING ASSUMPTIONS
+#Generate residual and predicted values
+nema_cult_resids <- residuals(TC_nema_cult)
+nema_cult_preds <- predict(TC_nema_cult)
+plot(nema_cult_resids ~ nema_cult_preds, xlab = "Predicted Values", ylab = "Residuals", asp=.5)
+#plot a line on X-axis for comparison. a=intercept,b=slope,h=yvalue,v=xvalue.
+abline(a=0,h=0,b=0)
+#Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(nema_cult_resids) # p-value = 0.13, data errors are normally distributed 
+#Perform Levene's Test for homogenity of variances
+leveneTest(nema.total.SqrtCount ~ cultivar, data=map.div, na.action=na.exclude) # variances among group are homogenous
 
-# 3. Compare absolute abundance of oligochaetes among sites
+# 4. Compare absolute abundance of oligochaetes among sites
 OL_site <- lm(sqrt.OL ~ Site, data=map.div, na.action=na.exclude)
 summary(OL_site)
 drop1(OL_site,~.,test="F") # type III SS and F Tests
@@ -707,8 +1237,7 @@ OL_site <- ggplot(map.div, aes(x=Site, y=Oligochaetes))+
        plot.background = element_blank(),
        panel.grid = element_blank())
 
-
-# 4. Compare absolute abundance of oligochaetes among sites 
+# 5. Compare absolute abundance of oligochaetes among rootstocks 
 OL.root <- lm(sqrt.OL ~ Rootstock, data=map.div, na.action=na.exclude)
 summary(OL.root)
 drop1(OL.root,~.,test="F") # type III SS and F Tests
@@ -749,7 +1278,23 @@ OL_root <- ggplot(map.div, aes(x=Rootstock, y=Oligochaetes))+
        plot.background = element_blank(),
        panel.grid = element_blank())
 
-# 5. Compare absolute mycorrhizal fungi abundance among sites
+# 6. Compare absolute abundance of oligochaetes among cultivars # not significant
+OL.cul <- lm(sqrt.OL ~ cultivar, data=map.div, na.action=na.exclude)
+summary(OL.cul)
+drop1(OL.cul,~.,test="F") # type III SS and F Tests
+#TESTING ASSUMPTIONS
+#Generate residual and predicted values
+OL_cul_resids <- residuals(OL.cul)
+OL_cul_preds <- predict(OL.cul)
+plot(OL_cul_resids ~ OL_cul_preds, xlab = "Predicted Values", ylab = "Residuals", asp=.5)
+#plot a line on X-axis for comparison. a=intercept,b=slope,h=yvalue,v=xvalue.
+abline(a=0,h=0,b=0)
+#Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(OL_cul_resids) # p-value = 0.30, data errors are normally distributed 
+#Perform Levene's Test for homogenity of variances
+leveneTest(sqrt.OL ~ cultivar, data=map.div, na.action=na.exclude)
+
+# 7. Compare absolute mycorrhizal fungi abundance among sites
 MF_site <- lm(log.MF ~ Site, data=map.div, na.action=na.exclude)
 summary(MF_site)
 drop1(MF_site,~.,test="F") # type III SS and F Tests
@@ -761,7 +1306,7 @@ plot(MF_site_resids ~ MF_site_preds, xlab = "Predicted Values", ylab = "Residual
 #plot a line on X-axis for comparison. a=intercept,b=slope,h=yvalue,v=xvalue.
 abline(a=0,h=0,b=0)
 #Perform a Shapiro-Wilk test for normality of residuals
-shapiro.test(MF_site_resids) # p-value = 0.3, data errors are normally distributed 
+shapiro.test(MF_site_resids) # p-value = 0.4, data errors are normally distributed 
 skew_xts <-  skewness(MF_site_resids)
 #Perform Levene's Test for homogenity of variances
 leveneTest(log.MF ~ Site, data=map.div, na.action=na.exclude) # variances among group are homogenous
@@ -796,7 +1341,7 @@ MF_site <- ggplot(map.div, aes(x=Site, y=MycorrhizalFungi))+
        panel.grid.major = element_blank(),
        panel.grid.minor = element_blank())
 
-# 6. Compare absolute mycorrhizal fungi abundance among rootstocks
+# 8. Compare absolute mycorrhizal fungi abundance among rootstocks
 MF_root <- lm(log.MF ~ Rootstock, data=map.div, na.action=na.exclude)
 summary(MF_root)
 drop1(MF_root,~.,test="F") # type III SS and F Tests
@@ -808,7 +1353,7 @@ plot(MF_root_resids ~ MF_root_preds, xlab = "Predicted Values", ylab = "Residual
 #plot a line on X-axis for comparison. a=intercept,b=slope,h=yvalue,v=xvalue.
 abline(a=0,h=0,b=0)
 #Perform a Shapiro-Wilk test for normality of residuals
-shapiro.test(MF_root_resids) # p-value = 0.3, data errors are normally distributed 
+shapiro.test(MF_root_resids) # p-value = 0.7, data errors are normally distributed 
 skew_xts <-  skewness(MF_site_resids)
 #Perform Levene's Test for homogenity of variances
 leveneTest(log.MF ~ Rootstock, data=map.div, na.action=na.exclude) # variances among group are homogenous
@@ -833,401 +1378,538 @@ MF_root <- ggplot(map.div, aes(x=Rootstock, y=MycorrhizalFungi))+
        panel.grid.major = element_blank(),
        panel.grid.minor = element_blank())
 
-# 7. Arrange Plot
+# 9. Compare absolute mycorrhizal fungi abundance among cultivars # not significant
+MF_cul <- lm(log.MF ~ cultivar, data=map.div, na.action=na.exclude)
+summary(MF_cul)
+drop1(MF_cul,~.,test="F") # type III SS and F Tests
+#TESTING ASSUMPTIONS
+#Generate residual and predicted values
+MF_cul_resids <- residuals(MF_cul)
+MF_cul_preds <- predict(MF_cul)
+plot(MF_cul_resids ~ MF_cul_preds, xlab = "Predicted Values", ylab = "Residuals", asp=.5)
+#plot a line on X-axis for comparison. a=intercept,b=slope,h=yvalue,v=xvalue.
+abline(a=0,h=0,b=0)
+#Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(MF_cul_resids) # p-value = 0.3, data errors are normally distributed 
+#Perform Levene's Test for homogenity of variances
+leveneTest(log.MF ~ cultivar, data=map.div, na.action=na.exclude)
+
+# 10. Arrange Plot
 grid.newpage()
 grid.draw(rbind(ggplotGrob(nema.ab.site), ggplotGrob(OL_site), ggplotGrob(MF_site),size = "first"))
 grid.newpage()
 grid.draw(rbind(ggplotGrob(nema.ab.root), ggplotGrob(OL_root), ggplotGrob(MF_root),size = "first"))
 
-# ANOVA test to check the differences of total absolute abundances of nematoda, oligochaetes, and mycorrhizal fungi among cultivars
-# 1. nematode
-nema_cul <- lm(nema.total.SqrtCount ~ cultivar, data=map.div, na.action=na.exclude)
-summary(nema_cul) # not significant
-# 2. oligochaetes
-ol_cul <- lm(sqrt.OL ~ cultivar, data=map.div, na.action=na.exclude)
-summary(ol_cul) # not significant
-# 3. mycorrhizal fungi
-MF_cul <- lm(log.MF ~ cultivar, data=map.div, na.action=na.exclude)
-summary(MF_cul) # not significant
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-nemagroup = read.csv("NematodeGroup.csv", sep=',', header=T)
-nema.plus = as.data.frame(nema.plus)
-nema.plus.tidy <- rownames_to_column(nema.plus,var = "Microorganism")
-nema.plus.group=left_join(nema.plus.tidy,nemagroup, by = "Microorganism")
-
-
-
-
-
-
-sqrt.allmic_relabund <- decostand(sqrt.nema.plus, method="total", MARGIN=2)
-allmic.com_abund <- rowSums(sqrt.allmic_relabund)
-df.allmic.com_abund <- as.data.frame(allmic.com_abund)
-head(df.com_abund)
-df.allmic.com_abund$RelAbund=df.allmic.com_abund$allmic.com_abund/45
-sum(df.allmic.com_abund$allmic.com_abund)
-sum(df.allmic.com_abund$RelAbund)
-df.allmic.com_abund$PercentRelAbund=df.allmic.com_abund$RelAbund*100
-sum(df.allmic.com_abund$PercentRelAbund)
-df.allmic.com_abund=rownames_to_column(df.allmic.com_abund, var = "Microorganism")
-head(df.allmic.com_abund)
-dim(df.allmic.com_abund) 
-
-df.sqrt.nema.plus <- as.data.frame(sqrt.nema.plus)
-nema.tidy <- rownames_to_column(df.sqrt.nema.plus,var = "Microorganism")
-nema.melt=reshape2::melt(nema.tidy,variable.name = "sample_code", value.name = "Count")
-nema.join=left_join(nema.melt,map, by = "sample_code")
-nema.group=nema.join %>% group_by(Site)
-
- mutate(Sample_sum = sum(Count),
-        RelAbund = Count / Sample_sum) %>%
- summarise(meanRelAbund = mean(RelAbund)) %>%
- ungroup() 
-
-map.div
-
-
-
-
-
-
-# make a data frame contain prevalence, mean of relative abundance using phyloseq
-prevdf = apply(X = otu_table(PHYL),
-               MARGIN = ifelse(taxa_are_rows(PHYL), yes = 1, no = 2),
-               FUN = function(x){sum(x > 0)})
-RelAbund = taxa_sums(PHYL.ra)
-prevdf = data.frame(Prevalence = prevdf,
-                    RelAbund = taxa_sums(PHYL.ra), MeanRelAbund = RelAbund/45,
-                    tax_table(PHYL))
-head(prevdf)
-sort_prevdf <- prevdf[order(prevdf$MeanRelAbund, decreasing = TRUE),]
-head(sort_prevdf)
-dim(sort_prevdf)
-filter_1 = prevdf[prevdf$Prevalence==45,]
-dim(filter_1)
-sort_filter_1 <- filter_1[order(filter_1$MeanRelAbund, decreasing = TRUE),]
-plyr::ddply(sort_filter_1, "Phylum", function(df1){cbind(mean(df1$Prevalence),sum(df1$Prevalence))})
-
-
-ggplot(sort_filter_1, aes(MeanRelAbund*100, Prevalence / 45,color=Phylum)) +
-  # Include a guess for parameter
-  geom_hline(yintercept = 0.05, alpha = 0.5, linetype = 2) +  geom_point(size = 2, alpha = 0.7) +
-  scale_x_log10() +  xlab("log(Mean of Relative Abundance)") + ylab("Occupancy") +
-  facet_wrap(~Phylum) + theme(legend.position="none")
-
-class(filter_1)
-
-filter_2 <- sort_filter_1 %>% 
-  group_by(Phylum) %>% 
-  summarise(PhylumMeanRelAbund = sum(MeanRelAbund))
-
-ggplot(filter_2, aes(x = reorder(Phylum, PhylumMeanRelAbund), y = PhylumMeanRelAbund*100))+ 
- geom_bar(position = "dodge",stat = "identity")+
- coord_flip()+
- theme_bw()+
- scale_y_continuous(position = "right")+
- theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
- labs(x= "Phylum", y= "Mean of relative abundance (%)")
-
-#### NETWORK ANALYSIS #####
-# 1. Subsample the otu table (occupancy 100 %) -Bacteria
-install.packages("OTUtable")
-library(OTUtable)
-Occ1_OTU <- filter_taxa(otu, abundance = 0, persistence = 100)
-head(Occ1_OTU) 
-dim(Occ1_OTU)
-Occ1_OTU.Bac <- rownames_to_column(Occ1_OTU, var = "OTU")
-# 2. Subsample the otu table (occupancy 100 %) - Fungi
-Occ1_OTU.ITS <- filter_taxa(otuITS, abundance = 0, persistence = 100)
-head(Occ1_OTU.ITS)
-dim(Occ1_OTU.ITS)
-Occ1_OTU.Fungi <- rownames_to_column(Occ1_OTU.ITS, var = "OTU")
-# 3. Subsample the otu table (occupancy 100 %) - Other microorganisms & nematode
-Occ1_nema <- filter_taxa(nema.plus, abundance = 0, persistence = 100)
-head(Occ1_nema)
-dim(Occ1_nema)
-Occ1_nema <- rownames_to_column(as.data.frame(Occ1_nema), var = "OTU")
-# Join three datasets
-total = rbind(Occ1_OTU.Bac,Occ1_OTU.Fungi,Occ1_nema)  
-# Write table
-write.table(total, file = "TotalOTU.txt", quote = F, sep = "\t",
-            row.names = FALSE)
-
-# 1. Total OTU - Bac
-BacOTU <- rownames_to_column(otu, var = "OTU")
-head(BacOTU)
-# 2. Total OTU - Fungi
-FungOTU <- rownames_to_column(otuITS, var = "OTU")
-head(FungOTU)
-# 3. Total Nema and other
-Nema <- rownames_to_column(as.data.frame(nema.plus), var = "OTU")
-# Join three datasets
-tot = rbind(BacOTU,FungOTU,Nema) 
-# Write table
-write.table(tot, file = "allofOTU.txt", quote = F, sep = "\t",
-            row.names = FALSE)
-
-BacTaxOTU <- rownames_to_column(otu, var = "OTU")
-BacTaxOTU[BacTaxOTU$OTU == "FPLL01002138.3.1535",]
-#191 D_0__Bacteria; D_1__Verrucomicrobia; D_2__Verrucomicrobiae; D_3__Pedosphaerales; D_4__Pedosphaeraceae; Ambiguous_taxa; Ambiguous_taxa
-BacTaxOTU[BacTaxOTU$OTU == "Z95733.1.1547",]
-#D_0__Bacteria; D_1__Acidobacteria; D_2__Subgroup 6; Ambiguous_taxa; Ambiguous_taxa; Ambiguous_taxa; Ambiguous_taxa
-BacTaxOTU[BacTaxOTU$OTU == "JX898177.1.1545",]
-#D_0__Bacteria; D_1__Acidobacteria; D_2__Subgroup 6; Ambiguous_taxa; Ambiguous_taxa; Ambiguous_taxa; Ambiguous_taxa
-
-
-BacTaxOTU[BacTaxOTU$OTU == "FPLS01015067.17.1524",]
-#675 D_0__Bacteria; D_1__Bacteroidetes; D_2__Bacteroidia; D_3__Chitinophagales; D_4__Chitinophagaceae; D_5__uncultured; Ambiguous_taxa
-BacTaxOTU[BacTaxOTU$OTU == "DQ787718.1.1532",]
-#153 D_0__Bacteria; D_1__Verrucomicrobia; D_2__Verrucomicrobiae; D_3__Verrucomicrobiales; D_4__Rubritaleaceae; D_5__Luteolibacter; Ambiguous_taxa
-
-BacTaxOTU[BacTaxOTU$OTU == "OTU_dn_1211",]
-
-### Add taxonomy for bacteria and fungi in node attribute table for network analysis
-# 1. bacteria
-otu <- read.table('OTU_rarefied.txt', sep='\t', header=T, row.names = 1)
-df.otu=rownames_to_column(otu, var = "OTU_ID")
-df.otu.tax <- subset(df.otu, select = c(1, 47))
-dim(df.otu.tax)
-write.table(df.otu.tax, file = "df.otu.tax.csv", sep = '\t', col.names = TRUE, row.names = TRUE, quote = FALSE)
-df.otu.tax.csv = read.csv("df.otu.tax.csv", sep=',', header=T)
-dim(df.otu.tax.csv)
-colnames(df.otu.tax.csv)[1]<-"Name"
-head(df.otu.tax.csv)
-
-
-allofOTU.node = read.table("allofOTU.node_attribute_copy.txt", sep='\t', header=T)
-head(allofOTU.node)
-dim(allofOTU.node)
-allofOTU.node.bac <- allofOTU.node[1:380,]
-dim(allofOTU.node.bac)
-head(allofOTU.node.bac)
-
-allofOTU.node.bac.tax <- merge(df.otu.tax.csv,allofOTU.node.bac, by.x =c("Name"), by.y = c("Name"))
-dim(allofOTU.node.bac.tax)
-head(allofOTU.node.bac.tax)
-
-# 2. Fungi
-allofOTU.node.fg <- allofOTU.node[381:426,]
-dim(allofOTU.node.fg)
-
-dim(tax)
-head(tax)
-tax.fg <- as.data.frame(tax)
-tax.fg=rownames_to_column(tax.fg, var = "Name")
-colnames(tax.fg)[2]<-"Domain"
-
-allofOTU.node.fg.tax <- merge(tax.fg,allofOTU.node.fg, by.x =c("Name"), by.y = c("Name"))
-dim(allofOTU.node.fg.tax)
-head(allofOTU.node.fg.tax)
-
-# 3. Combine bac and fungi
-allofOTU.node_attribute <- rbind(allofOTU.node.bac.tax, allofOTU.node.fg.tax)
-head(allofOTU.node_attribute)
-write.table(allofOTU.node_attribute, file = "allofOTU.node_attribute.txt", sep = '\t', col.names = TRUE, row.names = FALSE, quote = FALSE)
-
-# Make Zi-Pi Plot
-Module.hub <- allofOTU.node_attribute[allofOTU.node_attribute$Zi>2.5,] #12
-write.table(Module.hub, file = "Module.hub.txt", sep = '\t', col.names = TRUE, row.names = F, quote = FALSE)
-Module.hub.tax <- read.table("Module.hub.edit.txt", sep='\t', header=T)
-Module.col=c('#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff')
-non.hub <- allofOTU.node_attribute[allofOTU.node_attribute$Zi<2.5,]
-Peripherals <- non.hub[non.hub$Pi<0.62,] #409
-Connectors <- allofOTU.node_attribute[allofOTU.node_attribute$Pi>0.62,] #5
-write.table(Connectors, file = "Connectors.txt", sep = '\t', col.names = TRUE, row.names = F, quote = FALSE)
-Connectors.tax <- read.table("Connectors.edit.txt", sep='\t', header=T)
-
-ZP.plot1 <- ggplot()+ geom_point(size=2.5, aes(y = Zi, x = Pi),
-                           data = Peripherals)+
- xlab("Among-module connectivity (Pi)")+
- ylab("Within-module connectivity (Zi)")+
- geom_hline(yintercept = 2.5, colour="#990000", linetype="dashed") +
- geom_vline(xintercept = 0.62, colour="#990000", linetype="dashed")+
-annotate("text", x = 0.08, y = 4.25, label = "Module hubs", fontface='bold')+
- annotate("text", x = 0.75, y = 4.25, label = "Network hubs",fontface='bold')+
- annotate("text", x = 0.08, y = -2, label = "Peripherals",fontface='bold')+
- annotate("text", x = 0.75, y = -2, label = "Connectors",fontface='bold')+
- xlim(0, 0.8)+
- theme_bw()+
- theme(axis.text=element_text(size=9), 
-       axis.title=element_text(size=10,face="bold"),
-legend.text=element_text(size = 8),
-legend.title = element_text(size=10),
- panel.grid = element_blank())
-ZP.plot2 <- ZP.plot1 + 
- geom_point(size=2.5, 
-            mapping=aes(y = Zi, x = Pi, colour=Module_hub),
-            data = Module.hub.tax)+
- scale_color_manual(name="Module Hubs", values = Module.col)
-ZP.plot3 <- ZP.plot2 + geom_point(size=2.5, mapping=aes(y = Zi, x = Pi, shape=Connectors),
-            data = Connectors.tax)
- # 2. Install Required packages 
-install.packages("igraph") 
-install.packages("qgraph") 
-install.packages("MCL")
-library(igraph)
-library(qgraph)
-library(MCL)
-# Install SpiecEasi package 
-install.packages("devtools")
-library(devtools) 
-install_github("zdk123/SpiecEasi")
-library(SpiecEasi)
-# Proccess the absolute abundance of otu table into relative abundance
-Occ1.RelAbund <- decostand(Occ1_OTU, method="total", MARGIN=2)
-head(Occ1.RelAbund)
-
-# Dissimilarity based network
-distances <- vegdist(t(Occ1.RelAbund), method = "bray")
-# Convert distance object to a matrix
-diss.mat <- as.matrix(distances)
-diss.cutoff <- 0.6
-diss.adj <- ifelse(diss.mat <= diss.cutoff, 1, 0)
-diss.net <- graph.adjacency(diss.adj,mode = "undirected", diag = FALSE)
-plot(diss.net)
-# Correlation based network
-cor.matrix <- cor(Occ1.RelAbund, method = "pearson")
-# Convert correlation matrix to binary adjacency matrix 
-cor.cutoff <- 0.3 
-cor.adj <- ifelse(abs(cor.matrix) >= cor.cutoff, 1, 0) 
-# Construct microbiome network from adjacency matrix 
-cor.net <- graph.adjacency(cor.adj,
-mode = "undirected", diag = FALSE)
-plot(cor.net)
-
-
-
-
-
-
-head(otu)
-head(sort(rowSums (otu, na.rm = FALSE, dims = 1), decreasing = FALSE))
-head(Mean_rel.abund)
-rSums=rowSums(otu)
-otu.relrows=otu/rSums
-mean.oturelrows=mean(otu.relrows)
-
-otu_tidy=rownames_to_column(otu, var = "OTU")
-head(otu_tidy)
-otu_tidy_melt=reshape2::melt(otu_tidy, variable.name = "sample_code", value.name = "Count")
-Sample_sum=sum(otu_tidy_melt$Count)
-Relab=otu_tidy_melt$Count/Sample_sum
-otu_tidy_melt=left_join(otu_tidy_melt, map, by = "sample_code")
-otu_tidy_melt$sample_code=as.factor(otu_tidy_melt$sample_code)
-otu_tidy_melt%>%group_by(sample_code)
-otu_tidy_melt%>%mutate(Sample_sum,Relab)
-
-head(otu_table(PHYL.ra))==head(otu/colSums(otu))
-
-##### MultiCola ######
-
-u=unique(map[,"sample_code"])
-MantelMultiCOLA.f=function(otu){
-  #Step 1.  Read in full dataset:
-  otu2=otu
-  library(vegan)
-  cutoff=c(1.00,0.90, 0.80, 0.70, 0.60, 0.50, 0.40, 0.30, 0.20, 0.10, 0.05, 0.025,
-0.01, 0.005, 0.001)
-  m.out=NULL
-  otu.pa=1*(otu2>0)
-  r=rowSums(otu2)
-  #Create a vector of indexes of the ranked OTUs
-  r2=sort(r,decreasing=TRUE, index=TRUE)
-  r2$ix
-  r2$x
-  for(j in 1:length(cutoff)){
-    print(cutoff[j])
-    no.keep=ceiling(cutoff[j]*nrow(otu2))
-    otu.index.keep=r2$ix[1:no.keep]
-    otu.keep=otu2[otu.index.keep,]
-    print(head(otu.keep))
-#Write out otu tables at each cutoff
-    write.table(otu.keep, paste("_",cutoff[j],"_otu.txt", sep=""),sep="\t",
-quote=FALSE)
-    all.dist=vegdist(t(otu2), method="bray")
-    subset.dist=vegdist(t(otu.keep),method="bray")
-    m1=mantel(all.dist,subset.dist, method="pearson",permutations=999)
-    m=c(paste(cutoff[j]),m1$statistic,m1$signif,dim(otu.keep)[1])
-    m.out=rbind(m.out,m)
-  }
-  colnames(m.out)=c("Cutoff", "AllvSubsetPearsonR", "AllvSubset_pvalue",
-"NoOTUsSubset")
-  #write.table(m.out, "MantelMultiCOLA.txt", sep="\t", quote=FALSE, row.names=FALSE)
-  return(m.out)
-}
-
-MultiCOLA.test=MantelMultiCOLA.f(otu)
-
-# 1. ph in every site
-ph_site <- lm(map_aov$pH ~ Site, data=map_aov, na.action=na.exclude)
-#drop1(ph_site,~.,test="F")
-ph_site_resids <- residuals(ph_site)
-ph_site_preds <- predict(ph_site)
-plot(ph_site_resids ~ ph_site_preds, xlab = "Predicted Values", ylab = "Residuals", asp=.5)
-#plot a line on X-axis for comparison. a=intercept,b=slope,h=yvalue,v=xvalue.
- abline(a=0,h=0,b=0)
-#Perform a Shapiro-Wilk test for normality of residuals
- shapiro.test(ph_site_resids) # p-value = 0.4, data errors are normally distributed 
- skew_xts <-  skewness(ph_site_resids)
-#Perform Levene's Test for homogenity of variances
- leveneTest(ph_site, na.action=na.exclude) #0.2 variances among group are homogenous
-# Significantly different
-
-# 2. Acidobacteria abundance in every site
+# 3. ANOVA TEST FOR NEMATODE ALPHA DIVERSITY
+ 
+# 1. compare nematode richness among sites #not significant
+AovNema_richness_site <- lm(nema.Richness ~ Site , data=map.div, na.action=na.exclude)
+summary(AovNema_richness_site)
+drop1(AovNema_richness_site,~.,test="F") # type III SS and F Tests
+# Check normality
+Richness.Nema_resids <- residuals(AovNema_richness_site)
+Richness.Nema_preds <- predict(AovNema_richness_site)
+plot(Richness.Nema_resids ~ Richness.Nema_preds, xlab = "Predicted Values", ylab = "Residuals", asp=.5)
+shapiro.test(Richness.Nema_resids) # not normal
+qqnorm(Richness.Nema_resids)
+qqline(Richness.Nema_resids) 
+leveneTest(nema.Richness ~ Site, data=map.div, na.action=na.exclude) # not homogen
+gvlma(AovNema_richness_site)
+
+# 2. compare nematode shannon index among sites #not significant
+AovNema_shannon_site <- lm(nema.Shannon ~ Site, data=map.div, na.action=na.exclude)
+drop1(AovNema_shannon_site,~.,test="F") # type III SS and F Tests
+summary(AovNema_shannon_site)
+# Check normality
+Sha.Nema_resids <- residuals(AovNema_shannon_site)
+Sha.Nema_preds <- predict(AovNema_shannon_site)
+plot(Sha.Nema_resids ~ Sha.Nema_preds, xlab = "Predicted Values", ylab = "Residuals", asp=.5)
+shapiro.test(Sha.Nema_resids) # normal
+qqnorm(Sha.Nema_resids)
+qqline(Sha.Nema_resids) 
+leveneTest(nema.Shannon ~ Site, data=map.div, na.action=na.exclude) # homogen
+gvlma(AovNema_shannon_site)
+
+# 3. compare nematode richness among rootstocks #not significant
+AovNema_richness_root <- lm(nema.Richness ~ Rootstock , data=map.div, na.action=na.exclude)
+summary(AovNema_richness_root)
+drop1(AovNema_richness_root,~.,test="F") # type III SS and F Tests
+# Check normality
+Richness.Nema_resids <- residuals(AovNema_richness_root)
+Richness.Nema_preds <- predict(AovNema_richness_root)
+plot(Richness.Nema_resids ~ Richness.Nema_preds, xlab = "Predicted Values", ylab = "Residuals", asp=.5)
+shapiro.test(Richness.Nema_resids) #normal
+qqnorm(Richness.Nema_resids)
+qqline(Richness.Nema_resids) 
+leveneTest(nema.Richness ~ Rootstock, data=map.div, na.action=na.exclude) # homogen
+gvlma(AovNema_richness_root)
+
+# 4. compare nematode shannon index among rootstocks #not significant
+AovNema_shannon_root <- lm(nema.Shannon ~ Rootstock , data=map.div, na.action=na.exclude)
+summary(AovNema_shannon_root)
+drop1(AovNema_shannon_root,~.,test="F") # type III SS and F Tests
+# Check normality
+Richness.Nema_resids <- residuals(AovNema_shannon_root)
+Richness.Nema_preds <- predict(AovNema_shannon_root)
+plot(Richness.Nema_resids ~ Richness.Nema_preds, xlab = "Predicted Values", ylab = "Residuals", asp=.5)
+shapiro.test(Richness.Nema_resids) # normal
+qqnorm(Richness.Nema_resids)
+qqline(Richness.Nema_resids) 
+leveneTest(nema.Shannon ~ Rootstock, data=map.div, na.action=na.exclude) # homogen
+gvlma(AovNema_shannon_root)
+
+# ANOVA test to check the differences of nematoda alpha diversity among cultivars
+# 1. nematode - Richness
+nema_rich_cul <- lm(nema.Richness ~ cultivar, data=map.div, na.action=na.exclude)
+summary(nema_rich_cul) # not significant
+# 2. nematode - Shannon
+nema_sha_cul <- lm(nema.Shannon ~ cultivar, data=map.div, na.action=na.exclude)
+summary(nema_sha_cul) # not significant
+
+# Check nematode prevalence
+nema_PA <- 1*(nema.t>0)
+sum_nemaPA <- rowSums(nema_PA)
+sum_nemaPA
+
+###PEARSON CORRELATION AND LINEAR REGRESSION TEST OF NEMATODES, OLIGOCHAETES, MYCORRHYZAL FUNGI ABSOLUTE ABUNDANCES TO BACTERIAL AND FUNGAL RICHNESS AND SHANNON ###
+# 1. Bacterial Richness and nematode Tylenchs
+bac.rich_tyl <- cor.test(map.div$Tylenchs, map.div$Richness, method ="pearson")
+cor.test(map.div$Tylenchs, map.div$Richness)
+# linear regression
+lm.bac.rich_tyl <- lm(Richness ~ Tylenchs, data = map.div) # OK
+ggplot(lm.bac.rich_tyl, aes(x = Tylenchs, y = Richness)) + geom_point() + stat_smooth(method = 'lm')
+summary(lm.bac.rich_tyl)
+gvlma(lm.bac.rich_tyl)
+# Do plot
+TY_rich <- lm(Richness ~ Tylenchs, data=map.div)
+summary(TY_rich)
+ggplot(TY_rich, aes(x = Tylenchs, y = Richness)) + geom_point() + stat_smooth(method = 'lm')
+ggscatter(map.div, x = "Tylenchs", y = "Richness", 
+          add = "reg.line",conf.int = TRUE, xlab = "Tylenchs (individuals per 100 g soil)", ylab = "Richness")+
+          annotate("text", x=180, y=5200, label = "y == -1.55(x)+4753.92", parse=T)+
+          annotate("text", x=180, y=5100, label = "R^2 ==  0.108", parse=T)+
+          annotate("text", x=180, y=5000, label = "p-val == 0.026", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=15,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=15,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+# 2. Bacterial Shannon and nematode Tylenchs
+bac.sha_tyl <- cor.test(map.div$Tylenchs, map.div$Shannon, method ="pearson")
+cor.test(map.div$Tylenchs, map.div$Shannon)
+# linear regression
+lm.bac.sha_tyl <- lm(Shannon ~ Tylenchs, data = map.div) # OK
+ggplot(lm.bac.sha_tyl, aes(x = Tylenchs, y = Shannon)) + geom_point() + stat_smooth(method = 'lm')
+summary(lm.bac.sha_tyl)
+gvlma(lm.bac.sha_tyl)
+# Do plot
+TY_sha <- lm(Shannon ~ Tylenchs, data=map.div)
+summary(TY_sha)
+ggplot(TY_sha, aes(x = Tylenchs, y = Shannon)) + geom_point() + stat_smooth(method = 'lm')
+ggscatter(map.div, x = "Tylenchs", y = "Shannon", 
+          add = "reg.line",conf.int = TRUE, xlab = "Tylenchs (individuals per 100 g soil)", ylab = "Shannon")+
+          annotate("text", x=190, y=7.65, label = "y == -0.0007(x)+7.46", parse=T)+
+          annotate("text", x=180, y=7.62, label = "R^2 ==  0.143", parse=T)+
+          annotate("text", x=180, y=7.58, label = "p-val == 0.01", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=15,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+# 3. Fungal Richness and nematode Tylenchs # not significant
+fg.rich_tyl <- cor.test(map.div$Tylenchs, map.div$fg.Richness, method ="pearson")
+cor.test(map.div$Tylenchs, map.div$fg.Richness)
+# 4. Fungal Shannon and nematode Tylenchs # not significant
+fg.sha_tyl <- cor.test(map.div$Tylenchs, map.div$fg.Shannon, method ="pearson")
+cor.test(map.div$Tylenchs, map.div$fg.Shannon)
+
+# 3. Bacterial Shannon and nematode Shannon
+BC.sha_NM.sha<- lm(map.div$Shannon ~ map.div$nema.Shannon)
+summary(BC.sha_NM.sha)
+ggscatter(map.div, x = "nema.Shannon", y = "Shannon", 
+          add = "reg.line",conf.int = TRUE, xlab = "Nematode Shannon index", ylab = "Bacterial/archaeal Shannon index")+
+          annotate("text", x=1.25, y=7.65, label = "y == -0.12(x)+7.51", parse=T)+
+          annotate("text", x=1.25, y=7.62, label = "R^2 == 0.108", parse=T)+
+          annotate("text", x=1.25, y=7.58, label = "p-val == 0.027", parse=T)+
+     geom_smooth(method='lm')+
+      theme(axis.text.x=element_text(size=15), 
+       axis.text.y = element_text(size = 14),
+       strip.text.x = element_text(size=18,colour = "black", face = "bold"), 
+       strip.text.y = element_text(size=18, face = 'bold'),
+       plot.title = element_text(size = rel(2)),
+       axis.title=element_text(size=15,face="bold"),
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank())
+
+############################################################################################
+######################### BACTERIAL, FUNGAL, and NEMATODE BETA DIVERSITY ###################
+############################################################################################
+
+# 1. CALCULATE BETA DIVERSITY (PCoA PLOT) FOR BACTERIA
+# dissimilarity indices for community ecologist to make a distance structure (Bray-Curtis distance between samples)
+otu_dist <- vegdist(t(otu), method='bray')
+# CMD/classical multidimensional scaling (MDS) of a data matrix. Also known as principal coordinates analysis
+otu_pcoa <- cmdscale(otu_dist, eig=T)
+env <- map[,c(11:22, 24:36)]
+# scores of PC1 and PC2
+ax1.scores=otu_pcoa$points[,1]
+ax2.scores=otu_pcoa$points[,2] 
+env_fit <- envfit(otu_pcoa, env, na.rm=TRUE)
+# calculate percent variance explained, then add to plot
+ax1 <- otu_pcoa$eig[1]/sum(otu_pcoa$eig)
+ax2 <- otu_pcoa$eig[2]/sum(otu_pcoa$eig)
+map2=cbind(map.div,ax1.scores,ax2.scores)
+# simple plot
+pcoa_plot <- plot(ax1.scores, ax2.scores, xlab=paste("PCoA1: ",round(ax1,3)*100,"% var. explained", sep=""), ylab=paste("PCoA2: ",round(ax2,3)*100,"% var. explained", sep=""))
+plot(env_fit, p.max=0.05, col="red1")
+# Do better plot
+A <- as.list(env_fit$vectors) #shortcutting ef$vectors
+pvals<-as.data.frame(A$pvals) #creating the dataframe
+#environment scores (vectors scaled by R2 values)
+bac.scores1 <- as.data.frame(scores(env_fit, display="vectors"))
+bac.scores2 <- cbind(bac.scores1, pvals)
+bac.scores3 <- cbind(bac.scores2,Variable=rownames(bac.scores2))
+bac.scores4 <- subset(bac.scores3,pvals<0.05)
+library(ggrepel)
+mult <-.25
+# Plot by site
+bac.pcoa <- ggplot(data = map2, aes(x=ax1.scores, y=ax2.scores))+
+  theme_bw()+
+ #geom_point(data = map2, aes(x = ax1.scores, y = ax2.scores, color=Site),size=2.5, shape=20,stroke=1.75)+
+  geom_text(aes(ax1.scores, y=ax2.scores,color=Site, label = Site),size=4)+
+  scale_x_continuous(name=paste("PCoA1: ",round(ax1,3)*100,"% var. explained", sep=""))+
+  scale_y_continuous(name=paste("PCoA2: ",round(ax2,3)*100,"% var. explained", sep=""),limits = c(-0.23,0.4))+
+  geom_segment(data=bac.scores4, aes(x=0, xend=mult*Dim1, y=0, yend=mult*Dim2), arrow = arrow(length = unit(0.3, "cm")), colour = "grey")+
+  geom_text_repel(data = bac.scores4, aes(x = mult*Dim1, y = mult*Dim2, label = Variable), size = 3,fontface="bold",position=position_jitter(width=0.03,height=0.001))+
+        coord_fixed() + 
+ labs(title = "A")+
+ theme(legend.position="none",
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank(),
+       plot.title = element_text(size = rel(1), face="bold"),
+       axis.text=element_text(size=10), 
+       axis.title=element_text(size=12,face="bold"),
+       legend.text=element_text(size=12),
+       legend.title = element_text(size = 12),
+       legend.spacing.x = unit(0.05, 'cm'))+scale_color_discrete(breaks=sort(as.numeric(map2$Site)))
+
+# Plot by rootstock
+bac_root.pcoa <- ggplot(data = map2, aes(x=ax1.scores, y=ax2.scores))+
+  theme_bw()+
+  #geom_point(aes(ax1.scores, y=ax2.scores,color=cultivar),size=1.5,shape=20,stroke=1.75)+
+ geom_text(aes(ax1.scores, y=ax2.scores,color=Rootstock, label = Rootstock),size=4)+
+  scale_x_continuous(name=paste("PCoA1: ",round(ax1,3)*100,"% var. explained", sep=""))+
+  scale_y_continuous(name=paste("PCoA2: ",round(ax2,3)*100,"% var. explained", sep=""), limits = c(-0.23,0.4))+
+  geom_segment(data=bac.scores4, aes(x=0, xend=mult*Dim1, y=0, yend=mult*Dim2), arrow = arrow(length = unit(0.3, "cm")), colour = "grey")+
+  geom_text_repel(data = bac.scores4, aes(x = mult*Dim1, y = mult*Dim2, label = Variable), size = 3,fontface="bold",position=position_jitter(width=0.03,height=0.001))+
+        coord_fixed() + 
+ labs(title = "A")+
+ theme(legend.position="none",
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank(),
+       plot.title = element_text(size = rel(1), face="bold"),
+       axis.text=element_text(size=10), 
+       axis.title=element_text(size=12,face="bold"),
+       legend.text=element_text(size=14),
+       legend.title = element_text(size = 15),
+       legend.spacing.x = unit(0.05, 'cm'))
+
+# 2. CALCULATE THE BETA DIVERSITY (PCoA PLOT) FOR FUNGI
+# dissimilarity indices for community ecologist to make a distance structure (Bray-Curtis distance between samples)
+otu_distITS <- vegdist(t(otuITS), method='bray')
+# CMD/classical multidimensional scaling (MDS) of a data matrix. Also known as principal coordinates analysis
+otu_pcoaITS <- cmdscale(otu_distITS, eig=T)
+env <- map[,c(11:22, 24:36)]
+# scores of PC1 and PC2
+ax1ITS.scores=otu_pcoaITS$points[,1] 
+ax2ITS.scores=otu_pcoaITS$points[,2] 
+env_fitITS <- envfit(otu_pcoaITS, env, na.rm=TRUE)
+ax1ITS <- otu_pcoaITS$eig[1]/sum(otu_pcoaITS$eig)
+ax2ITS <- otu_pcoaITS$eig[2]/sum(otu_pcoaITS$eig)
+map2=cbind(map2,ax1ITS.scores,ax2ITS.scores)
+# simple plot
+fg.pcoa_plot <- plot(ax1ITS.scores, ax2ITS.scores, xlab=paste("PCoA1: ",round(ax1,3)*100,"% var. explained", sep=""), ylab=paste("PCoA2: ",round(ax2,3)*100,"% var. explained", sep=""))
+plot(env_fitITS, p.max=0.05, col="red1")
+# Do better plot
+#shortcutting ef$vectors
+A.its <- as.list(env_fitITS$vectors)
+#creating the dataframe
+pvals.its <-as.data.frame(A.its$pvals)
+# environment scores (vectors scaled by R2 values)
+fg.scores1 <- as.data.frame(scores(env_fitITS, display="vectors"))
+fg.scores2 <- cbind(fg.scores1, pvals.its)
+fg.scores3 <- cbind(fg.scores2,Variable=rownames(fg.scores2))
+fg.scores4 <- subset(fg.scores3,pvals.its<0.05)
+library(ggrepel)
+mult <-.25
+# Plot by site
+fg.pcoa <- ggplot(data = map2, aes(x=ax1ITS.scores, y=ax2ITS.scores)) +
+  theme_bw()+
+  #geom_point(aes(ax1ITS.scores, y=ax2ITS.scores,color=Site),size=2.5, shape=20,stroke=1.75)+
+ geom_text(aes(ax1ITS.scores, y=ax2ITS.scores,color=Site, label = Site),size=4)+
+  scale_x_continuous(name=paste("PCoA1: ",round(ax1ITS,3)*100,"% var. explained", sep=""))+
+  scale_y_continuous(name=paste("PCoA2: ",round(ax2ITS,3)*100,"% var. explained", sep=""))+
+  coord_fixed()+
+ labs(title = "B")+
+  geom_segment(data=fg.scores4, aes(x=0, xend=mult*Dim1, y=0, yend=mult*Dim2), arrow = arrow(length = unit(0.3, "cm")), colour = "grey")+
+  geom_text_repel(data = fg.scores4, aes(x = mult*Dim1, y = mult*Dim2, label = Variable), size = 3,fontface="bold",position=position_jitter(width=0.03,height=0.001))+
+ theme(plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank(),
+       legend.position="none",
+       plot.title = element_text(size = rel(1), face="bold"),
+       axis.text=element_text(size=10), 
+       axis.title=element_text(size=12,face="bold"),
+       legend.text=element_text(size=12),
+       legend.title = element_text(size = 12),
+       legend.spacing.x = unit(0.05, 'cm'))+scale_color_discrete(breaks=sort(as.numeric(map2$Site)))
+
+# Plot by rootstocks
+fg_root.pcoa <- ggplot(data = map2, aes(x=ax1ITS.scores, y=ax2ITS.scores)) +
+  theme_bw()+
+  #geom_point(aes(ax1ITS.scores, y=ax2ITS.scores,color=cultivar),size=1.5,shape=20,stroke=1.75)+
+ geom_text(aes(ax1ITS.scores, y=ax2ITS.scores,color=Rootstock, label = Rootstock),size=4)+
+  scale_x_continuous(name=paste("PCoA1: ",round(ax1ITS,3)*100,"% var. explained", sep=""))+
+  scale_y_continuous(name=paste("PCoA2: ",round(ax2ITS,3)*100,"% var. explained", sep=""))+
+  coord_fixed()+
+ labs(title = "B")+
+  geom_segment(data=fg.scores4, aes(x=0, xend=mult*Dim1, y=0, yend=mult*Dim2), arrow = arrow(length = unit(0.3, "cm")), colour = "grey")+
+  geom_text_repel(data = fg.scores4, aes(x = mult*Dim1, y = mult*Dim2, label = Variable), size = 3,fontface="bold",position=position_jitter(width=0.03,height=0.001))+
+ theme(plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank(),
+       legend.position="none",
+       plot.title = element_text(size = rel(1), face="bold"),
+       axis.text=element_text(size=10), 
+       axis.title=element_text(size=12,face="bold"),
+       legend.text=element_text(size=14),
+       legend.title = element_text(size = 15),
+       legend.spacing.x = unit(0.05, 'cm'))
+#ggarrange(bac_root.pcoa, fg_root.pcoa, nrow=1, ncol=2, common.legend = TRUE, legend="left")
+
+# Arrange plots
+grid.newpage()
+grid.draw(cbind(ggplotGrob(bac.pcoa), ggplotGrob(fg.pcoa),size = "first"))
+grid.newpage()
+grid.draw(cbind(ggplotGrob(bac_root.pcoa), ggplotGrob(fg_root.pcoa),size = "first"))
+
+# 3. CALCULATE THE BETA DIVERSITY (PCoA PLOT) FOR NEMATODE
+# dissimilarity indices for community ecologist to make a distance structure (Bray-Curtis distance between samples)
+otu_dist_nema <- vegdist(t(sqrt.nema.t), method='bray')
+# CMD/classical multidimensional scaling (MDS) of a data matrix. Also known as principal coordinates analysis
+otu_pcoa_nema <- cmdscale(otu_dist_nema, eig=T)
+env.nema <- map[,c(11:22, 35:36)]
+# scores of PC1 and PC2
+ax1.nema.scores=otu_pcoa_nema$points[,1]
+ax2.nema.scores=otu_pcoa_nema$points[,2] 
+env_fit.nema <- envfit(otu_pcoa_nema, env.nema, na.rm=TRUE)
+# calculate percent variance explained, then add to plot
+ax1.nema <- otu_pcoa_nema$eig[1]/sum(otu_pcoa_nema$eig)
+ax2.nema <- otu_pcoa_nema$eig[2]/sum(otu_pcoa_nema$eig)
+map2=cbind(map2,ax1.nema.scores,ax2.nema.scores)
+# simple plot
+pcoa_plot <- plot(ax1.nema.scores, ax2.nema.scores, xlab=paste("PCoA1: ",round(ax1.nema,3)*100,"% var. explained", sep=""), ylab=paste("PCoA2: ",round(ax2.nema,3)*100,"% var. explained", sep=""))
+plot(env_fit.nema, p.max=0.05, col="red1")
+# Do better plot
+#shortcutting ef$vectors
+A.nema <- as.list(env_fit.nema$vectors)
+#creating the dataframe
+pvals.nema<-as.data.frame(A.nema$pvals)
+# environment scores (vectors scaled by R2 values)
+nm.scores1 <- as.data.frame(scores(env_fit.nema, display="vectors"))
+nm.scores2 <- cbind(nm.scores1, pvals.nema)
+nm.scores3 <- cbind(nm.scores2,Variable=rownames(nm.scores2))
+nm.scores4 <- subset(nm.scores3,pvals.nema<0.05)
+library(ggrepel)
+mult <-.25
+#Plot by site
+nm.pcoa <- ggplot(data = map2, aes(x=ax1.nema.scores, y=ax2.nema.scores))+
+  theme_bw()+
+  #geom_point(aes(ax1.nema.scores, y=ax2.nema.scores,color=Site),size=2.5,shape=20,stroke=1.75)+
+ geom_text(aes(ax1.nema.scores, y=ax2.nema.scores,color=Site, label = Site),size=4)+
+  scale_x_continuous(name=paste("PCoA1: ",round(ax1.nema,3)*100,"% var. explained", sep=""))+
+  scale_y_continuous(name=paste("PCoA2: ",round(ax2.nema,3)*100,"% var. explained", sep=""))+
+  geom_segment(data=nm.scores4, aes(x=0, xend=mult*Dim1, y=0, yend=mult*Dim2), arrow = arrow(length = unit(0.3, "cm")), colour = "grey")+
+  geom_text_repel(data = nm.scores4, aes(x = mult*Dim1, y = mult*Dim2, label = Variable), size = 3,fontface="bold",position=position_jitter(width=0.03,height=0.001))+
+        coord_fixed() + 
+ labs(title = "C")+
+ theme(legend.position = "none",
+       legend.box = "vertical",
+       plot.background = element_blank(),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank(),
+       plot.title = element_text(size = rel(1), face="bold"),
+       axis.text=element_text(size=10), 
+       axis.title=element_text(size=12,face="bold"),
+       legend.text=element_text(size=8),
+       legend.title = element_text(size = 12),
+       legend.spacing.x = unit(0.05, 'cm'))+scale_color_discrete(guide = guide_legend(title.position = "top", nrow = 2),breaks=sort(as.numeric(map2$Site)))
+
+################# PERMANOVA TO TEST ANY INFLUENCE OF SITE, ROOTSTOCK, AND CULTIVAR TO BACTERIAL, FUNGAL, AND NEMATODE BETA DIVERSITY ################################
+### SITE ###
+# 1. Site to bacterial beta diversity
+bac.otudist_site=adonis(otu_dist~map2$Site) # p-val=0.001
+# 2. Site to fungal beta diversity
+fg.otudist_site=adonis(otu_distITS~map2$Site) # p-val=0.001
+# 3. Site to nematode beta diversity
+nm.otudist_site=adonis(otu_dist_nema~map2$Site) # p-val=0.018
+### ROOTSTOCKS ###
+# 1. Rootstocks to bacterial beta diversity
+bac.otudist_root=adonis(otu_dist~map2$rootstock) # p-val=0.002
+# 2. Rootstocks to fungal beta diversity
+fg.otudist_root=adonis(otu_distITS~map2$rootstock) # p-val=0.01
+# 3. Rootstocks to nematode beta diversity
+nm.otudist_root=adonis(otu_dist_nema~map2$rootstock) # p-val=0.095 # not significant
+### CULTIVARS ###
+# 1. Cultivars to bacterial beta diversity
+bac.otudist_cul=adonis(otu_dist~map2$cultivar) # p-val=0.46 # not significant
+# 2. Cultivars to fungal beta diversity
+fg.otudist_cul=adonis(otu_distITS~map2$cultivar) # p-val=0.12 # not significant
+# 3. Cultivars to nematode beta diversity
+nm.otudist_cul=adonis(otu_dist_nema~map2$cultivar) # p-val=0.13 # not significant
+
+############################################################################################
+######################### BACTERIAL AND FUNGAL COMMUNITIES COMPOSITION #####################
+############################################################################################
+BiocManager::install("phyloseq")
+library(phyloseq)
+
+# 1. BACTERIA COMPOSITION
+# read bacterial taxonomy
+tax_16S = read.csv("16S_TAX.csv", sep=',', header=T)
+tax_16S
+rownames(tax_16S) <- rownames(otu)
+# make phyloseq otu table and taxonomy
+OTU = otu_table(otu, taxa_are_rows = TRUE)
+TAX = tax_table(as.matrix(tax_16S))
+# add map
+map$Site<-as.factor(map$Site)
+rownames(map) <- map$sample_code
+# make phyloseq map
+phyloseq_map <- sample_data(map)
+# make phyloseq object
+PHYL_16S <- merge_phyloseq(OTU,TAX,phyloseq_map)
 PHYL_16S
-phylum.16S.ra <- transform_sample_counts(PHYL_16S, function(x) x/sum(x))
-#phylum.16S <- tax_glom(phylum.16S.ra, taxrank = "Phylum", NArm = F)
-#phylum.16S
-#tax_table(phylum.16S)
+# merge taxa by phylum
+# 1. phylum - Bacteria
 phylum.16S.ra <- transform_sample_counts(PHYL_16S, function(x) x/sum(x))
 phylum.16S <- tax_glom(phylum.16S.ra, taxrank = "Phylum", NArm = F)
 phylum.16S
 cumabun=taxa_sums(phylum.16S)
 df.phylum.16S.taxasum=as.data.frame(cumabun)
 df.phylum.16S.taxasum$relabun=df.phylum.16S.taxasum$cumabun/45
-df.16S <- psmelt(phylum.16S)
-summary(df.16S)
-head(df.16S)
-dim(df.16S)
-df.16S$Phylum <- as.character(df.16S$Phylum)
-df.acid=df.16S %>% filter(df.16S$Phylum==" Acidobacteria")
-head(df.acid)
-dim(df.acid)
+sort.df.phylum.16S.taxasum=df.phylum.16S.taxasum[order(df.phylum.16S.taxasum$relabun, decreasing = T),]
+view(sort.df.phylum.16S.taxasum)
+write.table(sort.df.phylum.16S.taxasum, file = 'relabun_phylum_bac.txt', sep = '\t', col.names = TRUE, row.names = TRUE, quote = FALSE)
+df.phylum.16S <- psmelt(phylum.16S)
+summary(df.phylum.16S)
+head(df.phylum.16S)
+dim(df.phylum.16S)
+df.phylum.16S$Phylum <- as.character(df.phylum.16S$Phylum)
+df.phylum.16S$Phylum[df.phylum.16S$Abundance < 0.01] <- "Other"
+df.phylum.16S$Phylum[is.na(df.phylum.16S$Phylum)] <- "Other"
+#colourCount = length(unique(df.phylum$Phylum))
+#getPalette = colorRampPalette(brewer.pal(9, "Set1"))  
+#barplot 16S
+p <- ggplot(data=df.phylum.16S, aes(x=Sample, y=Abundance, fill=Phylum))
+barplot.16S <- p + geom_bar(aes(), stat="identity", position="fill") + scale_fill_manual(values=c('#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000'))+
+  theme(legend.position="bottom") + guides(fill=guide_legend(nrow=5))+
+ labs(title="A",y= "Relative Abundance")+
+ theme(plot.title = element_text(size = rel(1.5), face="bold"),
+       axis.text=element_text(size=9),
+       axis.text.x = element_text(angle = 90,hjust = 1),
+       axis.title=element_text(size=10,face="bold"),
+       legend.text=element_text(size = 8),
+       legend.title = element_text(size=10),
+       panel.grid = element_blank(), 
+       panel.background = element_blank(),
+       panel.border = element_rect(colour = "black", fill = NA, size = 1))
 
-acid_site <- lm(log10(df.acid$Abundance) ~ Site, data=df.acid, na.action=na.exclude)
-summary(acid_site)
-drop1(acid_site,~.,test="F")
-acid_site_resids <- residuals(acid_site)
-acid_site_preds <- predict(acid_site)
-plot(acid_site_resids ~ acid_site_preds, xlab = "Predicted Values", ylab = "Residuals", asp=.5)
-shapiro.test(acid_site_resids)
-leveneTest(acid_site, na.action=na.exclude)
+# 2. FUNGAL COMPOSITION
+# READ TAXONOMY FILE ("consensus_taxonomy_ITS.txt") FROM CONSTAX OUTPUT AND MERGE IT INTO "otuITS" FILE ("OTU_rarefied_ITS.txt")
+otuITS <- read.table(file = "OTU_rarefied_ITS.txt", sep='\t', header=T)
+fg.taxonomy = read.table("consensus_taxonomy_ITS.txt",
+                      header = T, sep = "\t")
+dim(fg.taxonomy)
+fg.otu.tax <- merge(otuITS, fg.taxonomy, by.x =c("OTU_ID"), by.y = c("OTU_ID"))
+head(fg.otu.tax)
+dim(fg.otu.tax)
+write.table(fg.otu.tax, file = "combined_otu_tax_ITS.txt", sep = '\t', col.names = TRUE, row.names = FALSE)
+# go to excel and separate the "combined_otu_tax_ITS.txt" into 2 files: OTU_ITS.csv and ITS_TAX.csv for uploading to phyloseq
+# READ OTU_TABLE
+otuITS.phyl = read.csv("OTU_ITS.csv", sep=",", row.names=1)
+otuITS.phyl = as.matrix(otuITS.phyl)
+dim(otuITS.phyl)
+head(sort(colSums(otuITS.phyl, na.rm = FALSE, dims = 1), decreasing = FALSE))
+head(sort(rowSums(otuITS.phyl, na.rm = FALSE, dims = 1), decreasing = FALSE))
+# read fungal taxonomy
+tax.ITS = read.csv("ITS_TAX.csv", sep=",", row.names=1)
+tax.ITS = as.matrix(tax.ITS)
+dim(tax.ITS)
+tax.ITS
+# IMPORT fungal otu table, taxonomy, and map files into phyloseq object
+OTU.ITS <- otu_table(otuITS.phyl, taxa_are_rows = TRUE)
+OTU.ITS
+TAX.ITS <-  tax_table(tax.ITS)
+TAX.ITS
+# check that your OTU names are consistent across objects
+taxa_names(TAX.ITS) 
+taxa_names(OTU.ITS)
+# merge into one phyloseq object
+PHYL_ITS <- phyloseq(OTU.ITS,TAX.ITS,phyloseq_map)
+# merge taxa by phylum
+# 1. phylum - Fungi
+PHYL_ITS.ra <- transform_sample_counts(PHYL_ITS, function(x) x/sum(x))
+phylum.ITS <- tax_glom(PHYL_ITS.ra, taxrank = "Phylum", NArm = F)
+phylum.ITS
 
-df.thau=df.16S %>% filter(df.16S$Phylum==" Thaumarchaeota")
-head(df.thau)
-dim(df.thau)
+cumabun.its=taxa_sums(phylum.ITS)
+df.phylum.ITS.taxasum=as.data.frame(cumabun.its)
+df.phylum.ITS.taxasum$relabun=df.phylum.ITS.taxasum$cumabun.its/45
+sort.df.phylum.ITS.taxasum=df.phylum.ITS.taxasum[order(df.phylum.ITS.taxasum$relabun, decreasing = T),]
+view(sort.df.phylum.ITS.taxasum)
+write.table(sort.df.phylum.ITS.taxasum, file = 'relabun_phylum_fg.txt', sep = '\t', col.names = TRUE, row.names = TRUE, quote = FALSE)
+df.phylum.ITS <- psmelt(phylum.ITS)
+head(df.phylum.ITS)
+dim(df.phylum.ITS)
+df.phylum.ITS$Phylum <- as.character(df.phylum.ITS$Phylum)
+df.phylum.ITS$Phylum[df.phylum.ITS$Abundance < 0.01] <- "Other"
+df.phylum.ITS$Phylum[is.na(df.phylum.ITS$Phylum)] <- "Other"
+#barplot ITS
+f <- ggplot(data=df.phylum.ITS, aes(x=Sample, y=Abundance, fill=Phylum))
+barplot.ITS <- f + geom_bar(aes(), stat="identity", position="fill") + scale_fill_manual(values=c('#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000'))+
+  theme(legend.position="bottom") + guides(fill=guide_legend(nrow=5))+
+ labs(title="B", y= "Relative Abundance")+
+ theme(plot.title = element_text(size = rel(1.5), face="bold"),
+       axis.text=element_text(size=9),
+       axis.text.x = element_text(angle = 90,hjust = 1),
+       axis.title=element_text(size=10,face="bold"),
+       legend.text=element_text(size = 8),
+       legend.title = element_text(size=10),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank(), 
+       panel.background = element_blank(),
+       panel.border = element_rect(colour = "black", fill = NA, size = 1))
+
+# Arrange Plots
+rid.newpage()
+ggarrange(barplot.16S,barplot.ITS, ncol = 2, nrow = 1)
 
 
 
 
-
-
-#anova(glm(N.Organisms~as.factor(Group), data=d, family=poisson))
-anova(glm(df.acid$Abundance ~ Site, data=df.acid, family=poisson,na.action=na.exclude), test="LRT")
-
-acid_ph <- lm(Abundance ~ P_ppm, data=df.acid)
-summary(acid_ph)
-cor.test(df.acid$P_ppm, df.acid$Abundance)
