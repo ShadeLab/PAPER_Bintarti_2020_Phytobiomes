@@ -166,6 +166,7 @@ Before run constax.sh:
 - CONSTAX WAS RUN ON THE OLD CENTOS 6 HPCC SYSTEM!
 - Add "NUMBERED_REP_SET.fasta" into: mnt/home/bintarti/CONSTAX_hpcc/otus 
 - Change the PATH in: mnt/home/bintarti/CONSTAX_hpcc/config
+
 After constax completed:
 - I moved the outputs directory to: /mnt/research/ShadeLab/WorkingSpace/Bintarti/ITS_apple_replant/ITS_45_aprep/Workflow2_ITS1_OpenReferenceClust/CONSTAX_OTU
 - I used the "consensus_taxonomy.txt" file in: outputs/consensus_taxonomy.txt for further analyses on Excel and R Software.
