@@ -1,13 +1,13 @@
-Raw Sequences Analysis of 16S rRNA gene from Apple Rhizosphere Soil
+Raw Sequences Analysis of 16S rRNA gene (v4 region) from Apple Root-zone Soil
 
 # Analysis of 16S Miseq Data
 
-Here we used the USEARCH pipeline (v10.0.240_i86linux64) for pre-processing raw sequences data and UPARSE method for OTU clustering (Edgar 2013). Additional analyses were conducted using QIIME
+Here we used the USEARCH pipeline (v10.0.240_i86linux64) for pre-processing raw sequences data and UPARSE method for OTU clustering (Edgar 2013). Additional analyses were conducted using QIIME1 (1.9.1).
 
-raw sequence data stored on HPCC
+raw sequence data stored on HPCC:
 /mnt/research/ShadeLab/Sequence/raw_sequence/AppleReplant/20171113_16S-V4_PE/
 
-Moved/copy apple replant sequences (45 soil samples (F01-F45)) to working space for analysis
+Moved/copy apple replant sequences (45 soil samples (F01-F45)) to working space for analysis:
 ShadeLab/WorkingSpace/Bintarti/16S_45samples_aprep/20171113_16S-V4_PE/
 
 # Part I: Clustering
@@ -141,11 +141,14 @@ cat SILVA_closed_reference.fasta denovo_otus.fasta > FULL_REP_SET.fna
 ```
 # Part II: Switch to QIIME 1.9.1
 
-## 1) Assign taxonomy to SILVA_132_QIIME_release with PyNAST
+## 1) Assign taxonomy to SILVA_132_QIIME_release with uclust 
 ```
+# assignment method: uclust
+# --uclust_min_consensus_fraction: [default:0.51]
+# --uclust_similarity: [default:0.9]
+# --uclust_max_accepts: [default: 3]
+
 assign_taxonomy.py -i FULL_REP_SET.fna -o taxonomy -r /mnt/home/bintarti/SILVA_132_QIIME_release/rep_set/rep_set_16S_only/97/silva_132_97_16S.fna -t /mnt/home/bintarti/SILVA_132_QIIME_release/taxonomy/16S_only/97/consensus_taxonomy_7_levels.txt
-#-r reference -> path to silva db here (SILVA_128_QIIME_release)
-# -t taxonomy
 ```
 ## 2) Convert OTU_table.txt. to OTU_table.from_txt_json.biom
 ```

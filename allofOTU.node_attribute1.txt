@@ -1,0 +1,427 @@
+Name	Domain	Phylum	Class	Order	Family	Genus	Species	node.degree	node.betw	node.stress	node.evcent	Clustering.Coefficient	No..module	Zi	Pi
+AB252949.1.1524	Bacteria	 Latescibacteria	NA	NA	NA	NA	NA	6	605.4249132	7296	0.003223124	0	2	0.782318259	0
+AB568315.1.1516	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Burkholderiaceae	 Burkholderia-Caballeronia-Paraburkholderia	 Burkholderia ambifaria	3	306.1666667	1112	0.004705727	0	6	0.044901326	0
+AB672207.1.1453	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 UTBCD1	NA	5	509.1875269	7952	0.002951617	0	2	0.456352318	0
+AB672256.1.1457	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 A21b	 Ambiguous_taxa	 Ambiguous_taxa	18	5841.905205	73435	0.009906425	0	2	4.04197767	0.203703704
+AB722236.1.1336	Bacteria	 Chloroflexi	 Anaerolineae	 RBG-13-54-9	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	2	0	0	0.002439863	1	4	-0.341659944	0
+AB821070.1.1492	Bacteria	 Actinobacteria	 Actinobacteria	 Frankiales	 Acidothermaceae	 Acidothermus	 uncultured bacterium	2	229.3840494	2152	0.000247548	0	2	-0.521545506	0
+AB821087.1.1453	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhizobiales	 Xanthobacteraceae	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	8.06e-99	0	38	0	0
+AJ408875.1.1517	Bacteria	 Actinobacteria	 Actinobacteria	 Frankiales	 Frankiaceae	 Frankia	 Ambiguous_taxa	1	0	0	0.000705723	0	2	-0.847511447	0
+AJ627422.38670.40139	Archaea	 Thaumarchaeota	 Nitrososphaeria	 Nitrososphaerales	 Nitrososphaeraceae	 Ambiguous_taxa	 Ambiguous_taxa	2	2	2	2.17e-76	0	12	1	0
+AJ863234.1.1471	Bacteria	 Actinobacteria	 Thermoleophilia	 Gaiellales	 uncultured	 uncultured bacterium	 uncultured bacterium	2	271.6944349	5093	0.000389435	0	2	-0.521545506	0
+AY139002.1.1524	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Burkholderiaceae	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	8.06e-99	0	52	0	0
+AY212693.1.1482	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Sphingomonadales	 Sphingomonadaceae	 Novosphingobium	 Ambiguous_taxa	1	0	0	1.58e-59	0	8	-1.322875656	0
+AY214600.8948.10463	Bacteria	 Acidobacteria	 Subgroup 5	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.02959495	0	3	-0.77321177	0
+AY491563.1.1527	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Burkholderiaceae	 uncultured	 uncultured bacterium	1	0	0	8.06e-99	0	45	0	0
+AY661980.1.1546	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	4	147.668254	474	0.015616634	0.333333333	6	0.359210604	0
+AY673403.1.1431	Bacteria	 Chloroflexi	 Ktedonobacteria	 Ktedonobacterales	 JG30-KF-AS9	 Ambiguous_taxa	 Ambiguous_taxa	6	1496.829358	16652	0.002675595	0	2	0.782318259	0
+AY741725.1.1482	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhizobiales	 Beijerinckiaceae	 Methylobacterium	 Ambiguous_taxa	1	0	0	0.000308195	0	2	-0.847511447	0
+AY955091.1.1528	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Steroidobacterales	 Steroidobacteraceae	 uncultured	 Ambiguous_taxa	1	0	0	8.06e-99	0	37	0	0
+CXWL01043325.321.1765	Bacteria	 Patescibacteria	 Microgenomatia	 Candidatus Woesebacteria	 groundwater metagenome	 groundwater metagenome	 groundwater metagenome	1	0	0	8.06e-99	0	35	0	0
+DQ125578.1.1412	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Sphingomonadales	 Sphingomonadaceae	 Sphingomonas	 Ambiguous_taxa	1	0	0	0.013742336	0	3	-0.77321177	0
+DQ298763.1.1508	Bacteria	 Bacteroidetes	 Bacteroidia	 Flavobacteriales	 Flavobacteriaceae	 Flavobacterium	 Ambiguous_taxa	1	0	0	0.000274123	0	4	-0.808595201	0
+DQ395983.1.1546	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Candidatus Udaeobacter	 Ambiguous_taxa	5	173.4383237	2072	0.019541012	0.4	6	0.673519883	0
+DQ404622.1.1516	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Nitrosomonadaceae	 Ellin6067	 Ambiguous_taxa	1	0	0	6.14e-05	0	4	-0.808595201	0
+DQ404701.1.1547	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Candidatus Udaeobacter	 uncultured bacterium	13	1746.538598	14944	0.03222386	0.115384615	6	3.187994111	0
+DQ517952.1.1496	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhizobiales	 Xanthobacteraceae	 Bradyrhizobium	NA	3	911	5240	0.026489316	0	10	1	0.444444444
+DQ787718.1.1532	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Verrucomicrobiales	 Rubritaleaceae	 Luteolibacter	 Ambiguous_taxa	3	9	9	3.86e-59	0.333333333	8	1.322875656	0
+EF018554.1.1407	Bacteria	 Proteobacteria	 Deltaproteobacteria	 MBNT15	NA	NA	NA	3	9.756611354	180	0.042077078	0.666666667	5	-0.266864417	0.444444444
+EF018609.1.1388	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Nitrosomonadaceae	 MND1	NA	1	0	0	0.002987337	0	3	-0.77321177	0
+EF018752.1.1386	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Microscillaceae	 uncultured	 uncultured bacterium	17	9553.344084	92483	0.084356307	0.058823529	6	3.187994111	0.380622837
+EF018876.1.1358	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Xiphinematobacteraceae	 Candidatus Xiphinematobacter	NA	8	2077.201659	15533	0.006303539	0.107142857	4	1.993016341	0.21875
+EF019096.1.1407	Bacteria	 Acidobacteria	 Acidobacteriia	 Subgroup 2	NA	NA	NA	2	470.3210102	9207	0.011874899	0	6	-0.583717232	0.5
+EF019229.1.1331	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhizobiales	 Hyphomicrobiaceae	 Pedomicrobium	 Ambiguous_taxa	1	0	0	1.74e-09	0	7	-0.904534034	0
+EF019397.1.1385	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 Terrimonas	 Ambiguous_taxa	10	1852.189331	13852	0.13376353	0.133333333	3	0.234569863	0.5
+EF019523.1.1370	Bacteria	 Actinobacteria	 Actinobacteria	 Corynebacteriales	 Mycobacteriaceae	 Mycobacterium	 uncultured Mycobacteriaceae bacterium	1	0	0	0.000816654	0	1	-0.612763669	0
+EF019555.1.1404	Bacteria	 Acidobacteria	 Holophagae	 Subgroup 7	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	4	73.09286447	1188	0.017979778	0.5	6	0.359210604	0
+EF019578.1.1340	Bacteria	 Chloroflexi	 Anaerolineae	 SBR1031	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	3	1805	19493	7.07e-06	0	7	1.507556723	0
+EF019695.1.1389	Bacteria	 Planctomycetes	 Planctomycetacia	 Gemmatales	 Gemmataceae	 uncultured	 uncultured planctomycete	1	0	0	6.47e-05	0	1	-0.612763669	0
+EF019814.1.1408	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 Sandaracinaceae	 uncultured	 uncultured bacterium	1	0	0	0.001197349	0	2	-0.847511447	0
+EF019860.1.1349	Bacteria	 Acidobacteria	 Acidobacteriia	 Solibacterales	 Solibacteraceae (Subgroup 3)	 Bryobacter	 Ambiguous_taxa	1	0	0	0.010407112	0	6	-0.583717232	0
+EF020015.1.1359	Bacteria	 Chloroflexi	 Anaerolineae	 Anaerolineales	 Anaerolineaceae	 uncultured	 uncultured bacterium	8	1797.913117	11257	0.001870104	0	0	3.302891295	0.375
+EF020258.1.1328	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Micropepsales	 Micropepsaceae	 uncultured	NA	1	0	0	0.001934685	0	1	-0.612763669	0
+EF157268.1.1425	Bacteria	 Chloroflexi	 Chloroflexia	 Thermomicrobiales	 JG30-KF-CM45	 uncultured bacterium	 uncultured bacterium	1	0	0	0.001222164	0	2	-0.847511447	0
+EF492922.1.1528	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Candidatus Udaeobacter	 Ambiguous_taxa	1	0	0	6.54e-67	0	13	-0.5	0
+EF515951.1.1453	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Nitrosomonadaceae	 Ellin6067	 uncultured bacterium	1	0	0	0.002707466	0	6	-0.583717232	0
+EF516075.1.1495	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 uncultured bacterium	 uncultured bacterium	1	0	0	0.010407112	0	6	-0.583717232	0
+EF516309.1.1425	Bacteria	 Planctomycetes	 Phycisphaerae	 Tepidisphaerales	 WD2101 soil group	 uncultured bacterium	 uncultured bacterium	1	0	0	0.000348799	0	1	-0.612763669	0
+EF516510.1.1500	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 uncultured bacterium	 uncultured bacterium	2	158.629906	1138	0.000210271	0	1	-0.180815509	0
+EF516625.1.1481	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Chthoniobacter	 uncultured bacterium	1	0	0	8.06e-99	0	46	0	0
+EF516838.1.1429	Bacteria	 Planctomycetes	 Phycisphaerae	 Tepidisphaerales	 WD2101 soil group	 uncultured bacterium	 uncultured bacterium	1	0	0	0.010407112	0	6	-0.583717232	0
+EF516916.1.1453	Bacteria	 Planctomycetes	 vadinHA49	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	7.26e-83	0	18	0	0
+EF632938.1.1524	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Burkholderiaceae	 uncultured	 Ambiguous_taxa	1	0	0	0.000777673	0	4	-0.808595201	0
+EF688367.1.1458	Bacteria	 Chloroflexi	 Anaerolineae	 SBR1031	 uncultured soil bacterium	 uncultured soil bacterium	 uncultured soil bacterium	1	0	0	0.001502233	0	3	-0.77321177	0
+EU025070.1.1531	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 Ambiguous_taxa	 Ambiguous_taxa	10	3187.387728	13917	0.010822262	0.044444444	4	2.459951599	0.34
+EU131041.1.1519	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Chthoniobacter	 uncultured bacterium	1	0	0	0.001222164	0	2	-0.847511447	0
+EU132237.1.1397	Bacteria	 Acidobacteria	 Subgroup 6	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	0.001335152	0	4	-0.808595201	0
+EU132961.1.1330	Bacteria	 Actinobacteria	 MB-A2-108	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	0.000777673	0	4	-0.808595201	0
+EU133210.1.1367	Bacteria	 Actinobacteria	 Thermoleophilia	 Gaiellales	 uncultured	 uncultured bacterium	 uncultured bacterium	1	0	0	0.001222164	0	2	-0.847511447	0
+EU133614.1.1308	Bacteria	 Proteobacteria	 Alphaproteobacteria	NA	NA	NA	NA	2	94.53887674	688	0.000513898	0	0	0	0
+EU134041.1.1317	Bacteria	 Chloroflexi	 Anaerolineae	 SBR1031	 A4b	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.042907602	0	3	-0.77321177	0
+EU134340.1.1392	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 P3OB-42	NA	NA	4	328.3571429	1193	0.087577855	0.166666667	3	-0.017375545	0
+EU134396.1.1388	Bacteria	 Proteobacteria	 Deltaproteobacteria	 NB1-j	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	0.001472833	0	4	-0.808595201	0
+EU135032.1.1341	Bacteria	 Planctomycetes	 Phycisphaerae	 Tepidisphaerales	 WD2101 soil group	 uncultured bacterium	 uncultured bacterium	2	20.91811839	302	0.023821207	0	4	-0.808595201	0.5
+EU135124.1.1339	Bacteria	 Planctomycetes	 Planctomycetacia	 Pirellulales	 Pirellulaceae	 Pirellula	 uncultured bacterium	2	46.52243867	145	0.026488046	0	4	-0.808595201	0.5
+EU135143.1.1373	Bacteria	 Planctomycetes	 OM190	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	2	0	0	0.044238986	1	3	-0.521266362	0
+EU135436.1.1354	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 uncultured bacterium	 uncultured bacterium	2	142.3207488	3846	0.000868544	0	0	-0.825722824	0.5
+EU135448.1.1387	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 uncultured bacterium	 uncultured bacterium	9	2880.859243	35294	0.010798731	0	2	1.1082842	0.345679012
+EU135481.1.1380	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Candidatus Udaeobacter	 Ambiguous_taxa	1	0	0	1.34e-76	0	12	-1	0
+EU135499.1.1401	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 uncultured bacterium	 uncultured bacterium	2	100.4581445	1310	0.018004758	0	3	-0.521266362	0
+EU155997.1.1440	Archaea	 Thaumarchaeota	 Nitrososphaeria	 Nitrososphaerales	 Nitrososphaeraceae	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	8.06e-99	0	38	0	0
+EU335150.1.1540	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 uncultured bacterium	 uncultured bacterium	1	0	0	8.06e-99	0	47	0	0
+EU335222.1.1517	Bacteria	 Acidobacteria	 Subgroup 22	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	3	619.6294258	2255	0.024214282	0	3	-0.269320954	0
+EU335240.1.1487	Bacteria	 Bacteroidetes	 Bacteroidia	 Sphingobacteriales	 AKYH767	 uncultured bacterium	 uncultured bacterium	8	295.6236309	5291	0.197958317	0.571428571	3	0.990406088	0
+EU335265.1.1482	Bacteria	 Planctomycetes	 Phycisphaerae	 Tepidisphaerales	 WD2101 soil group	 uncultured bacterium	 uncultured bacterium	1	0	0	8.06e-99	0	27	0	0
+EU335298.1.1525	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 Archangiaceae	 Anaeromyxobacter	NA	1	0	0	0.003975486	0	6	-0.583717232	0
+EU335320.1.1482	Bacteria	 Acidobacteria	 Acidobacteriia	 Acidobacteriales	 uncultured	 Ambiguous_taxa	 Ambiguous_taxa	8	1744.788554	10729	0.021945746	0.214285714	6	1.30213844	0.21875
+EU335422.1.1525	Bacteria	 Entotheonellaeota	 Entotheonellia	 Entotheonellales	 Entotheonellaceae	 uncultured bacterium	 uncultured bacterium	8	1214.640771	7141	0.013473111	0.178571429	4	1.993016341	0.21875
+EU344930.1.1463	Bacteria	 Planctomycetes	 Planctomycetacia	 Planctomycetales	 uncultured	NA	NA	2	81.55461255	384	0.011203045	0	2	-0.847511447	0.5
+EU545492.1.1538	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 Polyangiaceae	 Sorangium	 Sorangium cellulosum	1	0	0	0.000147373	0	16	0	0
+EU861820.1.1488	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	 Ambiguous_taxa	1	0	0	0.00058055	0	6	-0.583717232	0
+EU861850.1.1490	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	 Ambiguous_taxa	1	0	0	0.003975486	0	6	-0.583717232	0
+EU881161.1.1495	Bacteria	 Gemmatimonadetes	 Gemmatimonadetes	 Gemmatimonadales	 Gemmatimonadaceae	 uncultured	NA	1	0	0	0.006453776	0	5	-0.689399745	0
+EU881176.1.1524	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Candidatus Udaeobacter	NA	1	0	0	0.02567673	0	3	-0.77321177	0
+EU881196.1.1506	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Xanthomonadales	 Xanthomonadaceae	 Lysobacter	 Ambiguous_taxa	3	441.2173838	2313	0.000279179	0	0	0.825722824	0
+EU881280.1.1488	Bacteria	 Acidobacteria	 Acidobacteriia	 Acidobacteriales	 uncultured	 Ambiguous_taxa	 Ambiguous_taxa	2	0	0	0.006682952	1	6	-0.269407953	0
+EU881293.1.1522	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 BIrii41	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	8.06e-99	0	46	0	0
+EU881356.1.1485	Bacteria	 Acidobacteria	 Acidobacteriia	 Acidobacteriales	 uncultured	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.003975486	0	6	-0.583717232	0
+FJ439860.1.1500	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhizobiales	 Xanthobacteraceae	 Bradyrhizobium	 uncultured bacterium	1	0	0	0.00326801	0	10	-1	0
+FJ444683.1.1463	Bacteria	 Planctomycetes	 Phycisphaerae	 Tepidisphaerales	 WD2101 soil group	 uncultured bacterium	 uncultured bacterium	5	2577.523156	15645	0.003773714	0	4	0.59221057	0.32
+FJ444715.1.1514	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	2	75.45350149	591	0.000302333	0	0	0	0
+FJ466087.1.1346	Bacteria	 Acidobacteria	 Acidobacteriia	 Solibacterales	 Solibacteraceae (Subgroup 3)	 Bryobacter	 uncultured bacterium	2	6.531582369	168	0.002759723	0	2	-0.521545506	0
+FJ478482.1.1522	Bacteria	 Rokubacteria	 NC10	 Rokubacteriales	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	4	232.4089442	3306	0.002823999	0	2	0.130386376	0
+FJ478897.1.1521	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Desulfarculales	 Desulfarculaceae	 uncultured	 Ambiguous_taxa	1	0	0	1.39e-08	0	7	-0.904534034	0
+FJ479090.1.1513	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	7.26e-83	0	17	0	0
+FJ479179.1.1483	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Microscillaceae	 uncultured	 Ambiguous_taxa	4	0	0	0.137965383	1	3	-0.017375545	0
+FJ484765.1.1355	Bacteria	 Planctomycetes	 Pla3 lineage	NA	NA	NA	NA	4	412.3099698	2967	0.027177148	0.166666667	5	0.578206237	0
+FJ592755.1.1370	Bacteria	 Acidobacteria	 Acidobacteriia	 Solibacterales	 Solibacteraceae (Subgroup 3)	 Candidatus Solibacter	 uncultured bacterium	2	38.48130661	221	0.000367974	0	0	-0.825722824	0.5
+FJ624914.1.1516	Bacteria	 Acidobacteria	 Acidobacteriia	 Subgroup 2	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	4	165.024171	2867	0.00504769	0	2	0.130386376	0
+FJ624921.1.1487	Bacteria	 Acidobacteria	 Acidobacteriia	 Acidobacteriales	 Acidobacteriaceae (Subgroup 1)	 Granulicella	 Ambiguous_taxa	4	628.4895252	5518	0.004293875	0	2	0.130386376	0
+FJ625370.1.1495	Bacteria	 Acidobacteria	 Acidobacteriia	 Solibacterales	 Solibacteraceae (Subgroup 3)	 Bryobacter	 Ambiguous_taxa	1	0	0	0.003506511	0	1	-0.612763669	0
+FJ625379.1.1481	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhizobiales	 Beijerinckiaceae	 Roseiarcus	 uncultured bacterium	3	182.0397974	1436	0.000876714	0	2	-0.195579565	0
+FJ660573.1.1520	Bacteria	 Elusimicrobia	 Lineage IIb	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	8.06e-99	0	39	0	0
+FJ713033.1.1487	Bacteria	 Acidobacteria	 Blastocatellia (Subgroup 4)	 Blastocatellales	 Blastocatellaceae	 uncultured	NA	2	305	2318	0.000497868	0	4	-0.341659944	0
+FJ716020.1.1488	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	 Ambiguous_taxa	1	0	0	8.06e-99	0	33	0	0
+FJ872373.13200.14750	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Chthoniobacter	 Ambiguous_taxa	1	0	0	4.73e-60	0	8	-1.322875656	0
+FJ872375.29511.31045	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Chthoniobacter	 metagenome	1	0	0	0.007347146	0	6	-0.583717232	0
+FJ901870.1.1258	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 TRA3-20	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.008208554	0	4	-0.808595201	0
+FPLL01000336.10.1488	Bacteria	 Acidobacteria	 Acidobacteriia	 Solibacterales	 Solibacteraceae (Subgroup 3)	 Bryobacter	 uncultured bacterium	4	816.9199943	5109	0.004183577	0	1	0.683080811	0
+FPLL01000956.9.1489	Bacteria	 Acidobacteria	 Acidobacteriia	 Solibacterales	 Solibacteraceae (Subgroup 3)	 Candidatus Solibacter	 Ambiguous_taxa	8	3730.89807	35751	0.024263637	0.035714286	1	1.115028971	0.53125
+FPLL01001599.1.1409	Bacteria	 Proteobacteria	 Alphaproteobacteria	 uncultured	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	2	338.1715147	1895	0.000848761	0	1	-0.612763669	0.5
+FPLL01002138.3.1535	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 Ambiguous_taxa	 Ambiguous_taxa	18	2169.129292	21316	0.347793592	0.163398693	3	3.509860172	0
+FPLL01003754.14.1563	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 Ambiguous_taxa	 Ambiguous_taxa	6	597.7961349	2250	0.0069139	0.2	4	1.526081084	0
+FPLL01003773.13.1488	Bacteria	 Chloroflexi	 Anaerolineae	 SBR1031	 A4b	NA	NA	1	0	0	3.83e-05	0	0	-0.825722824	0
+FPLL01004645.16.1553	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	2	0	0	0.004411245	1	5	-0.266864417	0
+FPLL01004960.9.1532	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 TRA3-20	 Ambiguous_taxa	 Ambiguous_taxa	8	285.1289708	2709	0.05913114	0.035714286	5	1.423276892	0.375
+FPLL01008426.9.1523	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Nitrosomonadaceae	 MND1	NA	1	0	0	8.73e-07	0	7	-0.904534034	0
+FPLL01008488.21.1525	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 Ferruginibacter	 Ambiguous_taxa	1	0	0	8.06e-99	0	27	0	0
+FPLM01000559.10.1453	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhodobacterales	 Rhodobacteraceae	 Amaricoccus	 Ambiguous_taxa	15	3653.842692	37168	0.015681859	0.019047619	1	3.706717931	0.426666667
+FPLP01001352.15.1519	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Saprospiraceae	 uncultured	NA	6	825.4350644	2965	0.11139043	0.2	3	0.486515271	0
+FPLS01001182.11.1473	Bacteria	 Acidobacteria	 Acidobacteriia	 Solibacterales	 Solibacteraceae (Subgroup 3)	 Bryobacter	 Ambiguous_taxa	1	0	0	0.010407112	0	6	-0.583717232	0
+FPLS01001342.16.1549	Bacteria	 Acidobacteria	 Thermoanaerobaculia	 Thermoanaerobaculales	 Thermoanaerobaculaceae	 Subgroup 10	NA	1	0	0	0.003506511	0	1	-0.612763669	0
+FPLS01006445.17.1523	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	 metagenome	2	1	1	1.45e-82	0	20	0	0
+FPLS01007460.13.1516	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Microscillaceae	 uncultured	 Ambiguous_taxa	6	326.575938	6100	0.106841611	0.333333333	3	0.486515271	0
+FPLS01010254.9.1544	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 BIrii41	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.000584383	0	1	-0.612763669	0
+FPLS01010329.11.1549	Bacteria	 Planctomycetes	 OM190	NA	NA	NA	NA	1	0	0	1.79e-70	0	9	-0.75	0
+FPLS01012823.9.1525	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Nitrosomonadaceae	 MND1	 uncultured bacterium	4	16.54921378	114	0.120129269	0.666666667	3	-0.017375545	0
+FPLS01013161.14.1531	Bacteria	 Proteobacteria	 Gammaproteobacteria	 CCD24	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	18	4166.607715	26796	0.239886019	0.078431373	3	2.502078538	0.345679012
+FPLS01015067.17.1524	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	 Ambiguous_taxa	3	5	5	3.7e-59	0.333333333	8	1.322875656	0
+FPLS01018303.13.1530	Bacteria	 Proteobacteria	 Gammaproteobacteria	 PLTA13	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	9	463.9051425	3704	0.118699291	0.111111111	3	0.990406088	0.197530864
+FPLS01021885.16.1486	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhizobiales	 Xanthobacteraceae	 uncultured	 Ambiguous_taxa	1	0	0	0.000837225	0	6	-0.583717232	0
+FPLS01023412.12.1532	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Chthoniobacter	 metagenome	1	0	0	0.042907602	0	3	-0.77321177	0
+FPLS01025427.9.1500	Bacteria	 Gemmatimonadetes	 Gemmatimonadetes	 Gemmatimonadales	 Gemmatimonadaceae	 uncultured	 Ambiguous_taxa	3	305	1993	0.044922726	0.333333333	3	-0.269320954	0
+FPLS01027209.11.1516	Bacteria	 Actinobacteria	 Thermoleophilia	 Solirubrobacterales	 67-14	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	8.06e-99	0	57	0	0
+FPLS01034545.9.1536	Bacteria	 Actinobacteria	 Thermoleophilia	 Gaiellales	 uncultured	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	8.06e-99	0	50	0	0
+FPLS01036854.16.1552	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Chthoniobacter	 Ambiguous_taxa	2	5	5	1.11e-59	0	8	0	0
+FPLS01037614.13.1517	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 Terrimonas	 Ambiguous_taxa	1	0	0	0.007601138	0	3	-0.77321177	0
+FPLS01039589.11.1546	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 Sandaracinaceae	 uncultured	 Ambiguous_taxa	1	0	0	0.013181144	0	3	-0.77321177	0
+FPLS01040234.20.1521	Bacteria	 Bacteroidetes	 Bacteroidia	 Sphingobacteriales	 KD3-93	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.001158188	0	2	-0.847511447	0
+FPLS01044982.10.1479	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Acetobacterales	 Acetobacteraceae	 uncultured	NA	1	0	0	6.64e-05	0	2	-0.847511447	0
+FPLS01047175.12.1456	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Caulobacterales	 Hyphomonadaceae	 SWB02	 Ambiguous_taxa	3	430.8461739	2797	0.000855618	0	1	0.251132651	0
+FPLS01051208.10.1550	Bacteria	 Acidobacteria	 Blastocatellia (Subgroup 4)	 Pyrinomonadales	 Pyrinomonadaceae	 RB41	 Ambiguous_taxa	5	837.661329	3611	0.008083708	0.2	4	1.059145827	0
+FPLS01051218.22.1526	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	 Ambiguous_taxa	11	1978.370539	12587	0.20812634	0.272727273	3	1.494296905	0.165289256
+FPLS01051879.12.1515	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Microscillaceae	 uncultured	 uncultured bacterium	1	0	0	0.014644036	0	3	-0.77321177	0
+FPLS01054308.18.1559	Bacteria	 Rokubacteria	 NC10	 Rokubacteriales	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	2	305	3253	1.41e-08	0	7	0.301511345	0
+FPLS01057749.14.1522	Bacteria	 Actinobacteria	 MB-A2-108	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	3	305	1493	0.000428898	0.333333333	4	-0.341659944	0.444444444
+FQ859183.1179124.1180623	Bacteria	 Bacteroidetes	 Bacteroidia	 Flavobacteriales	 Flavobacteriaceae	 Flavobacterium	 Ambiguous_taxa	2	8	8	2.12e-59	0	8	0	0
+FR687425.1.1464	Bacteria	 Planctomycetes	 Phycisphaerae	 Tepidisphaerales	 WD2101 soil group	 uncultured bacterium	 uncultured bacterium	4	261.5860815	5266	0.007639166	0	1	0.251132651	0.375
+FR687474.1.1514	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	3	123.5417258	681	0.003660958	0.333333333	4	0.125275313	0
+FR687499.1.1527	Bacteria	 Acidobacteria	 Blastocatellia (Subgroup 4)	 Pyrinomonadales	 Pyrinomonadaceae	 RB41	 Ambiguous_taxa	1	0	0	1.34e-76	0	12	-1	0
+FR687541.1.1483	Bacteria	 Gemmatimonadetes	 Gemmatimonadetes	 Gemmatimonadales	 Gemmatimonadaceae	 uncultured	 uncultured bacterium	1	0	0	0.002440132	0	1	-0.612763669	0
+FR749736.1.1496	Bacteria	 Gemmatimonadetes	 Gemmatimonadetes	 Gemmatimonadales	 Gemmatimonadaceae	 uncultured	 Ambiguous_taxa	1	0	0	8.06e-99	0	36	0	0
+GQ010603.1.1367	Bacteria	 Actinobacteria	 Thermoleophilia	 Gaiellales	 uncultured	 uncultured bacterium	 uncultured bacterium	1	0	0	0.000242373	0	1	-0.612763669	0
+GQ263797.1.1435	Bacteria	 Chloroflexi	 Anaerolineae	 SBR1031	 A4b	 uncultured bacterium	 uncultured bacterium	3	479.6562757	6630	0.002713182	0	2	-0.195579565	0
+GQ263828.1.1456	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Cytophagaceae	 Sporocytophaga	NA	2	7.871241345	67	0.000539823	0	0	0	0
+GQ264367.1.1450	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Microscillaceae	 Ohtaekwangia	 Ambiguous_taxa	3	309.965701	1063	0.061612092	0	3	-0.269320954	0
+GQ264467.1.1434	Bacteria	 Chloroflexi	 Dehalococcoidia	 S085	NA	NA	NA	3	276.224706	4019	0.00169507	0	2	-0.195579565	0
+GQ302567.1.1523	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	2	139.5025439	1486	0.000483197	0	4	-0.341659944	0
+GQ396836.1.1487	Bacteria	 Acidobacteria	 Blastocatellia (Subgroup 4)	 Blastocatellales	 Blastocatellaceae	 JGI 0001001-H03	NA	1	0	0	8.06e-99	0	54	0	0
+GQ396899.1.1522	Bacteria	 Acidobacteria	 Subgroup 17	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	0.010804557	0	3	-0.77321177	0
+GQ396918.1.1494	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 Ferruginibacter	 Ambiguous_taxa	1	0	0	0.001427474	0	2	-0.847511447	0
+GQ472352.1.1524	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	NA	NA	1	0	0	8.06e-99	0	37	0	0
+GQ487889.1.1462	Bacteria	 Chloroflexi	 JG30-KF-CM66	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	13	3908.733662	28200	0.02842252	0.012820513	1	3.274769771	0.378698225
+GQ500707.1.1511	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Salinisphaerales	 Solimonadaceae	 Polycyclovorans	NA	3	96.77775555	875	0.045970499	0.333333333	3	-0.521266362	0.444444444
+GQ500729.1.1524	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Oligoflexales	 0319-6G20	NA	NA	2	3.482705548	53	0.004391203	0	1	-0.612763669	0.5
+GQ500734.1.1500	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Gammaproteobacteria Incertae Sedis	 Unknown Family	 Acidibacter	 uncultured bacterium	1	0	0	0.02959495	0	3	-0.77321177	0
+GQ500782.1.1482	Bacteria	 Planctomycetes	 Planctomycetacia	 Pirellulales	 Pirellulaceae	 Pirellula	 Ambiguous_taxa	4	222.1128689	1425	0.026190742	0.333333333	4	0.125275313	0.375
+GU444062.1.1486	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Microscillaceae	 uncultured	 Ambiguous_taxa	1	0	0	8.06e-99	0	55	0	0
+GU444072.1.1508	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Verrucomicrobiales	 Rubritaleaceae	 Luteolibacter	NA	2	0	0	3.23e-59	1	8	0	0
+GU598593.1.1449	Bacteria	 Acidobacteria	 Acidobacteriia	 Solibacterales	 Solibacteraceae (Subgroup 3)	 Bryobacter	 Ambiguous_taxa	3	665.7613566	4371	0.004736795	0	1	-0.180815509	0.444444444
+GU727713.1.1477	Bacteria	 Acidobacteria	 Acidobacteriia	 Acidobacteriales	 uncultured	 Ambiguous_taxa	 Ambiguous_taxa	9	5792.807399	62235	0.020880757	0.055555556	2	0.782318259	0.49382716
+HE602796.1.1399	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Microscillaceae	 uncultured	 Ambiguous_taxa	3	0	0	0.1215852	1	3	-0.269320954	0
+HE818627.1.1450	Bacteria	 Gemmatimonadetes	 Gemmatimonadetes	 Gemmatimonadales	 Gemmatimonadaceae	 uncultured	NA	3	409.172329	3222	0.000912724	0	2	-0.521545506	0.444444444
+HF558627.1.1486	Bacteria	 Planctomycetes	 Planctomycetacia	 Pirellulales	 Pirellulaceae	 uncultured	 Ambiguous_taxa	1	0	0	8.06e-99	0	40	0	0
+HG917262.1.1473	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Azospirillales	 Azospirillaceae	 Skermanella	 Ambiguous_taxa	1	0	0	8.06e-99	0	49	0	0
+HG917487.1.1476	Bacteria	 Planctomycetes	 OM190	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	0.018279492	0	5	-0.689399745	0
+HM069101.1.1551	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Xiphinematobacteraceae	 Candidatus Xiphinematobacter	 uncultured bacterium	1	0	0	8.06e-99	0	57	0	0
+HM131973.1.1518	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	NA	NA	2	41.3547619	65	0.012706289	0	4	-0.341659944	0
+HM459614.1.1496	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	 Ambiguous_taxa	3	305	861	0.002827237	0.333333333	1	0.251132651	0
+HQ011714.1.1210	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Hymenobacteraceae	 Adhaeribacter	NA	1	0	0	8.06e-99	0	53	0	0
+HQ114086.1.1454	Bacteria	 Bacteroidetes	 Bacteroidia	 Sphingobacteriales	 AKYH767	 uncultured bacterium	 uncultured bacterium	2	0	0	0.039659761	1	3	-0.521266362	0
+HQ114142.1.1475	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 uncultured bacterium	 uncultured bacterium	7	1033.131111	4432	0.066535584	0.047619048	4	1.526081084	0.244897959
+HQ114171.1.1446	Bacteria	 Proteobacteria	 Deltaproteobacteria	 SAR324 clade(Marine group B)	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	2	5.542418718	91	0.002196371	0	1	-0.612763669	0.5
+HQ114187.1.1493	Bacteria	 Latescibacteria	 Latescibacteria	 Latescibacterales	 Latescibacteraceae	 uncultured bacterium	 uncultured bacterium	5	2567.199444	15464	0.038362319	0.1	4	0.125275313	0.56
+HQ119291.1.1498	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	 uncultured bacterium	1	0	0	6.54e-67	0	13	-0.5	0
+HQ119341.1.1523	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	3	307.3690476	2748	0.012176563	0	3	-0.269320954	0
+HQ119594.1.1480	Bacteria	 Cyanobacteria	 Sericytochromatia	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	0.001934685	0	1	-0.612763669	0
+HQ119617.1.1536	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Candidatus Udaeobacter	 Ambiguous_taxa	3	1.4	4	0.013540813	0.666666667	6	0.044901326	0
+HQ119662.1.1427	Bacteria	 Planctomycetes	 Planctomycetacia	 Isosphaerales	 Isosphaeraceae	 Singulisphaera	NA	1	0	0	0.000495082	0	1	-0.612763669	0
+HQ119950.1.1515	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Chthoniobacter	 uncultured bacterium	1	0	0	8.06e-99	0	56	0	0
+HQ120544.1.1501	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Saprospiraceae	 uncultured	 Ambiguous_taxa	9	346.3621445	2322	0.210077329	0.25	3	1.242351496	0
+HQ120613.1.1458	Bacteria	 Chloroflexi	 Anaerolineae	 SBR1031	 A4b	 uncultured bacterium	 uncultured bacterium	2	305	2531	0.000537927	0	2	-0.521545506	0
+HQ166693.1.1493	Bacteria	 Acidobacteria	 Subgroup 5	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	4	826.2794122	4210	0.036457026	0	4	-0.341659944	0.625
+HQ166695.1.1490	Bacteria	 Planctomycetes	 Planctomycetacia	 Pirellulales	 Pirellulaceae	 Pirellula	 Ambiguous_taxa	2	0	0	0.034782017	1	5	-0.689399745	0.5
+HQ166699.1.1541	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	5	1473.594359	7393	0.002657951	0.2	4	0.59221057	0.32
+HQ269171.1.1015	Archaea	 Thaumarchaeota	 Nitrososphaeria	 Nitrososphaerales	 Nitrososphaeraceae	 uncultured archaeon	 uncultured archaeon	2	2	2	2.17e-76	0	12	1	0
+HQ330573.1.1396	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Steroidobacterales	 Steroidobacteraceae	 uncultured	 Ambiguous_taxa	1	0	0	8.06e-99	0	50	0	0
+HQ538636.1.1505	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Xanthomonadales	 Rhodanobacteraceae	 uncultured	 uncultured bacterium	3	153.0772645	1217	0.000639985	0	0	0.825722824	0
+HQ595217.1.1516	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Oligoflexales	 0319-6G20	 uncultured bacterium	 uncultured bacterium	1	0	0	8.06e-99	0	45	0	0
+HQ597135.1.1484	Bacteria	 Acidobacteria	 Subgroup 5	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.001158188	0	2	-0.847511447	0
+HQ597338.1.1480	Bacteria	 Acidobacteria	 Subgroup 5	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.000147373	0	16	0	0
+HQ597819.1.1531	Bacteria	 Acidobacteria	 Subgroup 6	NA	NA	NA	NA	9	3233.257915	24726	0.126550552	0.083333333	3	-0.017375545	0.49382716
+HQ597996.1.1457	Bacteria	 Acidobacteria	 Acidobacteriia	 Solibacterales	 Solibacteraceae (Subgroup 3)	 Candidatus Solibacter	 Ambiguous_taxa	7	2524.849712	29941	0.002026741	0	2	0.456352318	0.408163265
+HQ598262.1.1507	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	2	0	0	0.012067539	1	3	-0.521266362	0
+HQ598294.1.1470	Bacteria	 Acidobacteria	 Acidobacteriia	 Acidobacteriales	 uncultured	 Ambiguous_taxa	 Ambiguous_taxa	10	5292.579668	61832	0.025540599	0	2	0.456352318	0.68
+HQ598900.1.1469	Bacteria	 Acidobacteria	 Acidobacteriia	 Solibacterales	 Solibacteraceae (Subgroup 3)	 Candidatus Solibacter	 Ambiguous_taxa	4	653.3205969	12291	0.000346963	0	0	0.825722824	0.375
+HQ622736.1.1513	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 Archangiaceae	 Anaeromyxobacter	NA	3	134.2950096	1472	0.014906908	0.333333333	6	0.044901326	0
+HQ674886.1.1499	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	 Ambiguous_taxa	2	93.15479593	1532	0.000405312	0	2	-0.521545506	0
+HQ674928.1.1497	Bacteria	 Gemmatimonadetes	 Gemmatimonadetes	 Gemmatimonadales	 Gemmatimonadaceae	 Gemmatimonas	 Ambiguous_taxa	5	726.0505276	4507	0.006473117	0.1	1	0.683080811	0.32
+HQ697548.1.1524	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 Polyangiaceae	 uncultured	 Ambiguous_taxa	2	0	0	0.043556902	1	3	-0.521266362	0
+HQ727625.1.1521	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 Haliangiaceae	 Haliangium	 Ambiguous_taxa	4	591.0659511	5259	0.079191852	0.166666667	3	-0.269320954	0.375
+HQ729781.1.1520	Bacteria	 Acidobacteria	 Subgroup 6	NA	NA	NA	NA	2	1	1	1.45e-82	0	17	0	0
+HQ863972.1.1502	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	 Ambiguous_taxa	2	0	0	0.002788931	1	1	-0.180815509	0
+HQ863981.1.1509	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Nitrosomonadaceae	 IS-44	 uncultured bacterium	16	4245.11178	28744	0.009387852	0.016666667	2	2.738113906	0.4140625
+HQ864072.1.1487	Bacteria	 Gemmatimonadetes	 Gemmatimonadetes	 Gemmatimonadales	 Gemmatimonadaceae	 uncultured	 uncultured bacterium	3	50.07917186	322	0.007881328	0.333333333	1	0.251132651	0
+JADL01000008.4216.5686	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Elsterales	 uncultured	NA	NA	5	725.7738498	11375	0.003524727	0	2	0.130386376	0.32
+JF428950.1.1509	Bacteria	 Acidobacteria	 Holophagae	 Subgroup 7	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	2	17.66845758	221	0.005441196	0	1	-0.180815509	0
+JF429038.1.1518	Bacteria	 Actinobacteria	 Thermoleophilia	 Gaiellales	 uncultured	 Ambiguous_taxa	 Ambiguous_taxa	3	570.8507726	6806	0.001563101	0	2	-0.195579565	0
+JF429061.1.1490	Bacteria	 Acidobacteria	 Acidobacteriia	 Acidobacteriales	 uncultured	 Ambiguous_taxa	 Ambiguous_taxa	13	5603.125152	50283	0.00666948	0	2	2.086182023	0.390532544
+JF429110.1.1493	Bacteria	 Actinobacteria	 Actinobacteria	 Frankiales	 Frankiaceae	 Jatrophihabitans	 Ambiguous_taxa	1	0	0	1.4e-05	0	0	-0.825722824	0
+JF429136.1.1504	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 SC-I-84	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.003150966	0	2	-0.847511447	0
+JF703511.1.1441	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Xanthomonadales	 Rhodanobacteraceae	 uncultured	NA	1	0	0	8.06e-99	0	49	0	0
+JF703540.1.1422	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Microscillaceae	 uncultured	NA	3	209.3965805	1145	0.037948386	0	5	-0.266864417	0.444444444
+JF776925.1.1478	Bacteria	 Planctomycetes	 OM190	NA	NA	NA	NA	4	772.189153	7600	0.000955924	0	0	0.825722824	0.375
+JF830203.1.1537	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Desulfarculales	 Desulfarculaceae	 uncultured	 Ambiguous_taxa	1	0	0	0.00082282	0	2	-0.847511447	0
+JF833458.1.1475	Bacteria	 Chloroflexi	 AD3	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	9	1646.194581	26952	0.006484415	0	2	1.1082842	0.345679012
+JF833872.1.1526	Bacteria	 Rokubacteria	 NC10	 Rokubacteriales	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	3	911	9755	1.13e-07	0	7	1.507556723	0
+JF833933.1.1527	Bacteria	 Rokubacteria	 NC10	 Rokubacteriales	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	2	1208	13000	8.87e-07	0	7	0.301511345	0
+JN038614.1.1527	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 Ambiguous_taxa	 Ambiguous_taxa	6	335.1612987	1791	0.07105741	0.2	3	0.486515271	0
+JN038691.1.1501	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 BIrii41	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.000308195	0	2	-0.847511447	0
+JN038717.1.1516	Bacteria	 Latescibacteria	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	6	130.2530922	3178	0.17994047	0.8	3	0.486515271	0
+JN178076.1.1488	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Sphingomonadales	 Sphingomonadaceae	 Sphingomonas	 Ambiguous_taxa	8	6553.286191	35749	0.122227512	0.142857143	3	0.234569863	0.46875
+JN178270.1.1481	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Sphingomonadales	 Sphingomonadaceae	 Sphingomonas	 Ambiguous_taxa	3	82.93325615	497	0.012292702	0.666666667	4	0.125275313	0
+JN178446.1.1510	Bacteria	 Acidobacteria	 Blastocatellia (Subgroup 4)	 Blastocatellales	 Blastocatellaceae	 JGI 0001001-H03	 uncultured bacterium	1	0	0	8.06e-99	0	36	0	0
+JN178821.1.1477	Bacteria	 Chloroflexi	 Anaerolineae	 SBR1031	 A4b	 Ambiguous_taxa	 Ambiguous_taxa	5	0	0	0.168206906	1	3	0.234569863	0
+JN417573.1.1521	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 Terrimonas	 Ambiguous_taxa	12	1374.544309	7973	0.251918307	0.257575758	3	1.998187721	0
+JN417578.1.1474	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhizobiales	 KF-JG30-B3	 Ambiguous_taxa	 Ambiguous_taxa	4	873.8242648	3309	0.006451547	0.166666667	2	-0.195579565	0.375
+JN417583.1.1527	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 TRA3-20	 Ambiguous_taxa	 Ambiguous_taxa	3	2	3	0.014035021	0.333333333	5	-0.266864417	0.444444444
+JN417600.1.1512	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Hymenobacteraceae	 Adhaeribacter	 Ambiguous_taxa	1	0	0	8.06e-99	0	53	0	0
+JN615820.1.1390	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Saprospiraceae	 uncultured	 uncultured bacterium	2	9.756611354	180	0.025574553	0	5	-0.266864417	0
+JN825571.1.1572	Bacteria	 Planctomycetes	 Planctomycetacia	 Gemmatales	 Gemmataceae	 uncultured	 uncultured bacterium	2	305	2006	0.000524109	0	1	-0.180815509	0
+JQ311910.1.1435	Bacteria	 Acidobacteria	 Blastocatellia (Subgroup 4)	 Pyrinomonadales	 Pyrinomonadaceae	 RB41	 uncultured bacterium	2	104.9049815	731	0.001237143	0	0	-0.825722824	0.5
+JQ323145.1.1499	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Saprospiraceae	 uncultured	 Ambiguous_taxa	1	0	0	4.42e-05	0	0	-0.825722824	0
+JQ427871.1.1509	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 BIrii41	 Ambiguous_taxa	 Ambiguous_taxa	5	965.5029349	5195	0.004012961	0	1	0.683080811	0.32
+JQ655782.1.1495	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	 Ambiguous_taxa	12	4608.607092	50861	0.009924267	0.03030303	2	2.086182023	0.277777778
+JQ682871.1.1504	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Hymenobacteraceae	 Hymenobacter	 Ambiguous_taxa	3	323.5730833	2727	0.000310722	0	0	0	0.444444444
+JQ684424.1.914	Archaea	 Euryarchaeota	 Thermoplasmata	 Marine Group II	 uncultured archaeon	 uncultured archaeon	 uncultured archaeon	5	686.1076786	4225	0.052311987	0.2	5	0.578206237	0.32
+JQ769695.1.1487	Bacteria	 Acidobacteria	 Acidobacteriia	 Solibacterales	 Solibacteraceae (Subgroup 3)	 Bryobacter	 uncultured bacterium	1	0	0	0.001335152	0	4	-0.808595201	0
+JQ861342.1.1534	Bacteria	 Planctomycetes	 BD7-11	 uncultured planctomycete	 uncultured planctomycete	 uncultured planctomycete	 uncultured planctomycete	1	0	0	7.26e-83	0	20	0	0
+JQ978538.1.1535	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	NA	NA	2	8.257081807	55	0.057551638	0	3	-0.521266362	0
+JQ978549.1.1515	Bacteria	 Acidobacteria	 Blastocatellia (Subgroup 4)	 Pyrinomonadales	 Pyrinomonadaceae	 RB41	 uncultured bacterium	1	0	0	0.001222164	0	2	-0.847511447	0
+JQ978570.1.1500	Bacteria	 Gemmatimonadetes	 Gemmatimonadetes	 Gemmatimonadales	 Gemmatimonadaceae	 uncultured	 Ambiguous_taxa	7	1818.392788	7200	0.019778834	0.142857143	1	1.546977131	0.244897959
+JQ978577.1.1483	Bacteria	 Acidobacteria	 Subgroup 11	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	18	4016.346102	25269	0.148166991	0.045751634	5	3.535953529	0.549382716
+JQ978578.1.1521	Bacteria	 Acidobacteria	 Subgroup 22	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	4	6	6	2.62e-66	0	13	2	0
+JQ978618.1.1464	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Dongiales	 Dongiaceae	 Dongia	 Ambiguous_taxa	1	0	0	0.018279492	0	5	-0.689399745	0
+JQ978620.1.1534	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Candidatus Udaeobacter	 Ambiguous_taxa	4	782.0041394	4886	0.05955332	0.166666667	6	0.044901326	0.375
+JQ978850.1.1513	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	4	1994.087571	19134	0.018949844	0.166666667	4	-0.341659944	0.625
+JX025746.1.1509	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	8.06e-99	0	44	0	0
+JX025749.1.1465	Bacteria	 Acidobacteria	 Acidobacteriia	 Acidobacteriales	 uncultured	 Ambiguous_taxa	 Ambiguous_taxa	2	81.49978378	442	0.001551098	0	1	-0.612763669	0.5
+JX079376.1.1541	Bacteria	 Actinobacteria	 Thermoleophilia	 Solirubrobacterales	 67-14	NA	NA	1	0	0	5.29e-05	0	4	-0.808595201	0
+JX079440.1.1482	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Sphingomonadales	 Sphingomonadaceae	 Sphingomonas	NA	7	1519.403502	17895	0.006619505	0	1	1.978925291	0
+JX080268.1.1494	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	NA	NA	2	57.3397816	1033	0.000285306	0	2	-0.521545506	0
+JX133357.1.1505	Bacteria	 Actinobacteria	 Thermoleophilia	 Solirubrobacterales	 67-14	 Ambiguous_taxa	 Ambiguous_taxa	5	567.7455801	7348	0.002051652	0	2	0.456352318	0
+JX133575.1.1516	Bacteria	 Chloroflexi	 Ktedonobacteria	 Ktedonobacterales	 JG30-KF-AS9	 uncultured bacterium	 uncultured bacterium	5	521.9372222	5587	0.000260936	0	2	0.130386376	0.32
+JX406211.1.1461	Bacteria	 Planctomycetes	 Phycisphaerae	 Tepidisphaerales	 WD2101 soil group	 uncultured bacterium	 uncultured bacterium	10	2203.064982	34641	0.01157059	0	2	1.760216082	0.18
+JX489918.1.1504	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Gammaproteobacteria Incertae Sedis	 Unknown Family	NA	NA	1	0	0	1.79e-70	0	9	-0.75	0
+JX505213.1.1459	Bacteria	 Acidobacteria	 Holophagae	 Subgroup 7	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.003506511	0	1	-0.612763669	0
+JX898177.1.1545	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	8	347.6623223	3464	0.1910621	0.428571429	3	0.990406088	0
+KC138685.1.1557	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	2	228.6290736	2641	0.026722466	0	3	-0.77321177	0.5
+KC283062.1.1542	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Nitrosomonadaceae	 MND1	 Ambiguous_taxa	10	2709.912003	15385	0.011938251	0.088888889	4	2.926886856	0.18
+KC331263.1.1475	Bacteria	 Gemmatimonadetes	 Gemmatimonadetes	 Gemmatimonadales	 Gemmatimonadaceae	 uncultured	 Ambiguous_taxa	2	305	2835	0.001964587	0	1	-0.180815509	0
+KC331286.1.1513	Bacteria	 Gemmatimonadetes	 Gemmatimonadetes	 Gemmatimonadales	 Gemmatimonadaceae	 uncultured	NA	1	0	0	0.015612653	0	3	-0.77321177	0
+KC331417.1.1467	Bacteria	 Chloroflexi	 Anaerolineae	 SBR1031	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	3	0	0	0.093006624	1	3	-0.269320954	0
+KC502961.1.1477	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhizobiales	 Rhizobiaceae	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.005542156	0	3	-0.77321177	0
+KC541054.1.1549	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	6	768.8313582	4600	0.101138274	0.266666667	3	0.486515271	0
+KC541131.1.1550	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	3	28.12088356	295	0.008578814	0.333333333	5	0.15567091	0
+KC541167.1.1558	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Candidatus Udaeobacter	 uncultured bacterium	1	0	0	8.06e-99	0	41	0	0
+KC554381.1.1529	Bacteria	 Actinobacteria	 Actinobacteria	 Micromonosporales	 Micromonosporaceae	 Krasilnikovia	 uncultured bacterium	1	0	0	3.44e-05	0	0	-0.825722824	0
+KC554426.1.1520	Bacteria	 Actinobacteria	 Actinobacteria	 Propionibacteriales	 Propionibacteriaceae	 Microlunatus	 Ambiguous_taxa	4	878.8048758	7447	0.001567539	0	0	0.825722824	0.375
+KC554630.1.1514	Bacteria	 Actinobacteria	 Actinobacteria	 Micromonosporales	 Micromonosporaceae	 Longispora	 uncultured bacterium	1	0	0	8.06e-99	0	40	0	0
+KC554998.1.1542	Bacteria	 Actinobacteria	 Thermoleophilia	 Gaiellales	 Gaiellaceae	 Gaiella	 Ambiguous_taxa	8	1859.639152	25965	0.009705283	0	2	1.434250141	0
+KC682952.1.1571	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 TRA3-20	NA	NA	3	227.9918379	2457	0.000675178	0	4	0.125275313	0
+KF037870.1.1478	Bacteria	 Bacteroidetes	 Ignavibacteria	 OPB56	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	8.06e-99	0	43	0	0
+KF070914.1.1353	Bacteria	 Actinobacteria	 MB-A2-108	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	4.28e-05	0	0	-0.825722824	0
+KF494652.1.1520	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.000327914	0	4	-0.808595201	0
+KF712605.1.1520	Bacteria	 Proteobacteria	 Deltaproteobacteria	 NB1-j	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	2	0	0	0.047874442	1	5	-0.689399745	0.5
+KF712624.1.1524	Bacteria	 Acidobacteria	 Subgroup 22	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	4	732.3668953	6707	0.001317248	0	2	0.130386376	0
+KF712859.1.1532	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 uncultured bacterium	 uncultured bacterium	1	0	0	0.000997294	0	4	-0.808595201	0
+KF712860.1.1490	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Microscillaceae	 uncultured	 Ambiguous_taxa	9	1051.139221	11283	0.245711395	0.388888889	3	0.990406088	0.197530864
+KF912975.1.1520	Bacteria	 Gemmatimonadetes	 S0134 terrestrial group	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	0.02567673	0	3	-0.77321177	0
+KF956755.1.1539	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Gammaproteobacteria Incertae Sedis	 Unknown Family	 Acidibacter	 Ambiguous_taxa	1	0	0	0.001934685	0	1	-0.612763669	0
+KJ161326.1.1708	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Pseudomonadales	 Pseudomonadaceae	 Pseudomonas	NA	1	0	0	8.06e-99	0	48	0	0
+KJ191792.1.1485	Bacteria	 Acidobacteria	 Blastocatellia (Subgroup 4)	 Blastocatellales	 Blastocatellaceae	 JGI 0001001-H03	NA	2	0.333333333	1	0.00424987	0	6	-0.269407953	0
+KJ191811.1.1479	Bacteria	 Acidobacteria	 Acidobacteriia	 Acidobacteriales	 uncultured	 uncultured Acidobacteria bacterium	 uncultured Acidobacteria bacterium	1	0	0	0.010407112	0	6	-0.583717232	0
+KJ191819.1.1479	Bacteria	 Acidobacteria	 Acidobacteriia	 Acidobacteriales	 uncultured	NA	NA	3	375.233269	4156	0.000358376	0	0	0	0.444444444
+KJ191909.1.1513	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Burkholderiaceae	 Burkholderia-Caballeronia-Paraburkholderia	NA	9	1375.893092	20049	0.011329879	0	2	0.130386376	0.49382716
+KJ192031.1.1509	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 Haliangiaceae	 Haliangium	 Ambiguous_taxa	1	0	0	5.47e-05	0	2	-0.847511447	0
+KJ192070.1.1494	Bacteria	 Gemmatimonadetes	 Gemmatimonadetes	 Gemmatimonadales	 Gemmatimonadaceae	 Gemmatimonas	 uncultured bacterium	1	0	0	0.000495082	0	1	-0.612763669	0
+KJ192075.1.1496	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	 Ambiguous_taxa	1	0	0	0.000155513	0	15	0	0
+KJ192076.1.1495	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 Ferruginibacter	 Ambiguous_taxa	1	0	0	8.06e-99	0	56	0	0
+KJ192125.1.1447	Bacteria	 Planctomycetes	 Planctomycetacia	 Pirellulales	 Pirellulaceae	 Pirellula	NA	1	0	0	0.000816654	0	1	-0.612763669	0
+KJ540668.1.1436	Bacteria	 Planctomycetes	 Phycisphaerae	 Tepidisphaerales	 WD2101 soil group	 uncultured bacterium	 uncultured bacterium	1	0	0	6.54e-67	0	13	-0.5	0
+KM108635.1.1515	Bacteria	 Acidobacteria	 Subgroup 6	NA	NA	NA	NA	4	667.5984506	5092	0.003974118	0.333333333	4	0.59221057	0
+KM200371.1.1496	Bacteria	 Acidobacteria	 Acidobacteriia	 Subgroup 2	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.001158188	0	2	-0.847511447	0
+KM200465.1.1483	Bacteria	 Planctomycetes	 Planctomycetacia	 Isosphaerales	 Isosphaeraceae	 Singulisphaera	 Ambiguous_taxa	3	305	1277	0.006786241	0.333333333	6	0.044901326	0
+KM200751.1.1559	Bacteria	 Acidobacteria	 Subgroup 17	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.000816654	0	1	-0.612763669	0
+KM823762.1.1546	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	10	2784.289423	43688	0.011897357	0	2	1.760216082	0.18
+KM978287.1.1535	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Burkholderiaceae	 Ralstonia	 Ambiguous_taxa	1	0	0	8.06e-99	0	52	0	0
+KP162203.1.1518	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	8.06e-99	0	54	0	0
+KP411861.1.1477	Bacteria	 Bacteroidetes	 Bacteroidia	 Cytophagales	 Microscillaceae	 uncultured	 uncultured bacterium	2	0	0	0.056088746	1	3	-0.521266362	0
+KP745072.1.1450	Bacteria	 Gemmatimonadetes	 Gemmatimonadetes	 Gemmatimonadales	 Gemmatimonadaceae	 Gemmatimonas	 uncultured bacterium	1	0	0	0.000193389	0	0	-0.825722824	0
+KT905712.1.1543	Bacteria	 Actinobacteria	 Thermoleophilia	 uncultured	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	0.000777673	0	4	-0.808595201	0
+KX239185.1.1533	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 Ambiguous_taxa	 uncultured bacterium	10	1813.128438	27000	0.002498116	0	2	1.760216082	0.18
+KX239212.1.1482	Bacteria	 Acidobacteria	 Blastocatellia (Subgroup 4)	 Blastocatellales	 Blastocatellaceae	 JGI 0001001-H03	 Ambiguous_taxa	1	0	0	0.003975486	0	6	-0.583717232	0
+KX753034.1.1486	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Elsterales	 uncultured	 uncultured bacterium	 uncultured bacterium	1	0	0	1.79e-70	0	9	-0.75	0
+KY190480.1.1482	Bacteria	 Planctomycetes	 OM190	NA	NA	NA	NA	3	144.8788544	599	0.026757723	0.333333333	3	-0.269320954	0
+KY190548.1.1462	Bacteria	 Planctomycetes	 Planctomycetacia	 Gemmatales	 Gemmataceae	 uncultured	NA	2	107.7563745	1111	0.00095098	0	1	-0.612763669	0.5
+LC121999.1.1497	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhizobiales	 A0839	 uncultured bacterium	 uncultured bacterium	2	0	0	0.042072468	1	3	-0.521266362	0
+LMIW01000001.1349490.1351021	Bacteria	 Actinobacteria	 Actinobacteria	 Micrococcales	 Intrasporangiaceae	 Phycicoccus	 Ambiguous_taxa	1	0	0	7.26e-83	0	18	0	0
+LN563846.1.1413	Bacteria	 Planctomycetes	 Phycisphaerae	 Pla1 lineage	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	8.06e-99	0	51	0	0
+LN570780.1.1389	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 BIrii41	 uncultured bacterium	 uncultured bacterium	1	0	0	8.06e-99	0	55	0	0
+LN572097.1.1296	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Caulobacterales	 Hyphomonadaceae	 Hirschia	 Ambiguous_taxa	1	0	0	0.02959495	0	3	-0.77321177	0
+LN573915.1.1394	Bacteria	 Planctomycetes	 OM190	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	8.06e-99	0	35	0	0
+LNNI01000005.225118.226745	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Pseudomonadales	 Pseudomonadaceae	 Pseudomonas	 Ambiguous_taxa	1	0	0	8.06e-99	0	48	0	0
+OTU_dn_1124	Bacteria	 Actinobacteria	 Actinobacteria	 Frankiales	 Acidothermaceae	 Acidothermus	 uncultured bacterium	7	3194.11966	34201	0.000443437	0	2	0.782318259	0.244897959
+OTU_dn_1211	Bacteria	 Planctomycetes	 Phycisphaerae	 Tepidisphaerales	 WD2101 soil group	 uncultured bacterium	 uncultured bacterium	1	0	0	8.06e-99	0	21	0	0
+OTU_dn_13712	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 TRA3-20	NA	NA	2	62.50664394	540	0.00155613	0	4	-0.341659944	0
+OTU_dn_140	Bacteria	 Actinobacteria	 0319-7L14	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	0.000230716	0	0	-0.825722824	0
+OTU_dn_147	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Salinisphaerales	 Solimonadaceae	 Polycyclovorans	NA	5	864.6506678	6466	0.002295371	0	0	1.651445648	0.32
+OTU_dn_162	Bacteria	 Zixibacteria	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	7.26e-83	0	19	0	0
+OTU_dn_17	Bacteria	 Planctomycetes	 OM190	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	2	561.6890806	3519	0.019752325	0	5	-0.689399745	0.5
+OTU_dn_178	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Verrucomicrobiales	 Verrucomicrobiaceae	 Roseimicrobium	 metagenome	3	305	964	0.002221945	0.333333333	4	0.125275313	0
+OTU_dn_183	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	NA	1	0	0	0.010407112	0	6	-0.583717232	0
+OTU_dn_188	Unassigned	NA	NA	NA	NA	NA	NA	3	308.1521341	3832	0.078575421	0	5	-0.266864417	0.444444444
+OTU_dn_189	Bacteria	 Actinobacteria	 Rubrobacteria	 Rubrobacterales	 Rubrobacteriaceae	 Rubrobacter	NA	3	332.1738815	7211	0.000113082	0	0	0.825722824	0
+OTU_dn_19	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Nitrosomonadaceae	 IS-44	 Ambiguous_taxa	5	432.6032189	6175	0.006245365	0	1	0.683080811	0.32
+OTU_dn_193	Bacteria	 Planctomycetes	 OM190	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	8.06e-99	0	47	0	0
+OTU_dn_2	Bacteria	 Planctomycetes	 Phycisphaerae	 Tepidisphaerales	 WD2101 soil group	NA	NA	1	0	0	8.06e-99	0	33	0	0
+OTU_dn_20	Bacteria	 Latescibacteria	NA	NA	NA	NA	NA	1	0	0	0.000308195	0	2	-0.847511447	0
+OTU_dn_207	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	NA	NA	1	0	0	0.000105558	0	1	-0.612763669	0
+OTU_dn_215	Bacteria	 Bacteroidetes	 Bacteroidia	 Chitinophagales	 Chitinophagaceae	 uncultured	 Ambiguous_taxa	1	0	0	0.00030541	0	2	-0.847511447	0
+OTU_dn_218	Bacteria	 Acidobacteria	 Subgroup 25	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	2	72.21414059	339	0.000155232	0	0	0	0
+OTU_dn_265	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 Nannocystaceae	 Nannocystis	NA	1	0	0	7.26e-83	0	19	0	0
+OTU_dn_274	Unassigned	NA	NA	NA	NA	NA	NA	3	1353.219714	7377	0.004716835	0	0	-0.825722824	0.666666667
+OTU_dn_287	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Desulfarculales	 Desulfarculaceae	 uncultured	NA	3	609	2191	0.001194551	0	16	0	0
+OTU_dn_295	Bacteria	 Bacteroidetes	 Ignavibacteria	 OPB56	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	0.000770496	0	1	-0.612763669	0
+OTU_dn_3	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 Nitrosomonadaceae	 MND1	 Ambiguous_taxa	1	0	0	7.26e-83	0	17	0	0
+OTU_dn_303	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Rhizobiales	 Rhizobiales Incertae Sedis	 Bauldia	 Ambiguous_taxa	2	34.70678085	162	7.5e-05	0	0	-0.825722824	0.5
+OTU_dn_304	Bacteria	 Planctomycetes	 Phycisphaerae	 Tepidisphaerales	 WD2101 soil group	 uncultured bacterium	 uncultured bacterium	6	1520.029137	26123	0.002581475	0	2	0.130386376	0.444444444
+OTU_dn_306	Bacteria	 Bacteroidetes	 Bacteroidia	 Sphingobacteriales	 AKYH767	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	8.06e-99	0	42	0	0
+OTU_dn_33	Bacteria	 Bacteroidetes	 Ignavibacteria	 Kryptoniales	 BSV26	 uncultured bacterium	 uncultured bacterium	2	86.08446979	349	0.003184787	0	1	-0.180815509	0
+OTU_dn_340	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Candidatus Udaeobacter	 uncultured bacterium	1	0	0	6.86e-05	0	0	-0.825722824	0
+OTU_dn_370	Bacteria	 Planctomycetes	 Planctomycetacia	 Gemmatales	 Gemmataceae	 uncultured	 uncultured bacterium	1	0	0	0.000155513	0	15	0	0
+OTU_dn_3986	Bacteria	 Acidobacteria	 Acidobacteriia	 Acidobacteriales	 uncultured	 Ambiguous_taxa	 Ambiguous_taxa	4	413.2814586	3766	0.003024378	0	2	0.130386376	0
+OTU_dn_4	Bacteria	 Chloroflexi	 Anaerolineae	 SBR1031	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	3	8.316666667	16	0.01548035	0.333333333	5	0.15567091	0
+OTU_dn_411	Bacteria	 Planctomycetes	 Phycisphaerae	 S-70	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	3.22e-05	0	2	-0.847511447	0
+OTU_dn_416	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Verrucomicrobiales	 Verrucomicrobiaceae	 Roseimicrobium	 metagenome	1	0	0	0.001222164	0	2	-0.847511447	0
+OTU_dn_45	Bacteria	 Chloroflexi	 TK10	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	5	502.5933457	7643	0.002475545	0	2	0.456352318	0
+OTU_dn_481	Bacteria	 Chloroflexi	 Anaerolineae	 SBR1031	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	6	2144.500628	21424	0.005720336	0	2	0.130386376	0.5
+OTU_dn_5	Bacteria	 Latescibacteria	 Latescibacteria	 Latescibacterales	 Latescibacteraceae	NA	NA	1	0	0	0.000852974	0	4	-0.808595201	0
+OTU_dn_5396	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Elsterales	 uncultured	 uncultured bacterium	 uncultured bacterium	1	0	0	6.54e-67	0	13	-0.5	0
+OTU_dn_5527	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Micropepsales	 Micropepsaceae	 uncultured	NA	5	804.8691258	13931	0.00055569	0	0	1.651445648	0.32
+OTU_dn_557	Bacteria	 Planctomycetes	 Planctomycetacia	 Gemmatales	 Gemmataceae	 uncultured	 uncultured bacterium	2	2093	22729	5.56e-05	0	7	-0.904534034	0.5
+OTU_dn_5613	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 TRA3-20	 uncultured bacterium	 uncultured bacterium	2	0.833333333	2	0.00014291	0	4	-0.341659944	0
+OTU_dn_5630	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 uncultured bacterium	 uncultured bacterium	1	0	0	0.001224366	0	2	-0.847511447	0
+OTU_dn_5754	Bacteria	 Planctomycetes	 Planctomycetacia	 Pirellulales	 Pirellulaceae	 Pirellula	NA	2	13.66953519	153	0.000418014	0	2	-0.521545506	0
+OTU_dn_608	Bacteria	 Proteobacteria	 Alphaproteobacteria	 Caulobacterales	 Hyphomonadaceae	 Hirschia	 uncultured bacterium	2	1	1	1.45e-82	0	18	0	0
+OTU_dn_62	Bacteria	 Latescibacteria	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	4	1625.512419	10880	0.000765625	0.166666667	2	-0.521545506	0.5
+OTU_dn_6326	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 Sandaracinaceae	 Sandaracinus	 uncultured bacterium	2	3	3	2.53e-70	0	9	0.5	0
+OTU_dn_7	Bacteria	 Actinobacteria	 MB-A2-108	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	8.06e-99	0	44	0	0
+OTU_dn_734	Bacteria	 Planctomycetes	 Planctomycetacia	 Gemmatales	 Gemmataceae	 Gemmata	 uncultured bacterium	1	0	0	7.26e-83	0	20	0	0
+OTU_dn_74	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Pedosphaerales	 Pedosphaeraceae	 uncultured bacterium	 uncultured bacterium	1	0	0	0.031079384	0	3	-0.77321177	0
+OTU_dn_787	Bacteria	 Chloroflexi	 Anaerolineae	 SBR1031	 uncultured bacterium	 uncultured bacterium	 uncultured bacterium	1	0	0	8.06e-99	0	43	0	0
+OTU_dn_820	Bacteria	 Proteobacteria	 Gammaproteobacteria	 Betaproteobacteriales	 A21b	 uncultured bacterium	 uncultured bacterium	1	0	0	8.06e-99	0	42	0	0
+OTU_dn_9	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 bacteriap25	 uncultured bacterium	 uncultured bacterium	3	453.7731922	3438	0.036444206	0.333333333	5	-0.689399745	0.666666667
+OTU_dn_972	Bacteria	 Planctomycetes	 Planctomycetacia	 Pirellulales	 Pirellulaceae	 uncultured	 Ambiguous_taxa	1	0	0	8.06e-99	0	21	0	0
+Y07576.1.1528	Bacteria	 Verrucomicrobia	 Verrucomicrobiae	 Chthoniobacterales	 Chthoniobacteraceae	 Candidatus Udaeobacter	 Ambiguous_taxa	1	0	0	8.06e-99	0	41	0	0
+Y07578.1.1494	Bacteria	 Firmicutes	 Bacilli	 Bacillales	 Bacillaceae	 Bacillus	 Ambiguous_taxa	3	242.1253138	2037	0.002080239	0	0	0	0.444444444
+Z95708.1.1548	Bacteria	 Acidobacteria	 Blastocatellia (Subgroup 4)	 11-24	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	0.00166219	0	4	-0.808595201	0
+Z95710.1.1542	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	1	0	0	5.47e-05	0	2	-0.847511447	0
+Z95727.1.1546	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	2	0	0	0.078918293	1	3	-0.521266362	0
+Z95733.1.1547	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	22	12207.97648	98825	0.429605978	0.147186147	3	3.509860172	0.318181818
+OTU_1	Fungi	Ascomycota	Sordariomycetes	Hypocreales	Nectriaceae	Fusarium	Fusarium sp 	1	0	0	1.56e-73	0	14	-0.577350269	0
+OTU_100	Fungi	Ascomycota	Sordariomycetes	Hypocreales	Nectriaceae	Gibberella	Gibberella fujikuroi	1	0	0	1.56e-73	0	14	-0.577350269	0
+OTU_1076	Fungi	Ascomycota	Sordariomycetes	Hypocreales	NA	NA	NA	1	0	0	8.06e-99	0	28	0	0
+OTU_1094	Fungi	NA	NA	NA	NA	NA	NA	1	0	0	8.06e-99	0	34	0	0
+OTU_1119	Fungi	Ascomycota	Leotiomycetes	Helotiales	NA	NA	NA	1	0	0	8.06e-99	0	22	0	0
+OTU_1129	Fungi	Ascomycota	Sordariomycetes	Sordariales	NA	NA	NA	2	63.8615954	580	0.001030704	0	0	-0.825722824	0.5
+OTU_1160	Fungi	Basidiomycota	Agaricomycetes	Agaricales	Tricholomataceae	Flagelloscypha	Flagelloscypha sp 	1	0	0	8.06e-99	0	25	0	0
+OTU_1161	Fungi	Ascomycota	Leotiomycetes	NA	NA	NA	NA	2	305	1748	0.003318519	0	10	1	0
+OTU_126	Fungi	Basidiomycota	Agaricomycetes	Agaricales	Agaricaceae	Lepiota	Lepiota subincarnata	1	0	0	8.06e-99	0	39	0	0
+OTU_1410	Fungi	Ascomycota	Sordariomycetes	Hypocreales	NA	NA	NA	1	0	0	8.06e-99	0	23	0	0
+OTU_15	Fungi	NA	NA	NA	NA	NA	NA	1	0	0	8.06e-99	0	26	0	0
+OTU_1539	Fungi	Basidiomycota	Tremellomycetes	Cystofilobasidiales	NA	NA	NA	1	0	0	7.6e-48	0	11	-0.729324957	0
+OTU_166	Fungi	Ascomycota	Sordariomycetes	Hypocreales	Nectriaceae	Fusarium	Fusarium oxysporum	3	3	3	4.69e-73	0	14	1.732050808	0
+OTU_1921	Fungi	Mortierellomycota	Mortierellomycetes	Mortierellales	Mortierellaceae	Mortierella	Mortierella exigua	1	0	0	8.06e-99	0	32	0	0
+OTU_211	Fungi	Ascomycota	Leotiomycetes	Helotiales	Incertae_sedis	Chalara	Chalara sp 	1	0	0	8.06e-99	0	24	0	0
+OTU_219	Fungi	Basidiomycota	Agaricomycetes	Auriculariales	NA	NA	NA	3	146.186186	1820	0.002375075	0	2	-0.195579565	0
+OTU_229	Fungi	Mortierellomycota	Mortierellomycetes	Mortierellales	Mortierellaceae	Mortierella	Mortierella sp 	1	0	0	8.06e-99	0	29	0	0
+OTU_246	Fungi	Ascomycota	Eurotiomycetes	Chaetothyriales	Herpotrichiellaceae	Exophiala	Exophiala equina	1	0	0	8.06e-99	0	34	0	0
+OTU_266	Fungi	NA	NA	NA	NA	NA	NA	1	0	0	8.06e-99	0	23	0	0
+OTU_271	Fungi	Mortierellomycota	Mortierellomycetes	Mortierellales	Mortierellaceae	NA	NA	1	0	0	0.00039764	0	2	-0.847511447	0
+OTU_272	Fungi	NA	NA	NA	NA	NA	NA	1	0	0	8.06e-99	0	31	0	0
+OTU_285	Fungi	NA	NA	NA	NA	NA	NA	1	0	0	8.06e-99	0	31	0	0
+OTU_2903	Fungi	Mortierellomycota	Mortierellomycetes	Mortierellales	Mortierellaceae	Mortierella	NA	1	0	0	8.06e-99	0	51	0	0
+OTU_3002	Fungi	Basidiomycota	Tremellomycetes	Cystofilobasidiales	NA	NA	NA	1	0	0	9.26e-48	0	11	-0.729324957	0
+OTU_3063	Fungi	Basidiomycota	Agaricomycetes	NA	NA	NA	NA	1	0	0	8.06e-99	0	30	0	0
+OTU_3076	Fungi	Ascomycota	NA	NA	NA	NA	NA	3	42.76827503	544	0.002717858	0.666666667	2	-0.195579565	0
+OTU_3079	Fungi	Basidiomycota	Tremellomycetes	Cystofilobasidiales	Mrakiaceae	NA	NA	6	15.5	16	2.8e-47	0.133333333	11	2.187974872	0
+OTU_314	Fungi	Mortierellomycota	Mortierellomycetes	Mortierellales	Mortierellaceae	Mortierella	Mortierella exigua	1	0	0	8.06e-99	0	32	0	0
+OTU_3172	Fungi	Basidiomycota	Agaricomycetes	Cantharellales	NA	NA	NA	1	0	0	8.06e-99	0	30	0	0
+OTU_3213	Fungi	NA	NA	NA	NA	NA	NA	1	0	0	8.06e-99	0	24	0	0
+OTU_3214	Fungi	Ascomycota	Leotiomycetes	NA	NA	NA	NA	1	0	0	0.000409409	0	10	-1	0
+OTU_3281	Fungi	Basidiomycota	Tremellomycetes	Cystofilobasidiales	NA	NA	NA	2	0	0	1.69e-47	1	11	-0.145864991	0
+OTU_3284	Fungi	Glomeromycota	Paraglomeromycetes	Paraglomerales	Paraglomeraceae	Paraglomus	NA	2	1	1	1.45e-82	0	19	0	0
+OTU_3294	Fungi	Basidiomycota	Tremellomycetes	Cystofilobasidiales	NA	NA	NA	2	0	0	1.69e-47	1	11	-0.145864991	0
+OTU_3442	Fungi	Ascomycota	Sordariomycetes	Hypocreales	Nectriaceae	NA	NA	1	0	0	8.06e-99	0	26	0	0
+OTU_3449	Fungi	Basidiomycota	Tremellomycetes	Cystofilobasidiales	NA	NA	NA	1	0	0	9.26e-48	0	11	-0.729324957	0
+OTU_3470	Fungi	Basidiomycota	Tremellomycetes	Cystofilobasidiales	NA	NA	NA	1	0	0	9.26e-48	0	11	-0.729324957	0
+OTU_3510	Fungi	Mortierellomycota	Mortierellomycetes	Mortierellales	Mortierellaceae	Mortierella	NA	1	0	0	8.06e-99	0	29	0	0
+OTU_3744	Fungi	Ascomycota	Sordariomycetes	Hypocreales	NA	NA	NA	1	0	0	8.06e-99	0	28	0	0
+OTU_375	Fungi	Basidiomycota	Tremellomycetes	Cystofilobasidiales	Mrakiaceae	Mrakia	Mrakia frigida	4	6.5	7	2.29e-47	0.333333333	11	1.02105494	0
+OTU_419	Fungi	NA	NA	NA	NA	NA	NA	1	0	0	8.06e-99	0	22	0	0
+OTU_453	Fungi	Ascomycota	Leotiomycetes	Helotiales	NA	NA	NA	3	42.76827503	544	0.002717858	0.666666667	2	-0.195579565	0
+OTU_646	Fungi	Basidiomycota	Agaricomycetes	Agaricales	Tricholomataceae	Flagelloscypha	Flagelloscypha sp 	1	0	0	8.06e-99	0	25	0	0
+OTU_74	Fungi	Ascomycota	Sordariomycetes	Hypocreales	NA	NA	NA	1	0	0	1.56e-73	0	14	-0.577350269	0
+OTU_762	Fungi	Ascomycota	Dothideomycetes	Pleosporales	Lophiostomataceae	Lophiostoma	Lophiostoma sp 	3	5	5	4.32e-70	0	9	1.75	0
+OTU_981	Fungi	Ascomycota	Sordariomycetes	Hypocreales	Nectriaceae	NA	NA	3	609	4669	0.001260536	0	15	0	0

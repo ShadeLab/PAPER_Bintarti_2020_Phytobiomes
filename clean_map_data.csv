@@ -1,4 +1,4 @@
-﻿sample_code,date_collected,Site_name,Site,sample_location,cultivar,rootstock,replicate,year_planted,year_planted_descr,pH,lime_index,P_ppm,K_ppm,Ca_ppm,Mg_ppm,NO3N_ppm,NH4N_ppm,OM_percent,sand_percent,silt_percent,clay_percent,soil_type,Lesion,Dagger,Ring,Pin,Stunt,Spiral,Tylenchs,Aphelenchs,Dorylaims,Monochs,BacterialFeeders,MycorrhizalFungi,Oligochaetes
+﻿sample_code,date_collected,Site_name,Site,sample_location,cultivar,rootstock,replicate,year_planted,year_planted_descr,pH,lime_index,P_ppm,K_ppm,Ca_ppm,Mg_ppm,NO3N_ppm,NH4N_ppm,OM_percent,sand_percent,silt_percent,clay_percent,soil_type,Pratylenchus_spp.,Dagger,Ring,Pin,Stunt,Spiral,Tylenchus,Aphelenchus,Dorylaims,Monochs,Rhabditidae,MycorrhizalFungi,Oligochaetes
 F01,6/26/17,Vinton(Schwallier),1,RootZone,Red,M26,NA,1982,actual,6.7,71,41,178,1377,148,0.2,4.1,3.5,40.2,41.7,18.1,Loam,4,8,0,0,0,0,60,8,4,20,840,208,36
 F02,6/26/17,Vinton(Schwallier),1,RootZone,Empire,M26,NA,1982,actual,6.3,70,84,189,901,89,0.2,3.7,2.8,51.2,33.7,15.1,Loam,4,4,0,0,0,0,84,12,8,0,312,64,12
 F03,6/26/17,Vinton(Schwallier),1,RootZone,JonaGold,M26,NA,1982,actual,5.7,68,78,137,615,57,0.2,4.2,2.5,63.1,24.8,12.1,SandyLoam,14,0,0,0,0,0,244,16,4,4,180,32,8
@@ -22,8 +22,8 @@ F20,6/26/17,DietrichWest,8,RootZone,Jonathan,M9,NA,NA,unknown,6.7,71,96,160,1163
 F21,6/26/17,DietrichWest,8,RootZone,Golden,M9,NA,NA,unknown,6.3,71,131,222,1104,192,1,6.7,2.6,54,31.9,14.1,SandyLoam,0,12,0,46,0,0,24,24,0,4,480,8,4
 F22,6/26/17,DietrichEast,9,RootZone,Jonathan,M9,NA,NA,unknown,6.7,71,114,181,1259,184,0.3,3.8,3,49,35.9,15.1,Loam,0,4,0,26,0,0,24,4,0,0,172,20,12
 F23,6/26/17,DietrichEast,9,RootZone,Golden,M9,NA,NA,unknown,6.4,70,117,208,1067,195,0.4,10.4,2.9,49,35.9,15.1,Loam,0,22,0,28,0,0,92,0,4,0,368,8,24
-F24,6/26/17,Wells,10,RootZone,NSpy,Pajam_Bud9,NA,1990,approximate,6.2,69,76,197,908,112,4.8,4.6,3.3,50,34.9,15.1,Loam,10,0,0,0,0,0,0,12,4,4,84,8,0
-F25,6/26/17,Wells,10,RootZone,PaulaRed,Pajam_Bud9,NA,1990,approximate,7.1,NA,74,202,1233,141,0.3,3,2.4,51,33.9,15.1,Loam,0,18,0,2,0,0,112,0,8,0,48,56,0
+F24,6/26/17,Wells,10,RootZone,NSpy,Pajam,NA,1990,approximate,6.2,69,76,197,908,112,4.8,4.6,3.3,50,34.9,15.1,Loam,10,0,0,0,0,0,0,12,4,4,84,8,0
+F25,6/26/17,Wells,10,RootZone,PaulaRed,Pajam,NA,1990,approximate,7.1,NA,74,202,1233,141,0.3,3,2.4,51,33.9,15.1,Loam,0,18,0,2,0,0,112,0,8,0,48,56,0
 F26,6/27/17,FrensNorth,11,RootZone,IdaRed,Bud9,NA,1999,actual,7,NA,86,226,2010,265,0.5,3.6,4.5,32,46.9,21.1,Loam,2,48,0,360,0,0,28,12,4,0,320,32,0
 F27,6/27/17,FrensSouth,12,RootZone,IdaRed,Bud9,NA,1999,actual,6.6,71,40,120,1681,217,0.2,4.5,4.1,37.3,43.3,19.4,Loam,10,24,4,96,0,0,140,8,8,8,332,28,16
 F28,6/27/17,RoosinckPatterson,13,RootZone,Rome,M7,NA,1980,approximate,6.5,71,157,119,1108,148,0.1,3,3.5,57.3,28.3,14.4,SandyLoam,4,38,0,0,0,0,4,8,16,0,364,8,12

@@ -1,0 +1,28 @@
+OTU	OccITS	Domain	Phylum	Class	Order	Family	Genus	Species	Genus_Order	com_abundITS	RelAbund	PercentRelAbund
+OTU_846	1	Fungi	Ascomycota	Leotiomycetes	Helotiales	Helotiaceae	Tetracladium	Tetracladium sp 	Tetracladium	7.021763869	0.156039197	15.60391971
+OTU_142	1	Fungi	Basidiomycota	Tremellomycetes	Filobasidiales	Piskurozymaceae	Solicoccozyma	Solicoccozyma terricola	Solicoccozyma	5.440825036	0.120907223	12.0907223
+OTU_3079	1	Fungi	Basidiomycota	Tremellomycetes	Cystofilobasidiales	Mrakiaceae	NA	NA	Cystofilobasidiales	2.637571124	0.058612692	5.861269164
+OTU_314	1	Fungi	Mortierellomycota	Mortierellomycetes	Mortierellales	Mortierellaceae	Mortierella	Mortierella exigua	Mortierella	2.214793741	0.049217639	4.921763869
+OTU_748	1	Fungi	Mortierellomycota	Mortierellomycetes	Mortierellales	Mortierellaceae	Mortierella	Mortierella sp 	Mortierella	1.289189189	0.028648649	2.864864865
+OTU_607	1	Fungi	Basidiomycota	Tremellomycetes	Filobasidiales	Piskurozymaceae	Solicoccozyma	Solicoccozyma terrea	Solicoccozyma	1.137233286	0.025271851	2.52718508
+OTU_246	1	Fungi	Ascomycota	Eurotiomycetes	Chaetothyriales	Herpotrichiellaceae	Exophiala	Exophiala equina	Exophiala	1.056418919	0.023475976	2.347597598
+OTU_285	1	Fungi	Fungi	NA	NA	NA	NA	NA	Fungi	0.819167852	0.01820373	1.820373005
+OTU_3265	1	Fungi	Ascomycota	NA	NA	NA	NA	NA	Ascomycota	0.678822902	0.015084953	1.508495337
+OTU_53	1	Fungi	Ascomycota	Leotiomycetes	Helotiales	Helotiaceae	Tetracladium	Tetracladium marchalianum	Tetracladium	0.534815078	0.01188478	1.188477952
+OTU_92	1	Fungi	Fungi	NA	NA	NA	NA	NA	Fungi	0.533588193	0.011857515	1.185751541
+OTU_122	1	Fungi	Ascomycota	Dothideomycetes	Pleosporales	Pleosporaceae	Alternaria	Alternaria sp 	Alternaria	0.530600996	0.011791133	1.179113324
+OTU_783	1	Fungi	Mortierellomycota	Mortierellomycetes	Mortierellales	Mortierellaceae	Mortierella	Mortierella camargensis	Mortierella	0.499324324	0.011096096	1.10960961
+OTU_166	1	Fungi	Ascomycota	Sordariomycetes	Hypocreales	Nectriaceae	Fusarium	Fusarium oxysporum	Fusarium	0.395039118	0.008778647	0.877864707
+OTU_1539	1	Fungi	Basidiomycota	Tremellomycetes	Cystofilobasidiales	NA	NA	NA	Cystofilobasidiales	0.367389758	0.008164217	0.816421685
+OTU_375	1	Fungi	Basidiomycota	Tremellomycetes	Cystofilobasidiales	Mrakiaceae	Mrakia	Mrakia frigida	Mrakia	0.317478663	0.007055081	0.70550814
+OTU_1095	1	Fungi	Basidiomycota	Microbotryomycetes	Leucosporidiales	Leucosporidiaceae	Leucosporidium	Leucosporidium intermedium	Leucosporidium	0.31230441	0.006940098	0.694009799
+OTU_2583	1	Fungi	Ascomycota	Sordariomycetes	Hypocreales	NA	NA	NA	Hypocreales	0.277507112	0.006166825	0.616682472
+OTU_3063	1	Fungi	Basidiomycota	Agaricomycetes	NA	NA	NA	NA	Agaricomycetes	0.276298009	0.006139956	0.613995575
+OTU_597	1	Fungi	Ascomycota	Leotiomycetes	Helotiales	NA	NA	NA	Helotiales	0.172670697	0.003837127	0.38371266
+OTU_1410	1	Fungi	Ascomycota	Sordariomycetes	Hypocreales	NA	NA	NA	Hypocreales	0.168990043	0.003755334	0.375533428
+OTU_959	1	Fungi	Basidiomycota	Agaricomycetes	Polyporales	NA	NA	NA	Polyporales	0.133197013	0.002959934	0.295993362
+OTU_35	1	Fungi	Fungi	NA	NA	NA	NA	NA	Fungi	0.106667852	0.002370397	0.237039671
+OTU_1094	1	Fungi	Fungi	NA	NA	NA	NA	NA	Fungi	0.104302987	0.002317844	0.231784416
+OTU_1447	1	Fungi	Fungi	NA	NA	NA	NA	NA	Fungi	0.051315789	0.001140351	0.114035088
+OTU_59	1	Fungi	Ascomycota	Sordariomycetes	Hypocreales	Nectriaceae	Thelonectria	Thelonectria lucida	Thelonectria	0.025889047	0.000575312	0.057531215
+OTU_1	1	Fungi	Ascomycota	Sordariomycetes	Hypocreales	Nectriaceae	Fusarium	Fusarium sp 	Fusarium	0.014989331	0.000333096	0.033309625

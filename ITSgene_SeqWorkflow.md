@@ -1,25 +1,20 @@
-# Analysis of ITS_apple_replant_45samples
+Raw Sequences Analysis of ITS gene (ITS1 region) from Apple Root-zone Soil
 
-```
-######## Modified from GLBRC/Bonito's Lab Workflow for ITS Sequences###########
-```
-```
-# all the analyses results are stored in /mnt/research/ShadeLab/WorkingSpace/Bintarti/ITS_apple_replant/ITS_45_aprep/Workflow2_ITS1_OpenReferenceClust/
-# ITS raw sequence data stored on HPCC 
-# the analyses were conducted in new centos7 HPCC system (ssh dev-intel18)
-# quality filtering was conducted using USEARCH10
-# primer/adapter removal was performed using cutadapt 1.17 with Python 2.7.15.
-# trimming was conducted with length of 200 bp 
-# OTU table was built using both open reference of UNITE V.7.2 and de novo clustering with 97% of similarity
-# Classifying was conducted using "consensus_taxonomy.txt" file produced by CONSTAX
-# further analyses were conducted using QIIME 1.9.1 pipeline (you have to install it in your home directory because it cannot be loaded either in old centos6 or new centos7 HPCC system)
-# unfortunately, taxonomy file (consensus_taxonomy.txt) produced from CONSTAX is biom unfriendly so it cannot be added into OTU table biom file using command: biom add-metadata
-# add taxonomy to OTU table can be conducted/modified using R software, Excel, and Phyloseq 
+# Analysis of ITS MiSeq data
 
-apple replant soil ITS:  45 total files
-Copied apple replant ITS sequences to working space for analysis
-ShadeLab/WorkingSpace/Bintarti/ITS_apple_replant/ITS_45_aprep/raw_reads/
-```
+Here we used the USEARCH pipeline (v10.0.240_i86linux64) for pre-processing raw sequences data and UPARSE method for OTU clustering (Edgar 2013). Further analyses were conducted using QIIME1 1.9.1 pipeline (you have to install it in your home directory on HPCC system).
+
+ITS raw sequence data stored on HPCC:
+/mnt/research/ShadeLab/Sequence/raw_sequence/AppleReplant/220180328_ITS_PE/
+
+Moved/copy apple replant sequences (45 soil samples (F01-F45)) to working space for analysis: 
+/mnt/research/ShadeLab/WorkingSpace/ITS_apple_replant/ITS_45_aprep/rawreads/
+
+The workflow results are stored in here:
+/mnt/research/ShadeLab/WorkingSpace/Bintarti/ITS_apple_replant/ITS_45_aprep/Workflow2_ITS1_OpenReferenceClust/
+
+Primer/adapter removal: cutadapt 1.17 with Python 2.7.15.
+OTU table was built using both open reference of UNITE V.7.2 and de novo clustering with 97% of similarity. Assign taxonomy was conducted using CONSTAX (Gdanetz et al. 2017: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1952-x). Unfortunately, taxonomy file (consensus_taxonomy.txt) produced using CONSTAX is biom unfriendly so it cannot be added into OTU table biom file using command: biom add-metadata. Adding taxonomy to OTU table was conducted/modified using R software, Excel, and Phyloseq.
 
 # QUALITY CHECKING AND PRE-FILTERING
 
@@ -128,7 +123,7 @@ Length         MaxEE 0.50         MaxEE 1.00         MaxEE 2.00
 #quality check
 /mnt/home/bintarti/FastQC/fastqc filtered_cut_merged.fastq
 ```
-# CLUSTERING AND DENOISING (OTUs vs. ESV)
+# CLUSTERING AND DENOISING (OTUs)
 
 ## DEREPLICATE
 ```
@@ -137,28 +132,6 @@ Length         MaxEE 0.50         MaxEE 1.00         MaxEE 2.00
 #output: 4138682 seqs, 547383 uniques, 372398 singletons (68.0%)
 Min size 1, median 1, max 401391, avg 7.56
 ```
-###########################################################################
-```
-## GENERATING Exact Sequence Variants (ESV) ALSO CALLED 0-RADIUS OTUs (DENOISING-MAKING ZOTU)
-
-/mnt/research/rdp/public/thirdParty/usearch10.0.240_i86linux64 -unoise3 derep_filtered_cut_merged.fasta -tabbedout unoise_zotus.txt -zotus zotus.fasta
-
-#output:
-00:02 190Mb   100.0% 3017 amplicons, 1097757 bad (size >= 8) 
-00:39 202Mb   100.0% 3012 good, 5 chimeras                  
-00:39 202Mb   100.0% Writing zotus
-
-/mnt/home/bintarti/python_scripts-master/fasta_number.py zotus.fasta OTU_ > zotus_numbered.fasta
-
-## CONSTRUCT ZOTU TABLE-MAP READS BACK TO zotus_numbered.fasta AS DATABASE FILE
-
-/mnt/research/rdp/public/thirdParty/usearch10.0.240_i86linux64 -usearch_global mergedfastq/merged.fastq -db zotus_numbered.fasta -strand plus -id 0.97 -otutabout otu_table_ITS_UNOISE.txt
-
-#output:00.0% Searching merged.fastq, 92.4% matched
-4250658 / 4601240 mapped to OTUs (92.4%)  
-```
-###########################################################################
-
 ## OPEN REFERENCE-BASED OTU PICKING AGAINST UNITE FUNGAL ITS DATABASE (v. 7.2) at 97% IDENTITY
 ```
 /mnt/research/rdp/public/thirdParty/usearch10.0.240_i86linux64 -usearch_global derep_filtered_cut_merged.fasta -id 0.97 -db /mnt/research/ShadeLab/UNITE_v7.2/sh_refs_qiime_ver7_97_s_01.12.2017.fasta  -strand plus -uc ref_seqs.uc -dbmatched UNITE_reference.fasta -notmatched UNITE_failed_closed.fq
@@ -186,16 +159,23 @@ cat UNITE_reference.fasta DENOVO_otus.fasta > REPRESENTATIVE_SET.fna
 #output: 4283105 / 4373305 mapped to OTUs (97.9%)   
 ```
 ## TAXONOMIC CLASSIFICATION USING CONSTAX
-```
+
 please refer to how "Running CONSTAX on the MSU HPCC on lab guru : https://my.labguru.com/knowledge/documents/330
 
-# YOU HAVE TO RUN CONSTAX WITHIN THE OLD CENTOS 6 HPCC SYSTEM!
-# add "NUMBERED_REP_SET.fasta" into: mnt/home/bintarti/CONSTAX_hpcc/otus
-# change the PATH in: mnt/home/bintarti/CONSTAX_hpcc/config
-# output directories: outputs, taxonomy_assignments, training_files
-# move the output directories to: /mnt/research/ShadeLab/WorkingSpace/Bintarti/ITS_apple_replant/ITS_45_aprep/Workflow2_ITS1_OpenReferenceClust/CONSTAX_OTU
-# Use the taxonomy file : outputs/consensus_taxonomy.txt
-```
+Before run constax.sh:
+- CONSTAX WAS RUN ON THE OLD CENTOS 6 HPCC SYSTEM!
+- Add "NUMBERED_REP_SET.fasta" into: mnt/home/bintarti/CONSTAX_hpcc/otus 
+- Change the PATH in: mnt/home/bintarti/CONSTAX_hpcc/config
+After constax completed:
+- I moved the outputs directory to: /mnt/research/ShadeLab/WorkingSpace/Bintarti/ITS_apple_replant/ITS_45_aprep/Workflow2_ITS1_OpenReferenceClust/CONSTAX_OTU
+- I used the "consensus_taxonomy.txt" file in: outputs/consensus_taxonomy.txt for further analyses on Excel and R Software.
+
+Information about CONSTAX tutorial: https://static-content.springer.com/esm/art%3A10.1186%2Fs12859-017-1952-x/MediaObjects/12859_2017_1952_MOESM1_ESM.pdf (Gdanetz et al. 2017).
+
+CONSTAX is a tool that compare three methods in assigning taxonomy, namely RDP Classifier (RDPC), UTAX, and SINTAX, then combine the taxonomy results of those three softwares into a consensus taxonomy.
+
+The output is filtered at the confidence cutoff of 0.8.
+
 ## CONVERT .TXT FILE INTO .BIOM FILE - CONSTAX output is not BIOM friendly, thus do not use this command: biom add_metadata
 ```
 biom convert -i OPEN_REF_OTU_TABLE_ITS.txt -o OPEN_REF_OTU_TABLE_ITS.biom --table-type="OTU table" --to-json

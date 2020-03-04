@@ -1,0 +1,105 @@
+Phylum	Genus_Class	GC_count
+ Actinobacteria	 Acidimicrobiia	2
+ Actinobacteria	 Marmoricola	1
+ Proteobacteria	 Pajaroellobacter	1
+ Firmicutes	 Bacillus	1
+ Chloroflexi	 Dehalococcoidia	1
+ Bacteroidetes	 Flavisolibacter	1
+ Planctomycetes	 Pirellula	4
+ Chloroflexi	 OLB14	1
+ Proteobacteria	 Candidatus Alysiosphaera	2
+ Euryarchaeota	 Thermoplasmata	1
+ Planctomycetes	 Planctomycetacia	5
+ Actinobacteria	 Ilumatobacter	1
+ Firmicutes	 Sporosarcina	1
+ Gemmatimonadetes	 BD2-11 terrestrial group	1
+ Proteobacteria	 Erythrobacter	1
+ Acidobacteria	 Bryobacter	1
+ Actinobacteria	 Pseudonocardia	1
+ Elusimicrobia	 Lineage IIa	1
+ Proteobacteria	 Altererythrobacter	1
+ Acidobacteria	 JGI 0001001-H03	1
+ Proteobacteria	 Rhodoplanes	1
+ Chloroflexi	 TK10	2
+ Acidobacteria	 Blastocatella	1
+ Actinobacteria	 Actinobacteria	5
+ Verrucomicrobia	 Verrucomicrobiae	15
+ Proteobacteria	 Pedomicrobium	3
+ Acidobacteria	 Candidatus Solibacter	2
+ Proteobacteria	 Mesorhizobium	1
+ Acidobacteria	 Subgroup 17	2
+ Actinobacteria	 Cellulomonas	1
+ Proteobacteria	 Phenylobacterium	2
+ Proteobacteria	 Haliangium	5
+ Proteobacteria	 Polaromonas	1
+ Bacteroidetes	 Parafilimonas	2
+ Proteobacteria	 Massilia	1
+ Planctomycetes	 Phycisphaerae	12
+ Actinobacteria	 Streptomyces	1
+ Proteobacteria	 Sphingomonas	11
+ Bacteroidetes	 Ohtaekwangia	1
+ Bacteroidetes	 Flavitalea	1
+ Proteobacteria	 Deltaproteobacteria	14
+ Proteobacteria	 JTB255 marine benthic group	1
+ Chloroflexi	 KD4-96	3
+ Actinobacteria	 Solirubrobacter	2
+ Proteobacteria	 Methylotenera	1
+ Actinobacteria	 Gaiella	2
+ Proteobacteria	 Gammaproteobacteria	30
+ Planctomycetes	 OM190	2
+ Proteobacteria	 Aquabacterium	2
+ Actinobacteria	 Thermoleophilia	3
+ Acidobacteria	 Subgroup 5	4
+ Proteobacteria	 Ralstonia	1
+ Actinobacteria	 Subtercola	1
+ Proteobacteria	 Hyphomicrobium	1
+ Proteobacteria	 Escherichia-Shigella	1
+ Acidobacteria	 Holophagae	3
+ Proteobacteria	 Oligoflexus	1
+ Proteobacteria	 Alphaproteobacteria	24
+ Bacteroidetes	 Bacteroidia	30
+ Proteobacteria	 Steroidobacter	2
+ Bacteroidetes	 Ferruginibacter	9
+ Proteobacteria	 Skermanella	1
+ Bacteroidetes	 Flavobacterium	2
+ Proteobacteria	 Reyranella	2
+ Verrucomicrobia	 Chthoniobacter	10
+ Acidobacteria	 Blastocatellia (Subgroup 4)	8
+ Gemmatimonadetes	 Gemmatimonadetes	7
+ Bacteroidetes	 Dinghuibacter	1
+ Verrucomicrobia	 Opitutus	2
+ Planctomycetes	 Planctomycetes	1
+ Verrucomicrobia	 Lacunisphaera	1
+ Acidobacteria	 Subgroup 6	37
+ Proteobacteria	 Microvirga	1
+ Proteobacteria	 Bradyrhizobium	4
+ Chloroflexi	 Anaerolineae	3
+ Proteobacteria	 MND1	4
+ Acidobacteria	 Acidobacteriia	2
+ Bacteroidetes	 Adhaeribacter	2
+ Acidobacteria	 Stenotrophobacter	3
+ Proteobacteria	 mle1-7	1
+ Proteobacteria	 Cellvibrio	1
+ Rokubacteria	 NC10	2
+ Proteobacteria	 Acidibacter	4
+ Proteobacteria	 Novosphingobium	2
+ Actinobacteria	 MB-A2-108	1
+ Bacteroidetes	 Terrimonas	4
+ Acidobacteria	 Subgroup 11	1
+ Proteobacteria	 Ellin6067	6
+ Latescibacteria	 Latescibacteria	4
+ Proteobacteria	 Arenimonas	1
+ Verrucomicrobia	 Cephaloticoccus	1
+ Proteobacteria	 Phaselicystis	1
+ Verrucomicrobia	 Luteolibacter	2
+ Actinobacteria	 Nakamurella	1
+ Acidobacteria	 Subgroup 22	2
+ Actinobacteria	 Mycobacterium	1
+ Acidobacteria	 RB41	7
+ Actinobacteria	 Arthrobacter	1
+ Thaumarchaeota	 Nitrososphaeria	1
+ Verrucomicrobia	 Candidatus Xiphinematobacter	2
+ Verrucomicrobia	 Candidatus Udaeobacter	6
+ Nitrospirae	 Nitrospira	1
+ Proteobacteria	 Pseudomonas	2
+ Thaumarchaeota	 uncultured archaeon	1

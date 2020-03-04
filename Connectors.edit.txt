@@ -1,0 +1,6 @@
+Name	Domain	Phylum	Class	Order	Family	Genus	Species	Connectors	node.degree	node.betw	node.stress	node.evcent	Clustering.Coefficient	No..module	Zi	Pi
+HQ166693.1.1493	Bacteria	 Acidobacteria	 Subgroup 5	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	(p) Acidobacteria; (c) Subgroup 5	4	826.2794122	4210	0.036457026	0	4	-0.341659944	0.625
+HQ598294.1.1470	Bacteria	 Acidobacteria	 Acidobacteriia	 Acidobacteriales	 uncultured	 Ambiguous_taxa	 Ambiguous_taxa	(p) Acidobacteria; (o) Acidobacteriales	10	5292.579668	61832	0.025540599	0	2	0.456352318	0.68
+JQ978850.1.1513	Bacteria	 Acidobacteria	 Subgroup 6	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	 Ambiguous_taxa	(p) Acidobacteria; (c) Subgroup 6	4	1994.087571	19134	0.018949844	0.166666667	4	-0.341659944	0.625
+OTU_dn_274	Unassigned	NA	NA	NA	NA	NA	NA	unassigned OTU	3	1353.219714	7377	0.004716835	0	0	-0.825722824	0.666666667
+OTU_dn_9	Bacteria	 Proteobacteria	 Deltaproteobacteria	 Myxococcales	 bacteriap25	 uncultured bacterium	 uncultured bacterium	(c) Deltaproteobacteria; (o) Myxococcales	3	453.7731922	3438	0.036444206	0.333333333	5	-0.689399745	0.666666667

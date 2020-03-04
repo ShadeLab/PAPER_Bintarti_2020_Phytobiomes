@@ -1,0 +1,17 @@
+Phylum	Genus_Order	GO_count
+Ascomycota	Tetracladium	2
+Basidiomycota	Solicoccozyma	2
+Basidiomycota	Cystofilobasidiales	2
+Mortierellomycota	Mortierella	3
+Ascomycota	Exophiala	1
+Ascomycota	Ascomycota	1
+Ascomycota	Alternaria	1
+Basidiomycota	Mrakia	1
+Basidiomycota	Leucosporidium	1
+Basidiomycota	Agaricomycetes	1
+Ascomycota	Hypocreales	2
+Ascomycota	Fusarium	2
+Ascomycota	Helotiales	1
+Basidiomycota	Polyporales	1
+Fungi	Fungi	5
+Ascomycota	Thelonectria	1
