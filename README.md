@@ -1,5 +1,5 @@
 ## Github Repository for
-# Biogeography and Diversity of Multi-Trophic Q:1 Root Zone Microbiomes in Michigan Apple Orchards: Analysis of Rootstock, Scion, and Local Growing Region
+# Biogeography and Diversity of Multi-Trophic Root Zone Microbiomes in Michigan Apple Orchards: Analysis of Rootstock, Scion, and Local Growing Region
 ## by Ari Fina Bintarti, Julianna K Wilson, Marisol A Quintanilla-Tornel, and Ashley Shade
 
 
