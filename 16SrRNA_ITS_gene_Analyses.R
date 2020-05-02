@@ -2720,6 +2720,16 @@ rownames(tax_16S) <- rownames(otu)
 OTU = otu_table(otu, taxa_are_rows = TRUE)
 TAX = tax_table(as.matrix(tax_16S))
 # add map
+# add map
+# Read the metadata (map)
+map <- read.table('clean_map_data.csv', sep=',', header=TRUE)
+str(map) # We use number as the name of site and it is integer 
+map$Site <- as.factor(map$Site) # I want to change site as factor
+colnames(map)[which(names(map) == "rootstock")] <- "Rootstock"
+colnames(map)[which(names(map) == "cultivar")] <- "Scion"
+map$Site<-as.factor(map$Site)
+rownames(map) <- map$sample_code
+head(map)
 map$Site<-as.factor(map$Site)
 rownames(map) <- map$sample_code
 # make phyloseq map
