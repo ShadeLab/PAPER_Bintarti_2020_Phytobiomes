@@ -56,7 +56,7 @@ library(fitdistrplus)
 detach(package:plyr)
 
 # Set the working directory
-setwd('/Users/arifinabintarti/Documents/PAPER_Bintarti_2019_Apple/')
+setwd('/Users/arifinabintarti/Documents/PAPER/PAPER_Bintarti_2019_Apple/')
 wd <- print(getwd())
 
 # Read the bacterial Operational Taxonomic Units (OTUs)
@@ -1798,6 +1798,9 @@ leveneTest(nema.total.SqrtCount ~ Rootstock, data=map.div, na.action=na.exclude)
 # Tukey
 HSD_TC_nema_root <- HSD.test(TC_nema_root, "Rootstock", group = TRUE, console = TRUE)
 HSD_TC_nema_root <- HSD.test(TC_nema_root, "Rootstock", group = F, console = TRUE)
+pval.nema.root <- as.data.frame(HSD_TC_nema_root$comparison)
+write.csv(pval.nema.root, file = "pval.nema.root.csv")
+
 # add significance letters from HSD.test into box plot
 TC_nema_root.sum1 <- map.div %>% group_by(Rootstock) %>% summarize(max.count=max(nema.total.Count))
 HSD_TC_nema_root <- HSD.test(TC_nema_root, "Rootstock", group = TRUE, console = TRUE)
@@ -1806,7 +1809,7 @@ class(hsd_TC_nema_root)
 hsd_TC_nema_root$Rootstock <- rownames(hsd_TC_nema_root)
 TC_nema_root.sum2=left_join(hsd_TC_nema_root,TC_nema_root.sum1, by='Rootstock')  
 # Do Plot
-nema.ab.root <- ggplot(map.div, aes(x=Rootstock, y=nema.total.Count))+
+(nema.ab.root <- ggplot(map.div, aes(x=Rootstock, y=nema.total.Count))+
  geom_boxplot() +
  geom_point() +
  theme_bw()+
@@ -1822,7 +1825,7 @@ nema.ab.root <- ggplot(map.div, aes(x=Rootstock, y=nema.total.Count))+
        axis.title.y = element_blank(),
        #axis.title=element_text(size=14,face="bold"),
        plot.background = element_blank(),
-       panel.grid = element_blank())
+       panel.grid = element_blank()))
 
 # 3. Compare total absolute nematodes abundances among cultivars # not significant
 TC_nema_cult <- lm(nema.total.SqrtCount ~ Scion, data=map.div, na.action=na.exclude)
@@ -1859,6 +1862,9 @@ leveneTest(sqrt.OL ~ Site, data=map.div, na.action=na.exclude) # variances among
 # Tukey
 HSD_OL_site <- HSD.test(OL_site, "Site", group = TRUE, console = TRUE)
 HSD_OL_site <- HSD.test(OL_site, "Site", group = F, console = TRUE)
+pval.OL.site <- as.data.frame(HSD_OL_site$comparison)
+write.csv(pval.OL.site, file = "pval.OL.site.csv")
+
 # add significance letters from HSD.test into box plot
 OL_site.sum1 <- map.div %>% group_by(Site) %>% summarize(max.count=max(Oligochaetes))
 HSD_OL_site <- HSD.test(OL_site, "Site", group = TRUE, console = TRUE)
@@ -1958,7 +1964,33 @@ skew_xts <-  skewness(MF_site_resids)
 leveneTest(log.MF ~ Site, data=map.div, na.action=na.exclude) # variances among group are homogenous
 # Tukey
 HSD_MF_site <- HSD.test(MF_site, "Site", group = TRUE, console = TRUE)
-HSD_MF_site <- HSD.test(MF_site, "Site", group = F, console = TRUE)
+HSD_MF_site <- HSD.test(MF_site, "Site", group = F)
+comp.df <- as.data.frame(HSD_MF_site$comparison)
+comp.df
+pval.MF.site <- as.data.frame(HSD_MF_site$comparison)
+write.csv(pval.MF.site , file = "pval.MF.site.csv")
+
+p.val <- rownames_to_column(comp.df, var = "comparison")
+p.val 
+library(rcompanion)
+letter <- cldList(pvalue ~ comparison,
+        data = p.val,
+        threshold  = 0.05)
+letter
+# with multcompletters
+p.val = HSD_MF_site$comparison[,'pvalue', drop=F]
+p.val
+names(p.val)[1] <- "P.adj"
+p.val
+library(multcompView)
+multcompLetters(p.val,
+                compare="<",
+                threshold=0.05,
+                Letters=letters,
+                reversed = FALSE)
+
+
+
 # add significance letters from HSD.test into box plot
 MF_site.sum1 <- map.div %>% group_by(Site) %>% summarize(max.count=max(MycorrhizalFungi))
 HSD_MF_site <- HSD.test(MF_site, "Site", group = TRUE, console = TRUE)
@@ -1966,6 +1998,8 @@ hsd_MF_site = HSD_MF_site$groups
 class(hsd_MF_site)
 hsd_MF_site$Site <- rownames(hsd_MF_site)
 MF_site.sum2=left_join(hsd_MF_site,MF_site.sum1, by='Site')  
+MF_site.sum2
+
 # Do Plot
 MF_site <- ggplot(map.div, aes(x=Site, y=MycorrhizalFungi))+
  geom_boxplot() +
@@ -2279,11 +2313,13 @@ dev.off()
 otu_dist <- vegdist(t(otu), method='bray')
 # CMD/classical multidimensional scaling (MDS) of a data matrix. Also known as principal coordinates analysis
 otu_pcoa <- cmdscale(otu_dist, eig=T)
-env <- map[,c(11:22, 24:36)]
+env <- map[,c(6,7,11:22, 24:36)]
 # scores of PC1 and PC2
 ax1.scores=otu_pcoa$points[,1]
 ax2.scores=otu_pcoa$points[,2] 
+set.seed(100)
 env_fit <- envfit(otu_pcoa, env, na.rm=TRUE)
+env_fit
 # calculate percent variance explained, then add to plot
 ax1 <- otu_pcoa$eig[1]/sum(otu_pcoa$eig)
 ax2 <- otu_pcoa$eig[2]/sum(otu_pcoa$eig)
@@ -2359,11 +2395,13 @@ bac_root.pcoa <- ggplot(data = map2, aes(x=ax1.scores, y=ax2.scores))+
 otu_distITS <- vegdist(t(otuITS), method='bray')
 # CMD/classical multidimensional scaling (MDS) of a data matrix. Also known as principal coordinates analysis
 otu_pcoaITS <- cmdscale(otu_distITS, eig=T)
-env <- map[,c(11:22, 24:36)]
+env <- map[,c(6,7,11:22, 24:36)]
 # scores of PC1 and PC2
 ax1ITS.scores=otu_pcoaITS$points[,1] 
 ax2ITS.scores=otu_pcoaITS$points[,2] 
+set.seed(100)
 env_fitITS <- envfit(otu_pcoaITS, env, na.rm=TRUE)
+env_fitITS
 ax1ITS <- otu_pcoaITS$eig[1]/sum(otu_pcoaITS$eig)
 ax2ITS <- otu_pcoaITS$eig[2]/sum(otu_pcoaITS$eig)
 map3=cbind(map2,ax1ITS.scores,ax2ITS.scores)
@@ -2779,6 +2817,18 @@ OTU.ITS <- otu_table(otuITS.phyl, taxa_are_rows = TRUE)
 OTU.ITS
 TAX.ITS <-  tax_table(tax.ITS)
 TAX.ITS
+# add map
+# Read the metadata (map)
+map <- read.table('clean_map_data.csv', sep=',', header=TRUE)
+str(map) # We use number as the name of site and it is integer 
+map$Site <- as.factor(map$Site) # I want to change site as factor
+colnames(map)[which(names(map) == "rootstock")] <- "Rootstock"
+colnames(map)[which(names(map) == "cultivar")] <- "Scion"
+map$Site<-as.factor(map$Site)
+rownames(map) <- map$sample_code
+head(map)
+# make phyloseq map
+phyloseq_map <- sample_data(map)
 # check that your OTU names are consistent across objects
 taxa_names(TAX.ITS) 
 taxa_names(OTU.ITS)
@@ -3179,7 +3229,7 @@ Occ.RelAbun.Fg <- ggplot()+
        panel.grid = element_blank(),
        legend.position = "bottom",
        legend.text=element_text(size = 8, face="bold"),
-       legend.title = element_blank())+
+       legend.title = element_text()+
        geom_point(data = Occ1ITS_RelAbund, aes(x=log10(RelAbund), y=OccITS, colour=Phylum),size=2.5, alpha=0.5)+
        scale_colour_manual(values = c('#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000'))
  #f <- Occ.RelAbun.Fg+theme(legend.position = "none")
@@ -3332,7 +3382,7 @@ annotate("text", x = 0.08, y = 4.25, label = "Module hubs", fontface='bold', siz
        axis.title=element_text(size=12,face="bold"),
 legend.text=element_text(size = 8),
 legend.title = element_text(size=10),
- panel.grid = element_blank())
+ panel.grid = element_blank()))
 ZP.plot2 <- ZP.plot1 + 
  geom_point(size=2.5, 
             mapping=aes(y = Zi, x = Pi, colour=Module_hub),
