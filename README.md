@@ -11,7 +11,7 @@ The raw data for this study are available in the NCBI SRA under bioproject [PRJN
 
 
 ### To cite this work or code
-
+Bintarti AF, JK Wilson, MA Quintanilla-Tornel and A Shade.  2020.  Biogeography and diversity of multi-trophic root zone microbiomes in Michigan apple orchards:  analysis of rootstock, scion, and local growing region.  Phytobiomes Journal. 4: 122-132. https://apsjournals.apsnet.org/doi/10.1094/PBIOMES-01-20-0007-R
 
 
 ### Abstract
