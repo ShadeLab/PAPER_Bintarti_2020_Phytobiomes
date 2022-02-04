@@ -56,7 +56,7 @@ library(fitdistrplus)
 detach(package:plyr)
 
 # Set the working directory
-setwd('/Users/arifinabintarti/Documents/PAPER/PAPER_Bintarti_2019_Apple/')
+setwd('/Users/arifinabintarti/Documents/GitHub/PAPER_Bintarti_2020_Phytobiomes/')
 wd <- print(getwd())
 
 # Read the bacterial Operational Taxonomic Units (OTUs)
@@ -3028,50 +3028,6 @@ sum(otuITS.melt$percentrelabund)
 head(otuITS.melt)
 dim(otuITS.melt) ### all OTU with relabund, percent relabund for each sample!!!!!!!!!!!
 
-par(mfrow=c(1,2))
-# Plot Core Bacteria and Archaea; and Fungi
-# 1. Bacteria
-library(forcats)
-library(dplyr)
-dim(sort_Occ1_RelAbund)
-top100.occ1 <- sort_Occ1_RelAbund[1:100,]
-CoreBac <- ggplot(sort_Occ1_RelAbund,aes(x=fct_reorder(Class, RelAbund, .desc=T), y=PercentRelAbund, fill=Phylum))+
- geom_boxplot()+
- coord_flip()+
- scale_fill_manual(values = c('#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000'))+
- labs(title = "A. Bacteria/archaea", y= "Relative Abundance (%)", x="Class")+
- theme_bw()+
- theme(plot.title = element_text(size=16, face="bold"),
-       axis.text=element_text(size=12), 
-       axis.title=element_text(size=12,face="bold"),
-       panel.grid.major = element_blank(),
-       panel.grid.minor = element_blank(),
-       #legend.position = "right",
-       legend.position = "none",
-       panel.background = element_blank(),
-       panel.grid = element_blank(),
-       panel.border = element_blank(),
-       axis.line.x = element_line(colour = "black"),
-       axis.line.y = element_line(colour = "black"),
-       plot.margin = unit(c(0.2,0.2,0.2,0.2), "lines"))
-# 2. Fungi
-CoreFg <- ggplot(sort_Occ1ITS_RelAbund,aes(x=fct_reorder(Genus_Order, RelAbund, .desc=T), y=RelAbund, fill=Phylum))+
- geom_boxplot()+
- coord_flip()+
- scale_fill_manual(values = c('#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000'))+
- labs(title="B. Fungi", y= "Relative Abundance (%)", x="Genus (or Order)")+
- theme_bw()+
- theme(plot.title = element_text(size = 16, face="bold"),
-       axis.text=element_text(size=12), 
-       axis.title=element_text(size=12,face="bold"),
-       legend.text=element_text(size = 8),
-       legend.title = element_text(size=10),
-       legend.position = "none",
-       panel.background = element_blank(),
-       panel.border = element_blank(),
-       panel.grid = element_blank(),
-       axis.line.x = element_line(colour = "black"),
-       axis.line.y = element_line(colour = "black"))
 
 # merge occupancy 1 and cumulative relative abundance 
 # 1. Bacteria
@@ -3178,6 +3134,57 @@ Fg.taxa.num=ggplot(go.count.fg, aes(x = Genus_Order,y = GO_count, fill=Phylum))+
        panel.grid.minor = element_blank())+
        labs(x= "Genus (or Class)", y="Number of taxa")
 
+par(mfrow=c(1,2))
+# Plot Core Bacteria and Archaea; and Fungi
+
+# 1. Bacteria
+library(forcats)
+library(dplyr)
+
+dim(sort_Occ1_RelAbund)
+top100.occ1 <- sort_Occ1_RelAbund[1:100,]
+
+CoreBac <- ggplot(sort_Occ1_RelAbund,aes(x=fct_reorder(Class, RelAbund, .desc=T), y=PercentRelAbund, fill=Phylum))+
+ geom_boxplot()+
+ coord_flip()+
+ scale_fill_manual(values = c('#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000'))+
+ labs(title = "A. Bacteria/archaea", y= "Relative Abundance (%)", x="Class")+
+ theme_bw()+
+ theme(plot.title = element_text(size=16, face="bold"),
+       axis.text=element_text(size=12), 
+       axis.title=element_text(size=12,face="bold"),
+       panel.grid.major = element_blank(),
+       panel.grid.minor = element_blank(),
+       #legend.position = "right",
+       legend.position = "none",
+       panel.background = element_blank(),
+       panel.grid = element_blank(),
+       panel.border = element_blank(),
+       axis.line.x = element_line(colour = "black"),
+       axis.line.y = element_line(colour = "black"),
+       plot.margin = unit(c(0.2,0.2,0.2,0.2), "lines"))
+
+# 2. Fungi
+CoreFg <- ggplot(sort_Occ1ITS_RelAbund,aes(x=fct_reorder(Genus_Order, RelAbund, .desc=T), y=RelAbund, fill=Phylum))+
+ geom_boxplot()+
+ coord_flip()+
+ scale_fill_manual(values = c('#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000'))+
+ labs(title="B. Fungi", y= "Relative Abundance (%)", x="Genus (or Order)")+
+ theme_bw()+
+ theme(plot.title = element_text(size = 16, face="bold"),
+       axis.text=element_text(size=12), 
+       axis.title=element_text(size=12,face="bold"),
+       legend.text=element_text(size = 8),
+       legend.title = element_text(size=10),
+       legend.position = "none",
+       panel.background = element_blank(),
+       panel.border = element_blank(),
+       panel.grid = element_blank(),
+       axis.line.x = element_line(colour = "black"),
+       axis.line.y = element_line(colour = "black"))
+
+
+
 ####### Plotting core microbiome members ##############
 grid.newpage()
 gA <- ggplotGrob(CoreBac)
@@ -3241,7 +3248,7 @@ Occ.RelAbun.Fg <- ggplot()+
        legend.text=element_text(size = 8, face="bold"),
        legend.title = element_text()+
        geom_point(data = Occ1ITS_RelAbund, aes(x=log10(RelAbund), y=OccITS, colour=Phylum),size=2.5, alpha=0.5)+
-       scale_colour_manual(values = c('#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000'))
+       scale_colour_manual(values = c('#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000')))
  #f <- Occ.RelAbun.Fg+theme(legend.position = "none")
  #ggarrange(f, CoreFg, ncol = 2, nrow = 1)
  
@@ -3254,9 +3261,6 @@ ggsave("SupplementaryFigureS9.tiff",
        units= "in", dpi = 600)
 
 
-
-
-
 ######## PLOT THE MEMBER OF OCC =1 BACTERIA AND FUNGI ########
 Bac.taxa.num
 Fg.taxa.num
@@ -3265,29 +3269,11 @@ CoreFg
 
 p1 <- ggarrange(CoreBac, Bac.taxa.num, nrow = 1, ncol = 2, align = "hv")
 
-
-
-
-
 grid.newpage()
 gC <- ggplotGrob(CoreFg)
 gD <- ggplotGrob(Fg.taxa.num)
 grid::grid.newpage()
 grid::grid.draw(cbind(gC, gD))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #### NETWORK ANALYSIS #####
 
